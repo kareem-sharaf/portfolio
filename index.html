@@ -4,52 +4,422 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kareem Sharaf | Backend Developer</title>
+    <meta name="description"
+        content="Kareem Sharaf - Backend Software Engineer & Architect specializing in scalable systems, RESTful APIs, and database design" />
+    <meta name="keywords"
+        content="Backend Developer, Software Engineer, Laravel, Django, Spring Boot, API Design, Database Architecture" />
+    <title>Kareem Sharaf | Software Engineer & Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
+    <!-- Header Navigation -->
     <header>
         <nav>
-            <h1>Kareem Sharaf</h1>
-            <ul>
+            <div class="nav-brand">
+                <h1>Kareem Sharaf</h1>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>Backend Software Engineer</h2>
-        <p>
-            Specialized in backend development, RESTful APIs, and database design.
-        </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-headline">
+                    <span class="line-1">Engineering Scalable Systems</span>
+                    <span class="line-2">Backend Architect specializing in high-performance APIs, database design, and
+                        cloud infrastructure.</span>
+                </h1>
+                <p class="hero-subheadline">
+                    Building infrastructure that powers businesses across healthcare, e-learning, travel, and
+                    marketplace domains.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-visualization">
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a software engineer focused on backend development and scalable architectures.
-        </p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        I believe backend systems should be invisible yet indispensable. With 5+ production systems
+                        across healthcare, education, and e-commerce, I specialize in architecting robust, scalable
+                        solutions that handle complex business logic seamlessly.
+                    </p>
+                    <p>
+                        As a Backend Software Engineer & Architect, I've successfully delivered enterprise-grade systems
+                        handling real-time communication, payment processing, multi-vendor architectures, and complex
+                        data workflows. My expertise spans multiple technologies including Laravel, Django, Spring Boot,
+                        and various cloud services.
+                    </p>
+                    <p>
+                        I focus on clean code, scalable architectures, and measurable impact. Every system I build is
+                        designed with performance, security, and maintainability in mind.
+                    </p>
+                </div>
+                <div class="about-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="5">0</div>
+                        <div class="metric-label">Production Systems</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="150">0</div>
+                        <div class="metric-label">API Endpoints</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="99">0</div>
+                        <div class="metric-label">Uptime %</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Projects will be added soon.</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-content">
+                <div class="tech-groups">
+                    <div class="tech-group">
+                        <h3>Backend Frameworks</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Laravel</span>
+                            <span class="tech-item">Django</span>
+                            <span class="tech-item">Spring Boot</span>
+                            <span class="tech-item">RESTful APIs</span>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h3>Databases</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">Database Design</span>
+                            <span class="tech-item">Query Optimization</span>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h3>Real-Time & Messaging</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">WebSocket</span>
+                            <span class="tech-item">Laravel Broadcasting</span>
+                            <span class="tech-item">Firebase Cloud Messaging</span>
+                            <span class="tech-item">Pusher</span>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h3>Payment & Integrations</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Stripe</span>
+                            <span class="tech-item">PayPal</span>
+                            <span class="tech-item">Multi-Gateway</span>
+                            <span class="tech-item">Webhook Handling</span>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h3>Cloud & DevOps</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">AWS S3</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">Celery</span>
+                            <span class="tech-item">Redis</span>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h3>Architecture Patterns</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Microservices</span>
+                            <span class="tech-item">Event-Driven</span>
+                            <span class="tech-item">Polymorphic Systems</span>
+                            <span class="tech-item">Modular Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: kareem.sh.ite@gmail.com</p>
-        <p>
-            <a href="https://github.com/kareem-sharaf">GitHub</a> |
-            <a href="https://www.linkedin.com/in/kareem-sharaf-ite">LinkedIn</a>
-        </p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Production systems I've architected and developed</p>
+
+            <!-- Project Filter -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="travel">Travel</button>
+                <button class="filter-btn" data-filter="marketplace">Marketplace</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Jaramana Clinic Center -->
+                <div class="project-card" data-category="healthcare" data-project="jaramana">
+                    <div class="project-header">
+                        <span class="project-badge">Healthcare</span>
+                        <h3>Jaramana Clinic Center</h3>
+                        <p class="project-type">Medical Management System</p>
+                    </div>
+                    <p class="project-description">
+                        Comprehensive medical clinic management system with appointment booking, medical records,
+                        real-time chat, and doctor scheduling.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-icon">🔐</span>
+                            <span>Dual Auth System</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">💬</span>
+                            <span>WebSocket Chat</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">📅</span>
+                            <span>Smart Scheduling</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                    <button class="btn-view-details" data-project="jaramana">View Case Study →</button>
+                </div>
+
+                <!-- Project 2: E-Learning System -->
+                <div class="project-card" data-category="education" data-project="elearning">
+                    <div class="project-header">
+                        <span class="project-badge">Education</span>
+                        <h3>E-Learning System</h3>
+                        <p class="project-type">University Course Management Platform</p>
+                    </div>
+                    <p class="project-description">
+                        Comprehensive LMS for universities with course management, enrollment system, quiz assessments,
+                        and video processing.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-icon">📹</span>
+                            <span>Resumable Uploads</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">📊</span>
+                            <span>Progress Tracking</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">🔒</span>
+                            <span>RBAC System</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Django REST Framework</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Celery</span>
+                        <span class="tech-tag">AWS S3</span>
+                    </div>
+                    <button class="btn-view-details" data-project="elearning">View Case Study →</button>
+                </div>
+
+                <!-- Project 3: Umrain -->
+                <div class="project-card" data-category="travel" data-project="umrain">
+                    <div class="project-header">
+                        <span class="project-badge">Travel</span>
+                        <h3>Umrain</h3>
+                        <p class="project-type">Multi-Vendor Travel & Booking Marketplace</p>
+                    </div>
+                    <p class="project-description">
+                        Large-scale multi-vendor marketplace for hotels, tours, flights, boats, cars, and event spaces
+                        with polymorphic booking system.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-icon">🏗️</span>
+                            <span>Modular Architecture</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">💰</span>
+                            <span>Commission Engine</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">🌍</span>
+                            <span>Multi-Currency</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Pusher</span>
+                        <span class="tech-tag">Multi-Gateway</span>
+                    </div>
+                    <button class="btn-view-details" data-project="umrain">View Case Study →</button>
+                </div>
+
+                <!-- Project 4: Pear -->
+                <div class="project-card" data-category="healthcare" data-project="pear">
+                    <div class="project-header">
+                        <span class="project-badge">Healthcare</span>
+                        <h3>Pear</h3>
+                        <p class="project-type">Telemedicine Platform</p>
+                    </div>
+                    <p class="project-description">
+                        Telemedicine platform connecting healthcare providers with clients for remote consultations via
+                        real-time video conferencing.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-icon">📹</span>
+                            <span>Agora Video</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">📅</span>
+                            <span>Slot Management</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">💳</span>
+                            <span>Stripe Integration</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Agora SDK</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                    <button class="btn-view-details" data-project="pear">View Case Study →</button>
+                </div>
+
+                <!-- Project 5: OfferMe -->
+                <div class="project-card" data-category="marketplace" data-project="offerme">
+                    <div class="project-header">
+                        <span class="project-badge">Marketplace</span>
+                        <h3>OfferMe</h3>
+                        <p class="project-type">Service Marketplace Platform</p>
+                    </div>
+                    <p class="project-description">
+                        B2B service marketplace connecting service providers with clients. Features real-time chat,
+                        dynamic field system, and multilingual notifications.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-icon">💬</span>
+                            <span>Real-Time Chat</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">🌐</span>
+                            <span>Multilingual</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-icon">⚙️</span>
+                            <span>Dynamic Fields</span>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Laravel Broadcasting</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Sanctum</span>
+                    </div>
+                    <button class="btn-view-details" data-project="offerme">View Case Study →</button>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to discuss your next project? Let's build something great together.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:kareem.sh.ite@gmail.com">kareem.sh.ite@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/kareem-sharaf-ite" target="_blank"
+                                rel="noopener noreferrer">Connect with me</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💻</span>
+                        <div>
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/kareem-sharaf" target="_blank" rel="noopener noreferrer">View my
+                                work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div id="modalBody" class="modal-body">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
