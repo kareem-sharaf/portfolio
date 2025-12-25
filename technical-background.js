@@ -43,6 +43,8 @@ class TechnicalBackground {
         this.setupElements();
         this.createNodes();
         this.createParticles();
+        this.createBinaryCode();
+        this.createTechIcons();
         this.setupEventListeners();
         this.loadPreferences();
         this.animate();
@@ -82,6 +84,8 @@ class TechnicalBackground {
                 this.settings.particleCount = this.isMobile ? 40 : 80;
                 this.settings.nodeCount = this.isMobile ? 15 : 25;
                 this.createParticles();
+                this.createBinaryCode();
+                this.createTechIcons();
             }
         });
     }
@@ -225,6 +229,89 @@ class TechnicalBackground {
                     this.svgContainer.appendChild(line);
                 }
             }
+        }
+    }
+    
+    createBinaryCode() {
+        const binaryLayer = document.getElementById('binary-layer');
+        if (!binaryLayer) return;
+        
+        // Clear existing
+        binaryLayer.innerHTML = '';
+        
+        // Create binary code elements (0 and 1)
+        const binaryCount = this.isMobile ? 30 : 50;
+        const binaryChars = ['0', '1'];
+        
+        for (let i = 0; i < binaryCount; i++) {
+            const binary = document.createElement('div');
+            binary.className = 'binary-char';
+            binary.textContent = binaryChars[Math.floor(Math.random() * binaryChars.length)];
+            
+            // Random position
+            binary.style.left = `${Math.random() * 100}%`;
+            binary.style.top = `${Math.random() * 100}%`;
+            
+            // Random animation delay and duration
+            const delay = Math.random() * 5;
+            const duration = 15 + Math.random() * 10;
+            binary.style.animation = `binaryFloat ${duration}s infinite ease-in-out ${delay}s`;
+            
+            // Random size
+            const size = 12 + Math.random() * 8;
+            binary.style.fontSize = `${size}px`;
+            
+            binaryLayer.appendChild(binary);
+        }
+    }
+    
+    createTechIcons() {
+        const techIconsLayer = document.getElementById('tech-icons-layer');
+        if (!techIconsLayer) return;
+        
+        // Clear existing
+        techIconsLayer.innerHTML = '';
+        
+        // Tech icons SVG paths
+        const techIcons = [
+            // Database icon
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><ellipse cx="12" cy="19" rx="9" ry="3"/><line x1="3" y1="5" x2="3" y2="19"/><line x1="21" y1="5" x2="21" y2="19"/></svg>',
+            // Server icon
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>',
+            // Code icon
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+            // API icon
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>',
+            // Network icon
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="7.5" y1="7.5" x2="10.5" y2="10.5"/><line x1="13.5" y1="10.5" x2="16.5" y2="7.5"/><line x1="7.5" y1="16.5" x2="10.5" y2="13.5"/><line x1="13.5" y1="13.5" x2="16.5" y2="16.5"/></svg>',
+            // Terminal icon
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>'
+        ];
+        
+        const iconCount = this.isMobile ? 8 : 15;
+        
+        for (let i = 0; i < iconCount; i++) {
+            const iconWrapper = document.createElement('div');
+            iconWrapper.className = 'tech-icon-wrapper';
+            
+            // Random icon
+            const iconSvg = techIcons[Math.floor(Math.random() * techIcons.length)];
+            iconWrapper.innerHTML = iconSvg;
+            
+            // Random position
+            iconWrapper.style.left = `${Math.random() * 100}%`;
+            iconWrapper.style.top = `${Math.random() * 100}%`;
+            
+            // Random animation
+            const delay = Math.random() * 8;
+            const duration = 20 + Math.random() * 15;
+            iconWrapper.style.animation = `techIconFloat ${duration}s infinite ease-in-out ${delay}s`;
+            
+            // Random rotation
+            const rotation = Math.random() * 360;
+            iconWrapper.style.transform = `rotate(${rotation}deg)`;
+            
+            techIconsLayer.appendChild(iconWrapper);
         }
     }
     
@@ -528,6 +615,8 @@ class TechnicalBackground {
         if (this.settings.enabled) {
             this.createParticles();
             this.createNodes();
+            this.createBinaryCode();
+            this.createTechIcons();
         }
         
         // Save preference

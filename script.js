@@ -344,6 +344,7 @@ function initLanguageSwitcher() {
 initLanguageSwitcher();
 loadTranslations();
 
+
 // ============================================
 // Initialize on DOM Load
 // ============================================

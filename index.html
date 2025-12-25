@@ -48,6 +48,12 @@
             <div class="floating-nodes"></div>
         </div>
 
+        <!-- Binary Code Layer -->
+        <div class="bg-layer bg-binary" id="binary-layer"></div>
+
+        <!-- Tech Icons Layer -->
+        <div class="bg-layer bg-tech-icons" id="tech-icons-layer"></div>
+
         <!-- Interactive highlight layer -->
         <div class="bg-layer bg-interactive">
             <div class="mouse-ripple"></div>
@@ -82,6 +88,7 @@
                 <li><a href="#value" data-i18n="nav.services">Services</a></li>
                 <li><a href="#technology" data-i18n="nav.technology">Technology</a></li>
                 <li><a href="#methodology" data-i18n="nav.approach">Approach</a></li>
+                <li><a href="#about" data-i18n="about.title">About</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Work</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
@@ -131,8 +138,8 @@
                     <h1 class="hero-headline">
                         <span class="line-1" data-i18n="hero.mainHeadline">From Vision to Scalable Reality</span>
                     </h1>
-                    <p class="hero-subtitle" data-i18n="hero.subHeadline">Software Engineering Partner & System
-                        Architect</p>
+                    <p class="hero-subtitle" data-i18n="hero.subHeadline">Backend Engineer who builds scalable systems
+                    </p>
                     <p class="hero-tagline" data-i18n="hero.tagline">Building robust digital foundations that power
                         business growth</p>
 
@@ -161,10 +168,8 @@
                     </div>
 
                     <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">Discuss Your Project
-                            →</a>
-                        <a href="#technology" class="btn btn-secondary" data-i18n="hero.ctaSecondary">View Technical
-                            Expertise</a>
+                        <a href="#projects" class="btn btn-primary">View Projects →</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                 </div>
             </div>
@@ -431,6 +436,27 @@
         </div>
     </section>
 
+    <!-- About & Skills Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
+            <p class="section-subtitle" data-i18n="about.subtitle">Building robust digital foundations that power
+                business growth</p>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about.paragraph1">As a Backend Software Engineer & Architect, I've successfully
+                        delivered enterprise-grade systems handling real-time communication, payment processing,
+                        multi-vendor architectures, and complex data workflows. My expertise spans multiple technologies
+                        including Laravel, Django, Spring Boot, and various cloud services.</p>
+                    <p data-i18n="about.paragraph2">I focus on clean code, scalable architectures, and measurable
+                        impact.
+                        Every system I build is designed with performance, security, and maintainability in mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
@@ -441,6 +467,11 @@
                 <div class="project-card">
                     <div class="project-icon">🏥</div>
                     <h3 data-i18n="projects.cards.healthcare.title">Healthcare Management System</h3>
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Pusher</span>
+                    </div>
                     <div class="project-challenge">
                         <strong data-i18n="projects.cards.labels.challenge">Challenge:</strong> <span
                             data-i18n="projects.cards.healthcare.challenge">Clinic struggling with manual processes and
@@ -681,6 +712,13 @@
         <div class="container">
             <p>&copy; 2024 Kareem Sharaf. <span data-i18n="footer.tagline">Software Engineering Partner & System
                     Architect</span>.</p>
+            <div class="footer-links">
+                <a href="#home" data-i18n="nav.home">Home</a>
+                <a href="#value" data-i18n="nav.services">Services</a>
+                <a href="#technology" data-i18n="nav.technology">Technology</a>
+                <a href="#projects" data-i18n="nav.projects">Work</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </div>
         </div>
     </footer>
 

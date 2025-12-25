@@ -65,6 +65,16 @@
     pointer-events: none;
 }
 
+.bg-binary {
+    pointer-events: none;
+    overflow: visible;
+}
+
+.bg-tech-icons {
+    pointer-events: none;
+    overflow: visible;
+}
+
 /* ============================================
    Elegant Background Color System
    Subtle & Refined Palette (Role-Weaver Style)
@@ -117,12 +127,89 @@
 }
 
 /* ============================================
+   Binary Code Layer
+   ============================================ */
+.binary-char {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: rgba(66, 153, 225, 0.4);
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+[data-theme="dark"] .binary-char {
+    color: rgba(96, 165, 250, 0.5);
+    opacity: 0.7;
+}
+
+@keyframes binaryFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.4;
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(5deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-10px) translateX(-15px) rotate(-5deg);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(-25px) translateX(5px) rotate(3deg);
+        opacity: 0.8;
+    }
+}
+
+/* ============================================
+   Tech Icons Layer
+   ============================================ */
+.tech-icon-wrapper {
+    position: absolute;
+    opacity: 0.3;
+    color: rgba(66, 153, 225, 0.4);
+    transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] .tech-icon-wrapper {
+    color: rgba(96, 165, 250, 0.5);
+    opacity: 0.4;
+}
+
+.tech-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 2px 4px rgba(66, 153, 225, 0.2));
+}
+
+[data-theme="dark"] .tech-icon-wrapper svg {
+    filter: drop-shadow(0 2px 4px rgba(96, 165, 250, 0.3));
+}
+
+@keyframes techIconFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+        opacity: 0.3;
+    }
+    33% {
+        transform: translateY(-30px) translateX(15px) rotate(10deg) scale(1.1);
+        opacity: 0.5;
+    }
+    66% {
+        transform: translateY(-15px) translateX(-20px) rotate(-10deg) scale(0.9);
+        opacity: 0.4;
+    }
+}
+
+/* ============================================
    Layer 1: Floating Geometric Shapes
    Elegant Floating Elements
    ============================================ */
 .svg-node {
     fill: url(#nodeGradient);
-    opacity: 0.6;
+    opacity: 0.7;
     animation: elegantFloat 25s infinite ease-in-out;
     filter: blur(0.5px);
 }
@@ -145,7 +232,15 @@
 }
 
 [data-theme="dark"] .svg-node {
-    opacity: 0.75;
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .binary-char {
+    opacity: 0.6;
+}
+
+[data-theme="dark"] .tech-icon-wrapper {
+    opacity: 0.5;
 }
 
 /* ============================================
