@@ -2,7 +2,123 @@
 // Portfolio Website JavaScript
 // ============================================
 
+// ============================================
+// Translation Service
+// ============================================
+let translations = {};
+let currentLang = localStorage.getItem('language') || 'en';
+
+// Load translations
+async function loadTranslations() {
+    try {
+        const response = await fetch('translations.json');
+        translations = await response.json();
+        applyTranslations();
+    } catch (error) {
+        console.error('Error loading translations:', error);
+    }
+}
+
+// Get translation by key path (e.g., "nav.home" -> translations.nav.home[currentLanguage])
+function getTranslation(key) {
+    const keys = key.split('.');
+    let value = translations;
+    
+    for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+            value = value[k];
+        } else {
+            return key; // Return key if translation not found
+        }
+    }
+    
+    if (typeof value === 'object' && currentLang in value) {
+        return value[currentLang];
+    }
+    
+    return key; // Fallback to key
+}
+
+// Apply translations to all elements with data-i18n attribute
+function applyTranslations() {
+    // Update HTML lang and dir attributes
+    const htmlElement = document.documentElement;
+    htmlElement.setAttribute('lang', currentLang);
+    htmlElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+    
+    // Update all elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getTranslation(key);
+        
+        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = translation;
+        } else if (element.hasAttribute('aria-label')) {
+            element.setAttribute('aria-label', translation);
+        } else {
+            element.textContent = translation;
+        }
+    });
+    
+    // Update aria-labels
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+        const key = element.getAttribute('data-i18n-aria-label');
+        const translation = getTranslation(key);
+        element.setAttribute('aria-label', translation);
+    });
+    
+    // Update language switcher active state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Update project modal content if it's open
+    const modal = document.getElementById('projectModal');
+    if (modal && modal.classList.contains('active')) {
+        const projectKey = modal.dataset.currentProject;
+        if (projectKey) {
+            openModal(projectKey);
+        }
+    }
+}
+
+// Switch language
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    applyTranslations();
+    
+    // Re-trigger animations for RTL/LTR transition
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = '0';
+        setTimeout(() => {
+            card.style.opacity = '1';
+        }, 100);
+    });
+}
+
+// Initialize language switcher
+function initLanguageSwitcher() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            switchLanguage(lang);
+        });
+    });
+}
+
+// Load translations on page load
+loadTranslations().then(() => {
+    initLanguageSwitcher();
+});
+
+// ============================================
 // Project Data
+// ============================================
 const projectsData = {
     jaramana: {
         title: "Jaramana Clinic Center",
@@ -243,18 +359,35 @@ document.querySelectorAll('.project-card').forEach(card => {
 });
 
 // ============================================
+// Theme Toggle (Light/Dark Mode)
+// ============================================
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+htmlElement.setAttribute('data-theme', currentTheme);
+
+themeToggle?.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+});
+
+// ============================================
 // Animated Counter for Metrics
 // ============================================
-function animateCounter(element, target, duration = 2000) {
+function animateCounter(element, target, suffix = '', duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
     const timer = setInterval(() => {
         start += increment;
         if (start >= target) {
-            element.textContent = target + (target === 99 ? '%' : '+');
+            element.textContent = target + suffix;
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(start) + (target === 99 ? '%' : '+');
+            element.textContent = Math.floor(start) + suffix;
         }
     }, 16);
 }
@@ -263,7 +396,8 @@ const metricObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.dataset.animated) {
             const target = parseInt(entry.target.dataset.target);
-            animateCounter(entry.target, target);
+            const suffix = entry.target.dataset.suffix || '';
+            animateCounter(entry.target, target, suffix);
             entry.target.dataset.animated = 'true';
         }
     });
@@ -318,6 +452,9 @@ const viewDetailsButtons = document.querySelectorAll('.btn-view-details');
 function openModal(projectKey) {
     const project = projectsData[projectKey];
     if (!project) return;
+    
+    // Store current project for language switching
+    modal.dataset.currentProject = projectKey;
 
     modalBody.innerHTML = `
         <div class="modal-project-header">
@@ -462,5 +599,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (heroVisual) {
         heroVisual.style.animation = 'fadeInRight 0.8s ease';
+    }
+    
+    // Initialize language switcher (in case translations loaded before DOM)
+    if (document.querySelectorAll('.lang-btn').length > 0) {
+        initLanguageSwitcher();
     }
 });

@@ -1,0 +1,369 @@
+{
+  "nav": {
+    "home": {
+      "en": "Home",
+      "ar": "الرئيسية"
+    },
+    "about": {
+      "en": "About",
+      "ar": "نبذة عني"
+    },
+    "skills": {
+      "en": "Skills",
+      "ar": "المهارات"
+    },
+    "projects": {
+      "en": "Projects",
+      "ar": "المشاريع"
+    },
+    "contact": {
+      "en": "Contact",
+      "ar": "اتصل بي"
+    }
+  },
+  "hero": {
+    "title": {
+      "en": "Engineering Scalable Systems",
+      "ar": "هندسة أنظمة قابلة للتوسع"
+    },
+    "subtitle": {
+      "en": "Backend Architect specializing in high-performance APIs, database design, and cloud infrastructure.",
+      "ar": "مهندس أنظمة خلفية متخصص في واجهات برمجة التطبيقات عالية الأداء وتصميم قواعد البيانات والبنية التحتية السحابية."
+    },
+    "description": {
+      "en": "Building infrastructure that powers businesses across healthcare, e-learning, travel, and marketplace domains.",
+      "ar": "بناء البنية التحتية التي تدعم الشركات في مجالات الرعاية الصحية والتعليم الإلكتروني والسفر والأسواق."
+    },
+    "cta": {
+      "viewProjects": {
+        "en": "View My Projects",
+        "ar": "عرض مشاريعي"
+      },
+      "getInTouch": {
+        "en": "Get In Touch",
+        "ar": "تواصل معي"
+      }
+    },
+    "scroll": {
+      "en": "Scroll",
+      "ar": "انتقل"
+    }
+  },
+  "about": {
+    "title": {
+      "en": "About Me",
+      "ar": "نبذة عني"
+    },
+    "lead": {
+      "en": "I believe backend systems should be invisible yet indispensable. With 5+ production systems across healthcare, education, and e-commerce, I specialize in architecting robust, scalable solutions that handle complex business logic seamlessly.",
+      "ar": "أؤمن بأن أنظمة الخلفية يجب أن تكون غير مرئية ولكن لا غنى عنها. مع أكثر من 5 أنظمة إنتاجية في مجالات الرعاية الصحية والتعليم والتجارة الإلكترونية، أتخصص في تصميم حلول قوية وقابلة للتوسع تتعامل مع منطق الأعمال المعقد بسلاسة."
+    },
+    "paragraph1": {
+      "en": "As a Backend Software Engineer & Architect, I've successfully delivered enterprise-grade systems handling real-time communication, payment processing, multi-vendor architectures, and complex data workflows. My expertise spans multiple technologies including Laravel, Django, Spring Boot, and various cloud services.",
+      "ar": "كمهندس برمجيات ومهندس معماري للأنظمة الخلفية، نجحت في تقديم أنظمة على مستوى المؤسسات تتعامل مع الاتصالات في الوقت الفعلي ومعالجة المدفوعات وهندسة متعددة البائعين وتدفقات البيانات المعقدة. تمتد خبرتي عبر تقنيات متعددة بما في ذلك Laravel وDjango وSpring Boot وخدمات السحابة المختلفة."
+    },
+    "paragraph2": {
+      "en": "I focus on clean code, scalable architectures, and measurable impact. Every system I build is designed with performance, security, and maintainability in mind.",
+      "ar": "أركز على الكود النظيف والهندسة المعمارية القابلة للتوسع والتأثير القابل للقياس. كل نظام أقوم ببنائه مصمم مع مراعاة الأداء والأمان وسهولة الصيانة."
+    },
+    "metrics": {
+      "productionSystems": {
+        "en": "Production Systems",
+        "ar": "أنظمة إنتاجية"
+      },
+      "apiEndpoints": {
+        "en": "API Endpoints",
+        "ar": "نقاط نهاية API"
+      },
+      "uptime": {
+        "en": "Uptime",
+        "ar": "وقت التشغيل"
+      }
+    }
+  },
+  "skills": {
+    "title": {
+      "en": "Technical Expertise",
+      "ar": "الخبرة التقنية"
+    },
+    "groups": {
+      "backendFrameworks": {
+        "en": "Backend Frameworks",
+        "ar": "أطر عمل الخلفية"
+      },
+      "databases": {
+        "en": "Databases",
+        "ar": "قواعد البيانات"
+      },
+      "realtimeMessaging": {
+        "en": "Real-Time & Messaging",
+        "ar": "الوقت الفعلي والرسائل"
+      },
+      "paymentIntegrations": {
+        "en": "Payment & Integrations",
+        "ar": "المدفوعات والتكاملات"
+      },
+      "cloudDevops": {
+        "en": "Cloud & DevOps",
+        "ar": "السحابة وDevOps"
+      },
+      "architecturePatterns": {
+        "en": "Architecture Patterns",
+        "ar": "أنماط الهندسة المعمارية"
+      }
+    }
+  },
+  "projects": {
+    "title": {
+      "en": "Featured Projects",
+      "ar": "المشاريع المميزة"
+    },
+    "subtitle": {
+      "en": "Production systems I've architected and developed",
+      "ar": "أنظمة إنتاجية قمت بتصميمها وتطويرها"
+    },
+    "filters": {
+      "all": {
+        "en": "All Projects",
+        "ar": "جميع المشاريع"
+      },
+      "healthcare": {
+        "en": "Healthcare",
+        "ar": "الرعاية الصحية"
+      },
+      "education": {
+        "en": "Education",
+        "ar": "التعليم"
+      },
+      "travel": {
+        "en": "Travel",
+        "ar": "السفر"
+      },
+      "marketplace": {
+        "en": "Marketplace",
+        "ar": "السوق"
+      }
+    },
+    "badges": {
+      "healthcare": {
+        "en": "Healthcare",
+        "ar": "الرعاية الصحية"
+      },
+      "education": {
+        "en": "Education",
+        "ar": "التعليم"
+      },
+      "travel": {
+        "en": "Travel",
+        "ar": "السفر"
+      },
+      "marketplace": {
+        "en": "Marketplace",
+        "ar": "السوق"
+      }
+    },
+    "jaramana": {
+      "title": {
+        "en": "Jaramana Clinic Center",
+        "ar": "مركز جرمانا الطبي"
+      },
+      "type": {
+        "en": "Medical Management System",
+        "ar": "نظام إدارة طبية"
+      },
+      "description": {
+        "en": "Comprehensive medical clinic management system with appointment booking, medical records, real-time chat, and doctor scheduling.",
+        "ar": "نظام شامل لإدارة العيادات الطبية مع حجز المواعيد والسجلات الطبية والدردشة في الوقت الفعلي وجدولة الأطباء."
+      },
+      "metrics": {
+        "dualAuth": {
+          "en": "Dual Auth System",
+          "ar": "نظام مصادقة مزدوج"
+        },
+        "websocketChat": {
+          "en": "WebSocket Chat",
+          "ar": "دردشة WebSocket"
+        },
+        "smartScheduling": {
+          "en": "Smart Scheduling",
+          "ar": "جدولة ذكية"
+        }
+      },
+      "viewCaseStudy": {
+        "en": "View Case Study →",
+        "ar": "عرض دراسة الحالة ←"
+      }
+    },
+    "elearning": {
+      "title": {
+        "en": "E-Learning System",
+        "ar": "نظام التعلم الإلكتروني"
+      },
+      "type": {
+        "en": "University Course Management Platform",
+        "ar": "منصة إدارة دورات جامعية"
+      },
+      "description": {
+        "en": "Comprehensive LMS for universities with course management, enrollment system, quiz assessments, and video processing.",
+        "ar": "نظام إدارة تعليم شامل للجامعات مع إدارة الدورات ونظام التسجيل وتقييمات الاختبارات ومعالجة الفيديو."
+      },
+      "metrics": {
+        "resumableUploads": {
+          "en": "Resumable Uploads",
+          "ar": "رفع قابل للاستئناف"
+        },
+        "progressTracking": {
+          "en": "Progress Tracking",
+          "ar": "تتبع التقدم"
+        },
+        "rbacSystem": {
+          "en": "RBAC System",
+          "ar": "نظام RBAC"
+        }
+      },
+      "viewCaseStudy": {
+        "en": "View Case Study →",
+        "ar": "عرض دراسة الحالة ←"
+      }
+    },
+    "umrain": {
+      "title": {
+        "en": "Umrain",
+        "ar": "عمرين"
+      },
+      "type": {
+        "en": "Multi-Vendor Travel & Booking Marketplace",
+        "ar": "سوق سفر وحجز متعدد البائعين"
+      },
+      "description": {
+        "en": "Large-scale multi-vendor marketplace for hotels, tours, flights, boats, cars, and event spaces with polymorphic booking system.",
+        "ar": "سوق متعدد البائعين واسع النطاق للفنادق والجولات والطيران والقوارب والسيارات ومساحات الفعاليات مع نظام حجز متعدد الأشكال."
+      },
+      "metrics": {
+        "modularArchitecture": {
+          "en": "Modular Architecture",
+          "ar": "هندسة معمارية معيارية"
+        },
+        "commissionEngine": {
+          "en": "Commission Engine",
+          "ar": "محرك العمولات"
+        },
+        "multiCurrency": {
+          "en": "Multi-Currency",
+          "ar": "متعدد العملات"
+        }
+      },
+      "viewCaseStudy": {
+        "en": "View Case Study →",
+        "ar": "عرض دراسة الحالة ←"
+      }
+    },
+    "pear": {
+      "title": {
+        "en": "Pear",
+        "ar": "بير"
+      },
+      "type": {
+        "en": "Telemedicine Platform",
+        "ar": "منصة الطب عن بُعد"
+      },
+      "description": {
+        "en": "Telemedicine platform connecting healthcare providers with clients for remote consultations via real-time video conferencing.",
+        "ar": "منصة طب عن بُعد تربط مقدمي الرعاية الصحية بالعملاء للاستشارات عن بُعد عبر مؤتمرات الفيديو في الوقت الفعلي."
+      },
+      "metrics": {
+        "agoraVideo": {
+          "en": "Agora Video",
+          "ar": "فيديو Agora"
+        },
+        "slotManagement": {
+          "en": "Slot Management",
+          "ar": "إدارة الفترات"
+        },
+        "stripeIntegration": {
+          "en": "Stripe Integration",
+          "ar": "تكامل Stripe"
+        }
+      },
+      "viewCaseStudy": {
+        "en": "View Case Study →",
+        "ar": "عرض دراسة الحالة ←"
+      }
+    },
+    "offerme": {
+      "title": {
+        "en": "OfferMe",
+        "ar": "أوفرمي"
+      },
+      "type": {
+        "en": "Service Marketplace Platform",
+        "ar": "منصة سوق الخدمات"
+      },
+      "description": {
+        "en": "B2B service marketplace connecting service providers with clients. Features real-time chat, dynamic field system, and multilingual notifications.",
+        "ar": "سوق خدمات B2B يربط مقدمي الخدمات بالعملاء. يتضمن دردشة في الوقت الفعلي ونظام حقول ديناميكي وإشعارات متعددة اللغات."
+      },
+      "metrics": {
+        "realtimeChat": {
+          "en": "Real-Time Chat",
+          "ar": "دردشة في الوقت الفعلي"
+        },
+        "multilingual": {
+          "en": "Multilingual",
+          "ar": "متعدد اللغات"
+        },
+        "dynamicFields": {
+          "en": "Dynamic Fields",
+          "ar": "حقول ديناميكية"
+        }
+      },
+      "viewCaseStudy": {
+        "en": "View Case Study →",
+        "ar": "عرض دراسة الحالة ←"
+      }
+    }
+  },
+  "contact": {
+    "title": {
+      "en": "Let's Connect",
+      "ar": "دعنا نتصل"
+    },
+    "subtitle": {
+      "en": "Ready to discuss your next project? Let's build something great together.",
+      "ar": "هل أنت مستعد لمناقشة مشروعك القادم؟ دعنا نبني شيئًا رائعًا معًا."
+    },
+    "email": {
+      "label": {
+        "en": "Email",
+        "ar": "البريد الإلكتروني"
+      }
+    },
+    "linkedin": {
+      "label": {
+        "en": "LinkedIn",
+        "ar": "لينكد إن"
+      },
+      "link": {
+        "en": "Connect with me",
+        "ar": "تواصل معي"
+      }
+    },
+    "github": {
+      "label": {
+        "en": "GitHub",
+        "ar": "جيت هاب"
+      },
+      "link": {
+        "en": "View my work",
+        "ar": "عرض أعمالي"
+      }
+    }
+  },
+  "modal": {
+    "close": {
+      "en": "Close",
+      "ar": "إغلاق"
+    }
+  }
+}
+
