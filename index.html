@@ -5,19 +5,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Kareem Sharaf - Backend Software Engineer & Architect specializing in scalable systems, RESTful APIs, and database design" />
+        content="Kareem Sharaf - Software Engineering Partner & System Architect. Building scalable digital foundations for businesses. From vision to scalable reality." />
     <meta name="keywords"
-        content="Backend Developer, Software Engineer, Laravel, Django, Spring Boot, API Design, Database Architecture" />
-    <title>Kareem Sharaf | Software Engineer & Backend Developer</title>
+        content="Software Engineer, System Architect, Full-Stack Developer, Laravel, Django, Spring Boot, API Development, Database Design" />
+    <title>Kareem Sharaf | Software Engineering Partner & System Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/963959378002" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contact on WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+    </a>
+
     <!-- Header Navigation -->
     <header>
         <nav>
@@ -25,11 +33,12 @@
                 <h1>Kareem Sharaf</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                <li><a href="#about" data-i18n="nav.about">About</a></li>
-                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#value">Services</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#methodology">Approach</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <div class="language-switcher">
@@ -72,139 +81,326 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-headline">
-                    <span class="line-1" data-i18n="hero.title">Engineering Scalable Systems</span>
-                    <span class="line-2" data-i18n="hero.subtitle">Backend Architect specializing in high-performance
-                        APIs, database design, and
-                        cloud infrastructure.</span>
-                </h1>
-                <p class="hero-subheadline" data-i18n="hero.description">
-                    Building infrastructure that powers businesses across healthcare, e-learning, travel, and
-                    marketplace domains.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.viewProjects">View My Projects</a>
-                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta.getInTouch">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="code-visualization">
-                    <div class="code-line"></div>
-                    <div class="code-line"></div>
-                    <div class="code-line"></div>
-                    <div class="code-line"></div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span data-i18n="hero.scroll">Scroll</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title" data-i18n="about.title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead" data-i18n="about.lead">
-                        I believe backend systems should be invisible yet indispensable. With 5+ production systems
-                        across healthcare, education, and e-commerce, I specialize in architecting robust, scalable
-                        solutions that handle complex business logic seamlessly.
-                    </p>
-                    <p data-i18n="about.paragraph1">
-                        As a Backend Software Engineer & Architect, I've successfully delivered enterprise-grade systems
-                        handling real-time communication, payment processing, multi-vendor architectures, and complex
-                        data workflows. My expertise spans multiple technologies including Laravel, Django, Spring Boot,
-                        and various cloud services.
-                    </p>
-                    <p data-i18n="about.paragraph2">
-                        I focus on clean code, scalable architectures, and measurable impact. Every system I build is
-                        designed with performance, security, and maintainability in mind.
-                    </p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-headline">
+                        <span class="line-1">From Vision to Scalable Reality</span>
+                    </h1>
+                    <p class="hero-subtitle">Software Engineering Partner & System Architect</p>
+                    <p class="hero-tagline">Building robust digital foundations that power business growth</p>
+
+                    <div class="hero-value-points">
+                        <div class="value-point">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Full-cycle system design & implementation</span>
+                        </div>
+                        <div class="value-point">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Scalable architecture for future growth</span>
+                        </div>
+                        <div class="value-point">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Clean code that's maintainable and efficient</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Discuss Your Project →</a>
+                        <a href="#technology" class="btn btn-secondary">View Technical Expertise</a>
+                    </div>
                 </div>
-                <div class="about-metrics">
-                    <div class="metric-card">
-                        <div class="metric-value" data-target="5" data-suffix="+">0</div>
-                        <div class="metric-label" data-i18n="about.metrics.productionSystems">Production Systems</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value" data-target="150" data-suffix="+">0</div>
-                        <div class="metric-label" data-i18n="about.metrics.apiEndpoints">API Endpoints</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value" data-target="99" data-suffix="%">0</div>
-                        <div class="metric-label" data-i18n="about.metrics.uptime">Uptime</div>
+                <div class="hero-visual">
+                    <div class="hero-image-placeholder">
+                        <div class="tech-visualization">
+                            <div class="tech-circle tech-circle-1"></div>
+                            <div class="tech-circle tech-circle-2"></div>
+                            <div class="tech-circle tech-circle-3"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <!-- Value Proposition Section -->
+    <section id="value" class="value-proposition">
         <div class="container">
-            <h2 class="section-title" data-i18n="skills.title">Technical Expertise</h2>
-            <div class="skills-content">
-                <div class="tech-groups">
-                    <div class="tech-group">
-                        <h3 data-i18n="skills.groups.backendFrameworks">Backend Frameworks</h3>
-                        <div class="tech-items">
-                            <span class="tech-item">Laravel</span>
-                            <span class="tech-item">Django</span>
-                            <span class="tech-item">Spring Boot</span>
-                            <span class="tech-item">RESTful APIs</span>
+            <h2 class="section-title">How I Transform Technical Challenges into Business Solutions</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>System Architecture & Design</h3>
+                    <p class="value-focus">Planning scalable systems from ground up</p>
+                    <p class="value-benefit">Future-proof infrastructure that grows with you</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Full-Cycle Development</h3>
+                    <p class="value-focus">From concept to deployment and maintenance</p>
+                    <p class="value-benefit">One partner for your entire technical journey</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Performance Optimization</h3>
+                    <p class="value-focus">Systems that are fast, reliable, efficient</p>
+                    <p class="value-benefit">Technology that works harder so you don't have to</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Visualization Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2 class="section-title">Technical Environments I Work With</h2>
+            <p class="section-subtitle">A versatile toolkit for building robust digital solutions</p>
+
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Backend Core</h3>
+                    <div class="tech-items">
+                        <div class="tech-item" data-tech="PHP">
+                            <span class="tech-name">PHP</span>
+                        </div>
+                        <div class="tech-item" data-tech="Java">
+                            <span class="tech-name">Java</span>
+                        </div>
+                        <div class="tech-item" data-tech="C++">
+                            <span class="tech-name">C++</span>
+                        </div>
+                        <div class="tech-item" data-tech="Python">
+                            <span class="tech-name">Python</span>
                         </div>
                     </div>
-                    <div class="tech-group">
-                        <h3 data-i18n="skills.groups.databases">Databases</h3>
-                        <div class="tech-items">
-                            <span class="tech-item">PostgreSQL</span>
-                            <span class="tech-item">MySQL</span>
-                            <span class="tech-item">Database Design</span>
-                            <span class="tech-item">Query Optimization</span>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Frameworks</h3>
+                    <div class="tech-items">
+                        <div class="tech-item" data-tech="Laravel">
+                            <span class="tech-name">Laravel</span>
+                        </div>
+                        <div class="tech-item" data-tech="Spring Boot">
+                            <span class="tech-name">Spring Boot</span>
+                        </div>
+                        <div class="tech-item" data-tech="Django">
+                            <span class="tech-name">Django</span>
                         </div>
                     </div>
-                    <div class="tech-group">
-                        <h3 data-i18n="skills.groups.realtimeMessaging">Real-Time & Messaging</h3>
-                        <div class="tech-items">
-                            <span class="tech-item">WebSocket</span>
-                            <span class="tech-item">Laravel Broadcasting</span>
-                            <span class="tech-item">Firebase Cloud Messaging</span>
-                            <span class="tech-item">Pusher</span>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Databases</h3>
+                    <div class="tech-items">
+                        <div class="tech-item" data-tech="MySQL">
+                            <span class="tech-name">MySQL</span>
+                        </div>
+                        <div class="tech-item" data-tech="PostgreSQL">
+                            <span class="tech-name">PostgreSQL</span>
+                        </div>
+                        <div class="tech-item" data-tech="Database Design">
+                            <span class="tech-name">Database Design</span>
+                        </div>
+                        <div class="tech-item" data-tech="Query Optimization">
+                            <span class="tech-name">Query Optimization</span>
                         </div>
                     </div>
-                    <div class="tech-group">
-                        <h3 data-i18n="skills.groups.paymentIntegrations">Payment & Integrations</h3>
-                        <div class="tech-items">
-                            <span class="tech-item">Stripe</span>
-                            <span class="tech-item">PayPal</span>
-                            <span class="tech-item">Multi-Gateway</span>
-                            <span class="tech-item">Webhook Handling</span>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Frontend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item" data-tech="HTML/CSS">
+                            <span class="tech-name">HTML/CSS</span>
+                        </div>
+                        <div class="tech-item" data-tech="Blade Templates">
+                            <span class="tech-name">Blade Templates</span>
+                        </div>
+                        <div class="tech-item" data-tech="Vue.js">
+                            <span class="tech-name">Vue.js</span>
                         </div>
                     </div>
-                    <div class="tech-group">
-                        <h3 data-i18n="skills.groups.cloudDevops">Cloud & DevOps</h3>
-                        <div class="tech-items">
-                            <span class="tech-item">AWS S3</span>
-                            <span class="tech-item">Docker</span>
-                            <span class="tech-item">Celery</span>
-                            <span class="tech-item">Redis</span>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Real-Time & Messaging</h3>
+                    <div class="tech-items">
+                        <div class="tech-item" data-tech="Pusher">
+                            <span class="tech-name">Pusher</span>
+                        </div>
+                        <div class="tech-item" data-tech="Laravel Echo">
+                            <span class="tech-name">Laravel Echo</span>
+                        </div>
+                        <div class="tech-item" data-tech="Firebase">
+                            <span class="tech-name">Firebase</span>
                         </div>
                     </div>
-                    <div class="tech-group">
-                        <h3 data-i18n="skills.groups.architecturePatterns">Architecture Patterns</h3>
-                        <div class="tech-items">
-                            <span class="tech-item">Microservices</span>
-                            <span class="tech-item">Event-Driven</span>
-                            <span class="tech-item">Polymorphic Systems</span>
-                            <span class="tech-item">Modular Architecture</span>
+                </div>
+
+                <div class="tech-category">
+                    <h3>APIs & Integration</h3>
+                    <div class="tech-items">
+                        <div class="tech-item" data-tech="RESTful APIs">
+                            <span class="tech-name">RESTful APIs</span>
+                        </div>
+                        <div class="tech-item" data-tech="Third-Party APIs">
+                            <span class="tech-name">Third-Party APIs</span>
+                        </div>
+                        <div class="tech-item" data-tech="Postman">
+                            <span class="tech-name">Postman</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Tools</h3>
+                    <div class="tech-items">
+                        <div class="tech-item" data-tech="Git">
+                            <span class="tech-name">Git</span>
+                        </div>
+                        <div class="tech-item" data-tech="GitHub">
+                            <span class="tech-name">GitHub</span>
+                        </div>
+                        <div class="tech-item" data-tech="GitLab">
+                            <span class="tech-name">GitLab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="methodology">
+        <div class="container">
+            <h2 class="section-title">My Engineering Methodology</h2>
+            <p class="section-subtitle">A proven process for delivering reliable solutions</p>
+
+            <div class="methodology-steps">
+                <div class="method-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Analyze & Plan</h3>
+                        <ul>
+                            <li>Understanding business objectives</li>
+                            <li>Technical requirements gathering</li>
+                            <li>System architecture planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Design & Architect</h3>
+                        <ul>
+                            <li>Database design and optimization</li>
+                            <li>API structure and integration planning</li>
+                            <li>Scalability considerations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Build & Implement</h3>
+                        <ul>
+                            <li>Clean, maintainable code</li>
+                            <li>Third-party integrations</li>
+                            <li>Real-time features when needed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="method-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Deploy & Optimize</h3>
+                        <ul>
+                            <li>Performance tuning</li>
+                            <li>Monitoring and maintenance</li>
+                            <li>Ongoing optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Partners Say About Working Together</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Exceptional problem-solving ability and clear communication throughout the project.
+                            Delivered exactly what we needed."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-icon">👤</div>
+                        <div class="author-info">
+                            <div class="author-name">Client Partner</div>
+                            <div class="author-role">Healthcare Industry</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Reliable, professional, and always focused on business outcomes. The system architecture has
+                            scaled beautifully with our growth."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-icon">👤</div>
+                        <div class="author-info">
+                            <div class="author-name">Client Partner</div>
+                            <div class="author-role">E-Learning Platform</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Technical expertise combined with business understanding. Made complex integrations feel
+                            simple and delivered on time."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-icon">👤</div>
+                        <div class="author-info">
+                            <div class="author-name">Client Partner</div>
+                            <div class="author-role">Travel Marketplace</div>
                         </div>
                     </div>
                 </div>
@@ -215,204 +411,84 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
-            <p class="section-subtitle" data-i18n="projects.subtitle">Production systems I've architected and developed
-            </p>
-
-            <!-- Project Filter -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all" data-i18n="projects.filters.all">All
-                    Projects</button>
-                <button class="filter-btn" data-filter="healthcare"
-                    data-i18n="projects.filters.healthcare">Healthcare</button>
-                <button class="filter-btn" data-filter="education"
-                    data-i18n="projects.filters.education">Education</button>
-                <button class="filter-btn" data-filter="travel" data-i18n="projects.filters.travel">Travel</button>
-                <button class="filter-btn" data-filter="marketplace"
-                    data-i18n="projects.filters.marketplace">Marketplace</button>
-            </div>
+            <h2 class="section-title">Selected System Implementations</h2>
+            <p class="section-subtitle">Real solutions for real business challenges</p>
 
             <div class="projects-grid">
-                <!-- Project 1: Jaramana Clinic Center -->
-                <div class="project-card" data-category="healthcare" data-project="jaramana">
-                    <div class="project-header">
-                        <span class="project-badge" data-i18n="projects.badges.healthcare">Healthcare</span>
-                        <h3 data-i18n="projects.jaramana.title">Jaramana Clinic Center</h3>
-                        <p class="project-type" data-i18n="projects.jaramana.type">Medical Management System</p>
+                <div class="project-card">
+                    <div class="project-icon">🏥</div>
+                    <h3>Healthcare Management System</h3>
+                    <div class="project-challenge">
+                        <strong>Challenge:</strong> Clinic struggling with manual processes and patient scheduling
                     </div>
-                    <p class="project-description" data-i18n="projects.jaramana.description">
-                        Comprehensive medical clinic management system with appointment booking, medical records,
-                        real-time chat, and doctor scheduling.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <span class="metric-icon">🔐</span>
-                            <span data-i18n="projects.jaramana.metrics.dualAuth">Dual Auth System</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">💬</span>
-                            <span data-i18n="projects.jaramana.metrics.websocketChat">WebSocket Chat</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">📅</span>
-                            <span data-i18n="projects.jaramana.metrics.smartScheduling">Smart Scheduling</span>
-                        </div>
+                    <div class="project-solution">
+                        <strong>Solution:</strong>
+                        <ul>
+                            <li>Automated appointment booking system</li>
+                            <li>Integrated medical records management</li>
+                            <li>Real-time notifications and chat</li>
+                        </ul>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">WebSocket</span>
-                        <span class="tech-tag">JWT</span>
-                        <span class="tech-tag">Firebase</span>
+                    <div class="project-outcome">
+                        <strong>Outcome:</strong> Reduced admin time by 60%, improved patient satisfaction
                     </div>
-                    <button class="btn-view-details" data-project="jaramana"
-                        data-i18n="projects.jaramana.viewCaseStudy">View Case Study →</button>
                 </div>
 
-                <!-- Project 2: E-Learning System -->
-                <div class="project-card" data-category="education" data-project="elearning">
-                    <div class="project-header">
-                        <span class="project-badge" data-i18n="projects.badges.education">Education</span>
-                        <h3 data-i18n="projects.elearning.title">E-Learning System</h3>
-                        <p class="project-type" data-i18n="projects.elearning.type">University Course Management
-                            Platform</p>
+                <div class="project-card">
+                    <div class="project-icon">🎓</div>
+                    <h3>E-Learning Platform</h3>
+                    <div class="project-challenge">
+                        <strong>Challenge:</strong> University needed scalable course management system
                     </div>
-                    <p class="project-description" data-i18n="projects.elearning.description">
-                        Comprehensive LMS for universities with course management, enrollment system, quiz assessments,
-                        and video processing.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <span class="metric-icon">📹</span>
-                            <span data-i18n="projects.elearning.metrics.resumableUploads">Resumable Uploads</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">📊</span>
-                            <span data-i18n="projects.elearning.metrics.progressTracking">Progress Tracking</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">🔒</span>
-                            <span data-i18n="projects.elearning.metrics.rbacSystem">RBAC System</span>
-                        </div>
+                    <div class="project-solution">
+                        <strong>Solution:</strong>
+                        <ul>
+                            <li>Resumable video upload system</li>
+                            <li>Progress tracking and assessments</li>
+                            <li>Role-based access control</li>
+                        </ul>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">Django REST Framework</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Celery</span>
-                        <span class="tech-tag">AWS S3</span>
+                    <div class="project-outcome">
+                        <strong>Outcome:</strong> Enabled structured online learning for thousands of students
                     </div>
-                    <button class="btn-view-details" data-project="elearning"
-                        data-i18n="projects.elearning.viewCaseStudy">View Case Study →</button>
                 </div>
 
-                <!-- Project 3: Umrain -->
-                <div class="project-card" data-category="travel" data-project="umrain">
-                    <div class="project-header">
-                        <span class="project-badge" data-i18n="projects.badges.travel">Travel</span>
-                        <h3 data-i18n="projects.umrain.title">Umrain</h3>
-                        <p class="project-type" data-i18n="projects.umrain.type">Multi-Vendor Travel & Booking
-                            Marketplace</p>
+                <div class="project-card">
+                    <div class="project-icon">✈️</div>
+                    <h3>Multi-Vendor Travel Marketplace</h3>
+                    <div class="project-challenge">
+                        <strong>Challenge:</strong> Unified booking system for diverse travel services
                     </div>
-                    <p class="project-description" data-i18n="projects.umrain.description">
-                        Large-scale multi-vendor marketplace for hotels, tours, flights, boats, cars, and event spaces
-                        with polymorphic booking system.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <span class="metric-icon">🏗️</span>
-                            <span data-i18n="projects.umrain.metrics.modularArchitecture">Modular Architecture</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">💰</span>
-                            <span data-i18n="projects.umrain.metrics.commissionEngine">Commission Engine</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">🌍</span>
-                            <span data-i18n="projects.umrain.metrics.multiCurrency">Multi-Currency</span>
-                        </div>
+                    <div class="project-solution">
+                        <strong>Solution:</strong>
+                        <ul>
+                            <li>Polymorphic booking architecture</li>
+                            <li>Multi-currency and commission system</li>
+                            <li>Dynamic pricing engine</li>
+                        </ul>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Stripe</span>
-                        <span class="tech-tag">Pusher</span>
-                        <span class="tech-tag">Multi-Gateway</span>
+                    <div class="project-outcome">
+                        <strong>Outcome:</strong> One-stop booking experience across hotels, tours, and flights
                     </div>
-                    <button class="btn-view-details" data-project="umrain"
-                        data-i18n="projects.umrain.viewCaseStudy">View Case Study →</button>
                 </div>
 
-                <!-- Project 4: Pear -->
-                <div class="project-card" data-category="healthcare" data-project="pear">
-                    <div class="project-header">
-                        <span class="project-badge" data-i18n="projects.badges.healthcare">Healthcare</span>
-                        <h3 data-i18n="projects.pear.title">Pear</h3>
-                        <p class="project-type" data-i18n="projects.pear.type">Telemedicine Platform</p>
+                <div class="project-card">
+                    <div class="project-icon">💼</div>
+                    <h3>B2B Service Marketplace</h3>
+                    <div class="project-challenge">
+                        <strong>Challenge:</strong> Connecting service providers with clients efficiently
                     </div>
-                    <p class="project-description" data-i18n="projects.pear.description">
-                        Telemedicine platform connecting healthcare providers with clients for remote consultations via
-                        real-time video conferencing.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <span class="metric-icon">📹</span>
-                            <span data-i18n="projects.pear.metrics.agoraVideo">Agora Video</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">📅</span>
-                            <span data-i18n="projects.pear.metrics.slotManagement">Slot Management</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">💳</span>
-                            <span data-i18n="projects.pear.metrics.stripeIntegration">Stripe Integration</span>
-                        </div>
+                    <div class="project-solution">
+                        <strong>Solution:</strong>
+                        <ul>
+                            <li>Real-time chat and notifications</li>
+                            <li>Dynamic field system for categories</li>
+                            <li>Multilingual support</li>
+                        </ul>
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">Agora SDK</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Stripe</span>
-                        <span class="tech-tag">Firebase</span>
+                    <div class="project-outcome">
+                        <strong>Outcome:</strong> Reduced time-to-contract significantly
                     </div>
-                    <button class="btn-view-details" data-project="pear" data-i18n="projects.pear.viewCaseStudy">View
-                        Case Study →</button>
-                </div>
-
-                <!-- Project 5: OfferMe -->
-                <div class="project-card" data-category="marketplace" data-project="offerme">
-                    <div class="project-header">
-                        <span class="project-badge" data-i18n="projects.badges.marketplace">Marketplace</span>
-                        <h3 data-i18n="projects.offerme.title">OfferMe</h3>
-                        <p class="project-type" data-i18n="projects.offerme.type">Service Marketplace Platform</p>
-                    </div>
-                    <p class="project-description" data-i18n="projects.offerme.description">
-                        B2B service marketplace connecting service providers with clients. Features real-time chat,
-                        dynamic field system, and multilingual notifications.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <span class="metric-icon">💬</span>
-                            <span data-i18n="projects.offerme.metrics.realtimeChat">Real-Time Chat</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">🌐</span>
-                            <span data-i18n="projects.offerme.metrics.multilingual">Multilingual</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-icon">⚙️</span>
-                            <span data-i18n="projects.offerme.metrics.dynamicFields">Dynamic Fields</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Laravel Broadcasting</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Sanctum</span>
-                    </div>
-                    <button class="btn-view-details" data-project="offerme"
-                        data-i18n="projects.offerme.viewCaseStudy">View Case Study →</button>
                 </div>
             </div>
         </div>
@@ -421,50 +497,78 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" data-i18n="contact.title">Let's Connect</h2>
-            <p class="section-subtitle" data-i18n="contact.subtitle">Ready to discuss your next project? Let's build
-                something great together.</p>
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <div>
-                            <h3 data-i18n="contact.email.label">Email</h3>
-                            <a href="mailto:kareem.sh.ite@gmail.com">kareem.sh.ite@gmail.com</a>
-                        </div>
+                <div class="contact-text">
+                    <h2>Let's Build Your Digital Foundation</h2>
+                    <p class="contact-tagline">Ready to transform your technical vision into reality?</p>
+                    <p class="contact-description">
+                        Whether you're starting from scratch or optimizing existing systems, I'm here to help you build
+                        scalable solutions that drive business growth.
+                    </p>
+                    <div class="response-time">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Typically respond within 2 hours</span>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">💼</span>
-                        <div>
-                            <h3 data-i18n="contact.linkedin.label">LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/kareem-sharaf-ite" target="_blank"
-                                rel="noopener noreferrer" data-i18n="contact.linkedin.link">Connect with me</a>
+                </div>
+
+                <div class="contact-options">
+                    <a href="https://wa.me/963959378002" class="contact-option whatsapp-option" target="_blank"
+                        rel="noopener noreferrer">
+                        <div class="contact-icon whatsapp-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">💻</span>
-                        <div>
-                            <h3 data-i18n="contact.github.label">GitHub</h3>
-                            <a href="https://github.com/kareem-sharaf" target="_blank" rel="noopener noreferrer"
-                                data-i18n="contact.github.link">View my
-                                work</a>
+                        <div class="contact-details">
+                            <h3>Message on WhatsApp</h3>
+                            <p>Quick response, direct communication</p>
                         </div>
-                    </div>
+                    </a>
+
+                    <a href="mailto:kareem.sh.ite@gmail.com" class="contact-option email-option">
+                        <div class="contact-icon email-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>kareem.sh.ite@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/kareem-sharaf-ite" class="contact-option linkedin-option"
+                        target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon linkedin-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>Connect professionally</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal" data-i18n-aria-label="modal.close">&times;</button>
-            <div id="modalBody" class="modal-body">
-                <!-- Content will be injected by JavaScript -->
-            </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kareem Sharaf. Software Engineering Partner & System Architect.</p>
         </div>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
