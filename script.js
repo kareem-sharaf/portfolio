@@ -46,7 +46,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const scrollY = window.pageYOffset;
-    const headerHeight = 80;
+    const headerHeight = 100;
 
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
@@ -56,10 +56,10 @@ window.addEventListener('scroll', () => {
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelectorAll('nav a').forEach(link => {
-                link.style.color = '';
+                link.classList.remove('active');
             });
-            if (navLink) {
-                navLink.style.color = '#4299e1';
+            if (navLink && !navLink.closest('.nav-brand')) {
+                navLink.classList.add('active');
             }
         }
     });
@@ -334,6 +334,33 @@ loadTranslations();
 
 
 // ============================================
+// Project Cards Toggle (Expand/Collapse)
+// ============================================
+function initProjectCardsToggle() {
+    document.querySelectorAll('.project-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = this.closest('.project-card');
+            if (card) {
+                card.classList.toggle('project-card-collapsed');
+                
+                // Smooth scroll to card if expanding
+                if (!card.classList.contains('project-card-collapsed')) {
+                    setTimeout(() => {
+                        const cardTop = card.getBoundingClientRect().top + window.pageYOffset;
+                        const headerOffset = 100;
+                        window.scrollTo({
+                            top: cardTop - headerOffset,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        });
+    });
+}
+
+// ============================================
 // Initialize on DOM Load
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -347,6 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroVisual) {
         heroVisual.style.animation = 'fadeInRight 0.8s ease';
     }
+    
+    // Initialize project cards toggle
+    initProjectCardsToggle();
     
     // Apply translations after DOM is loaded
     if (Object.keys(translations).length > 0) {

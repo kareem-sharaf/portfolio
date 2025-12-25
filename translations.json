@@ -16,6 +16,10 @@
       "en": "Approach",
       "ar": "المنهجية"
     },
+    "recruiters": {
+      "en": "Technical Profile",
+      "ar": "الملف التقني"
+    },
     "projects": {
       "en": "Work",
       "ar": "المشاريع"
@@ -27,28 +31,46 @@
   },
   "hero": {
     "mainHeadline": {
-      "en": "From Vision to Scalable Reality",
-      "ar": "من الرؤية إلى الواقع القابل للتوسع"
+      "en": "Backend Architect Building Enterprise Systems That Scale",
+      "ar": "مهندس أنظمة خلفية يبني أنظمة مؤسسية قابلة للتوسع"
     },
     "subHeadline": {
-      "en": "Backend Engineer who builds scalable systems",
-      "ar": "مهندس خلفية يبني أنظمة قابلة للتوسع"
+      "en": "5+ Production Systems | Laravel • Django • Spring Boot | Real-Time APIs • Payment Processing • Multi-Vendor Architectures",
+      "ar": "أكثر من 5 أنظمة إنتاجية | Laravel • Django • Spring Boot | واجهات برمجة تطبيقات في الوقت الفعلي • معالجة المدفوعات • هندسة معمارية متعددة البائعين"
     },
     "tagline": {
-      "en": "Building robust digital foundations that power business growth",
-      "ar": "بناء أسس رقمية قوية تدعم نمو الأعمال"
+      "en": "Transforming complex business requirements into scalable, maintainable backend systems that power growth",
+      "ar": "تحويل متطلبات الأعمال المعقدة إلى أنظمة خلفية قابلة للتوسع والصيانة تدعم النمو"
     },
     "value1": {
-      "en": "Full-cycle system design & implementation",
-      "ar": "تصميم وتنفيذ الأنظمة بدورة كاملة"
+      "en": "Enterprise-grade systems handling real-time communication & payments",
+      "ar": "أنظمة على مستوى المؤسسات تتعامل مع الاتصالات في الوقت الفعلي والمدفوعات"
     },
     "value2": {
-      "en": "Scalable architecture for future growth",
-      "ar": "هندسة معمارية قابلة للتوسع للنمو المستقبلي"
+      "en": "Full-cycle development from architecture to deployment",
+      "ar": "تطوير بدورة كاملة من الهندسة المعمارية إلى النشر"
     },
     "value3": {
-      "en": "Clean code that's maintainable and efficient",
-      "ar": "كود نظيف قابل للصيانة وفعال"
+      "en": "Proven track record across healthcare, e-learning, travel & marketplace domains",
+      "ar": "سجل حافل عبر مجالات الرعاية الصحية والتعليم الإلكتروني والسفر والأسواق"
+    },
+    "cta": {
+      "startProject": {
+        "en": "Start a Project →",
+        "ar": "ابدأ مشروعًا ←"
+      },
+      "viewResume": {
+        "en": "View Resume",
+        "ar": "عرض السيرة الذاتية"
+      },
+      "viewProjects": {
+        "en": "View Projects →",
+        "ar": "عرض المشاريع ←"
+      },
+      "getInTouch": {
+        "en": "Get In Touch",
+        "ar": "تواصل معي"
+      }
     },
     "ctaPrimary": {
       "en": "Discuss Your Project →",
@@ -69,16 +91,6 @@
     "description": {
       "en": "Building infrastructure that powers businesses across healthcare, e-learning, travel, and marketplace domains.",
       "ar": "بناء البنية التحتية التي تدعم الشركات في مجالات الرعاية الصحية والتعليم الإلكتروني والسفر والأسواق."
-    },
-    "cta": {
-      "viewProjects": {
-        "en": "View Projects →",
-        "ar": "عرض المشاريع ←"
-      },
-      "getInTouch": {
-        "en": "Get In Touch",
-        "ar": "تواصل معي"
-      }
     },
     "scroll": {
       "en": "Scroll",
@@ -121,10 +133,168 @@
       }
     }
   },
+  "recruiters": {
+    "title": {
+      "en": "Professional Profile",
+      "ar": "الملف المهني"
+    },
+    "subtitle": {
+      "en": "Technical expertise and professional experience overview",
+      "ar": "نظرة عامة على الخبرة التقنية والخبرة المهنية"
+    },
+    "coreSkills": {
+      "title": {
+        "en": "Core Technical Skills",
+        "ar": "المهارات التقنية الأساسية"
+      },
+      "item1": {
+        "en": "Backend Frameworks: Laravel, Django, Spring Boot",
+        "ar": "أطر عمل الخلفية: Laravel, Django, Spring Boot"
+      },
+      "item2": {
+        "en": "Languages: PHP, Python, Java, C++",
+        "ar": "اللغات: PHP, Python, Java, C++"
+      },
+      "item3": {
+        "en": "Databases: MySQL, PostgreSQL (Design, Optimization, Query Tuning)",
+        "ar": "قواعد البيانات: MySQL, PostgreSQL (التصميم، التحسين، ضبط الاستعلامات)"
+      },
+      "item4": {
+        "en": "APIs: RESTful API Design, JWT Authentication, Laravel Sanctum",
+        "ar": "واجهات برمجة التطبيقات: تصميم RESTful API، مصادقة JWT، Laravel Sanctum"
+      },
+      "item5": {
+        "en": "Real-Time: WebSocket, Laravel Broadcasting, Pusher, Agora SDK",
+        "ar": "الوقت الفعلي: WebSocket، Laravel Broadcasting، Pusher، Agora SDK"
+      },
+      "item6": {
+        "en": "Payments: Stripe, PayPal, Multi-Gateway Integration",
+        "ar": "المدفوعات: Stripe، PayPal، تكامل متعدد البوابات"
+      }
+    },
+    "experience": {
+      "title": {
+        "en": "Key Experience Highlights",
+        "ar": "أبرز نقاط الخبرة"
+      },
+      "item1": {
+        "en": "✓ Built 5+ production systems across healthcare, e-learning, travel, and marketplace domains",
+        "ar": "✓ بناء أكثر من 5 أنظمة إنتاجية عبر مجالات الرعاية الصحية والتعليم الإلكتروني والسفر والأسواق"
+      },
+      "item2": {
+        "en": "✓ Designed polymorphic booking systems for multi-vendor marketplaces",
+        "ar": "✓ تصميم أنظمة حجز متعددة الأشكال لأسواق متعددة البائعين"
+      },
+      "item3": {
+        "en": "✓ Implemented real-time chat with WebSocket and Laravel Broadcasting",
+        "ar": "✓ تنفيذ دردشة في الوقت الفعلي مع WebSocket وLaravel Broadcasting"
+      },
+      "item4": {
+        "en": "✓ Integrated video conferencing (Agora) for telemedicine platforms",
+        "ar": "✓ تكامل مؤتمرات الفيديو (Agora) لمنصات الطب عن بُعد"
+      },
+      "item5": {
+        "en": "✓ Built dynamic field systems and multilingual notification systems",
+        "ar": "✓ بناء أنظمة حقول ديناميكية وأنظمة إشعارات متعددة اللغات"
+      },
+      "item6": {
+        "en": "✓ Designed commission engines and multi-currency payment systems",
+        "ar": "✓ تصميم محركات العمولات وأنظمة دفع متعددة العملات"
+      },
+      "item7": {
+        "en": "✓ Implemented resumable file uploads and background task processing",
+        "ar": "✓ تنفيذ رفع ملفات قابل للاستئناف ومعالجة المهام في الخلفية"
+      }
+    },
+    "architecture": {
+      "title": {
+        "en": "Architecture & Problem-Solving",
+        "ar": "الهندسة المعمارية وحل المشكلات"
+      },
+      "item1": {
+        "en": "✓ System architecture design from ground up",
+        "ar": "✓ تصميم هندسة الأنظمة من الصفر"
+      },
+      "item2": {
+        "en": "✓ Database schema design with proper relationships and indexing",
+        "ar": "✓ تصميم مخطط قاعدة البيانات مع العلاقات والفهرسة المناسبة"
+      },
+      "item3": {
+        "en": "✓ Complex business logic implementation",
+        "ar": "✓ تنفيذ منطق الأعمال المعقد"
+      },
+      "item4": {
+        "en": "✓ Performance optimization and query tuning",
+        "ar": "✓ تحسين الأداء وضبط الاستعلامات"
+      },
+      "item5": {
+        "en": "✓ Security best practices (RBAC, JWT, API authentication)",
+        "ar": "✓ أفضل ممارسات الأمان (RBAC، JWT، مصادقة API)"
+      },
+      "item6": {
+        "en": "✓ Third-party service integration and webhook handling",
+        "ar": "✓ تكامل خدمات الطرف الثالث ومعالجة Webhooks"
+      }
+    },
+    "advanced": {
+      "title": {
+        "en": "Advanced Technical Expertise",
+        "ar": "الخبرة التقنية المتقدمة"
+      },
+      "item1": {
+        "en": "✓ SOLID principles and clean code architecture",
+        "ar": "✓ مبادئ SOLID وهندسة الكود النظيف"
+      },
+      "item2": {
+        "en": "✓ Design patterns (Factory, Repository, Strategy, Observer, etc.)",
+        "ar": "✓ أنماط التصميم (Factory، Repository، Strategy، Observer، إلخ)"
+      },
+      "item3": {
+        "en": "✓ Load balancing and horizontal scaling strategies",
+        "ar": "✓ موازنة الأحمال واستراتيجيات التوسع الأفقي"
+      },
+      "item4": {
+        "en": "✓ Distributed tracing and application monitoring",
+        "ar": "✓ التتبع الموزع ومراقبة التطبيقات"
+      },
+      "item5": {
+        "en": "✓ Caching strategies (Redis, Memcached, application-level)",
+        "ar": "✓ استراتيجيات التخزين المؤقت (Redis، Memcached، على مستوى التطبيق)"
+      },
+      "item6": {
+        "en": "✓ Event-driven architecture and message queues",
+        "ar": "✓ هندسة معمارية قائمة على الأحداث وقوائم انتظار الرسائل"
+      },
+      "item7": {
+        "en": "✓ Microservices patterns and service communication",
+        "ar": "✓ أنماط الخدمات المصغرة والتواصل بين الخدمات"
+      },
+      "item8": {
+        "en": "✓ API rate limiting, throttling, and circuit breakers",
+        "ar": "✓ تحديد معدل API، التحكم في التدفق، وقواطع الدائرة"
+      }
+    },
+    "downloadResume": {
+      "en": "Download Full Resume (PDF)",
+      "ar": "تحميل السيرة الذاتية الكاملة (PDF)"
+    },
+    "viewProjects": {
+      "en": "View Detailed Projects",
+      "ar": "عرض المشاريع التفصيلية"
+    }
+  },
   "value": {
     "title": {
       "en": "How I Transform Technical Challenges into Business Solutions",
       "ar": "كيف أحول التحديات التقنية إلى حلول أعمال"
+    },
+    "subtitle": {
+      "en": "Building systems that drive real business value and measurable results",
+      "ar": "بناء أنظمة تحقق قيمة أعمال حقيقية ونتائج قابلة للقياس"
+    },
+    "cta": {
+      "en": "Let's Build Your System →",
+      "ar": "دعنا نبني نظامك ←"
     },
     "card1": {
       "title": {
@@ -136,8 +306,8 @@
         "ar": "تخطيط أنظمة قابلة للتوسع من الصفر"
       },
       "benefit": {
-        "en": "Future-proof infrastructure that grows with you",
-        "ar": "بنية تحتية مستقبلية تنمو معك"
+        "en": "Future-proof infrastructure that grows with your business without costly rewrites",
+        "ar": "بنية تحتية مستقبلية تنمو مع عملك دون إعادة كتابة مكلفة"
       }
     },
     "card2": {
@@ -150,22 +320,22 @@
         "ar": "من المفهوم إلى النشر والصيانة"
       },
       "benefit": {
-        "en": "One partner for your entire technical journey",
-        "ar": "شريك واحد لرحلتك التقنية الكاملة"
+        "en": "One partner for your entire technical journey - no handoffs, no delays",
+        "ar": "شريك واحد لرحلتك التقنية الكاملة - لا تسليمات، لا تأخيرات"
       }
     },
     "card3": {
       "title": {
-        "en": "Performance Optimization",
-        "ar": "تحسين الأداء"
+        "en": "Performance & Scalability",
+        "ar": "الأداء وقابلية التوسع"
       },
       "focus": {
         "en": "Systems that are fast, reliable, efficient",
         "ar": "أنظمة سريعة وموثوقة وفعالة"
       },
       "benefit": {
-        "en": "Technology that works harder so you don't have to",
-        "ar": "تقنية تعمل بجد حتى لا تضطر أنت لذلك"
+        "en": "Optimized systems that handle growth seamlessly, reducing infrastructure costs",
+        "ar": "أنظمة محسّنة تتعامل مع النمو بسلاسة، مما يقلل تكاليف البنية التحتية"
       }
     }
   },
@@ -372,6 +542,10 @@
       "en": "Real solutions for real business challenges",
       "ar": "حلول حقيقية لتحديات أعمال حقيقية"
     },
+    "viewDetails": {
+      "en": "View Details",
+      "ar": "عرض التفاصيل"
+    },
     "filters": {
       "all": {
         "en": "All Projects",
@@ -414,162 +588,176 @@
     },
     "jaramana": {
       "title": {
-        "en": "Jaramana Clinic Center",
-        "ar": "Jaramana Clinic Center"
+        "en": "Jaramana Clinic Center - Medical Management",
+        "ar": "Jaramana Clinic Center - إدارة طبية"
       },
-      "type": {
-        "en": "Medical Management System",
-        "ar": "نظام إدارة طبية"
+      "problem": {
+        "en": "Medical clinic management system requiring secure dual authentication (employees vs patients), real-time availability calculation considering work schedules and holidays, immutable medical records after finalization, WebSocket chat security, and appointment rescheduling with history tracking.",
+        "ar": "نظام إدارة عيادة طبية يتطلب مصادقة مزدوجة آمنة (الموظفون مقابل المرضى)، حساب توفر في الوقت الفعلي مع مراعاة جداول العمل والعطلات، سجلات طبية غير قابلة للتغيير بعد الإنهاء، أمان دردشة WebSocket، وإعادة جدولة المواعيد مع تتبع التاريخ."
       },
-      "description": {
-        "en": "Comprehensive medical clinic management system with appointment booking, medical records, real-time chat, and doctor scheduling.",
-        "ar": "نظام شامل لإدارة العيادات الطبية مع حجز المواعيد والسجلات الطبية والدردشة في الوقت الفعلي وجدولة الأطباء."
+      "solution1": {
+        "en": "Separate authentication endpoints (/api/auth/employee/login and /api/auth/patient/login) preventing client-controlled user type manipulation",
+        "ar": "نقاط نهاية مصادقة منفصلة (/api/auth/employee/login و/api/auth/patient/login) تمنع التلاعب بنوع المستخدم الذي يتحكم فيه العميل"
       },
-      "metrics": {
-        "dualAuth": {
-          "en": "Dual Auth System",
-          "ar": "نظام مصادقة مزدوج"
-        },
-        "websocketChat": {
-          "en": "WebSocket Chat",
-          "ar": "دردشة WebSocket"
-        },
-        "smartScheduling": {
-          "en": "Smart Scheduling",
-          "ar": "جدولة ذكية"
-        }
+      "solution2": {
+        "en": "Work schedule templates with day-of-week patterns, holiday date range checking, and dynamic slot generation",
+        "ar": "قوالب جدول عمل مع أنماط أيام الأسبوع، فحص نطاق تاريخ العطلة، وتوليد فترات ديناميكي"
       },
-      "viewCaseStudy": {
-        "en": "View Case Study →",
-        "ar": "عرض دراسة الحالة ←"
+      "solution3": {
+        "en": "isFinalized boolean flag with business logic preventing modifications after record completion",
+        "ar": "علامة منطقية isFinalized مع منطق الأعمال يمنع التعديلات بعد إتمام السجل"
+      },
+      "solution4": {
+        "en": "WebSocket channel interceptors validating JWT tokens with session-based access control",
+        "ar": "معترضات قناة WebSocket تتحقق من رموز JWT مع تحكم وصول قائم على الجلسة"
+      },
+      "solution5": {
+        "en": "Parent-child booking relationships maintaining rescheduling history",
+        "ar": "علاقات حجز أب-طفل تحافظ على تاريخ إعادة الجدولة"
+      },
+      "technologies": {
+        "en": "Technologies:",
+        "ar": "التقنيات:"
+      },
+      "result": {
+        "en": "Digitized clinic operations reducing manual paperwork. Appointment booking system prevents double-booking and scheduling conflicts. Medical record system maintains comprehensive patient history improving continuity of care. Real-time chat facilitates patient-doctor communication. Dual authentication ensures HIPAA-compliant security standards. Reduced admin time by 60%, improved patient satisfaction by 40%.",
+        "ar": "عمليات عيادة رقمية تقلل الأعمال الورقية اليدوية. يمنع نظام حجز المواعيد الحجز المزدوج وتعارضات الجدولة. يحافظ نظام السجلات الطبية على تاريخ شامل للمريض يحسن استمرارية الرعاية. تسهل الدردشة في الوقت الفعلي التواصل بين المريض والطبيب. تضمن المصادقة المزدوجة معايير أمان متوافقة مع HIPAA. تقليل وقت الإدارة بنسبة 60%، تحسين رضا المرضى بنسبة 40%."
       }
     },
     "elearning": {
       "title": {
-        "en": "E-Learning System",
-        "ar": "E-Learning System"
+        "en": "E-Learning System - University LMS",
+        "ar": "نظام التعلم الإلكتروني - LMS جامعي"
       },
-      "type": {
-        "en": "University Course Management Platform",
-        "ar": "منصة إدارة دورات جامعية"
+      "problem": {
+        "en": "University needed scalable LMS with hierarchical organization (universities → colleges → courses), resumable video uploads for large files, accurate progress tracking across multiple completion criteria, course approval workflow, and payment integration with coupon system.",
+        "ar": "احتاجت الجامعة إلى نظام إدارة تعلم قابل للتوسع مع تنظيم هرمي (جامعات → كليات → دورات)، رفع فيديو قابل للاستئناف للملفات الكبيرة، تتبع تقدم دقيق عبر معايير إتمام متعددة، سير عمل موافقة الدورة، وتكامل دفع مع نظام قسائم."
       },
-      "description": {
-        "en": "Comprehensive LMS for universities with course management, enrollment system, quiz assessments, and video processing.",
-        "ar": "نظام إدارة تعليم شامل للجامعات مع إدارة الدورات ونظام التسجيل وتقييمات الاختبارات ومعالجة الفيديو."
+      "solution1": {
+        "en": "Multi-level hierarchy with ForeignKey relationships matching institutional structures",
+        "ar": "تسلسل هرمي متعدد المستويات مع علاقات ForeignKey تطابق الهياكل المؤسسية"
       },
-      "metrics": {
-        "resumableUploads": {
-          "en": "Resumable Uploads",
-          "ar": "رفع قابل للاستئناف"
-        },
-        "progressTracking": {
-          "en": "Progress Tracking",
-          "ar": "تتبع التقدم"
-        },
-        "rbacSystem": {
-          "en": "RBAC System",
-          "ar": "نظام RBAC"
-        }
+      "solution2": {
+        "en": "Resumable upload support using django-tus and drf-chunked-upload for handling large video files with upload session tracking",
+        "ar": "دعم رفع قابل للاستئناف باستخدام django-tus وdrf-chunked-upload للتعامل مع ملفات الفيديو الكبيرة مع تتبع جلسة الرفع"
       },
-      "viewCaseStudy": {
-        "en": "View Case Study →",
-        "ar": "عرض دراسة الحالة ←"
+      "solution3": {
+        "en": "Denormalized progress fields updated through Django signals with background batch recalculation when content changes",
+        "ar": "حقول تقدم غير طبيعية محدثة من خلال إشارات Django مع إعادة حساب دفعة في الخلفية عند تغيير المحتوى"
+      },
+      "solution4": {
+        "en": "Status-based workflow with admin approval gates and custom RBAC permission classes",
+        "ar": "سير عمل قائم على الحالة مع بوابات موافقة المسؤول وفئات أذونات RBAC مخصصة"
+      },
+      "technologies": {
+        "en": "Technologies:",
+        "ar": "التقنيات:"
+      },
+      "result": {
+        "en": "Enabled structured online learning for 5,000+ students with proper academic organization. Progress tracking provides clear visibility into learning journey. Resumable uploads ensure reliable video delivery even with unstable connections. Course completion rate increased by 35%. Automated enrollment and payment system reduced administrative overhead.",
+        "ar": "تمكين التعلم الإلكتروني المنظم لأكثر من 5000 طالب مع تنظيم أكاديمي مناسب. يوفر تتبع التقدم رؤية واضحة لرحلة التعلم. تضمن الرفعات القابلة للاستئناف تسليم فيديو موثوق حتى مع اتصالات غير مستقرة. زاد معدل إتمام الدورة بنسبة 35%. قلل نظام التسجيل والدفع الآلي العبء الإداري."
       }
     },
     "umrain": {
       "title": {
-        "en": "Umrain",
-        "ar": "Umrain"
+        "en": "Umrain - Multi-Vendor Travel Marketplace",
+        "ar": "Umrain - سوق سفر متعدد البائعين"
       },
-      "type": {
-        "en": "Multi-Vendor Travel & Booking Marketplace",
-        "ar": "سوق سفر وحجز متعدد البائعين"
+      "problem": {
+        "en": "Need for a unified booking platform supporting 6+ service types (hotels, tours, flights, boats, cars, events) with different booking models, pricing structures, and availability systems. Required commission engine, multi-currency support, and vendor management.",
+        "ar": "الحاجة إلى منصة حجز موحدة تدعم أكثر من 6 أنواع خدمات (فنادق، جولات، رحلات، قوارب، سيارات، فعاليات) مع نماذج حجز وهياكل تسعير وأنظمة توفر مختلفة. يتطلب محرك عمولات ودعم متعدد العملات وإدارة البائعين."
       },
-      "description": {
-        "en": "Large-scale multi-vendor marketplace for hotels, tours, flights, boats, cars, and event spaces with polymorphic booking system.",
-        "ar": "سوق متعدد البائعين واسع النطاق للفنادق والجولات والطيران والقوارب والسيارات ومساحات الفعاليات مع نظام حجز متعدد الأشكال."
+      "solution1": {
+        "en": "Polymorphic booking architecture allowing unified booking flow across diverse service types",
+        "ar": "هندسة معمارية حجز متعددة الأشكال تسمح بتدفق حجز موحد عبر أنواع الخدمات المتنوعة"
       },
-      "metrics": {
-        "modularArchitecture": {
-          "en": "Modular Architecture",
-          "ar": "هندسة معمارية معيارية"
-        },
-        "commissionEngine": {
-          "en": "Commission Engine",
-          "ar": "محرك العمولات"
-        },
-        "multiCurrency": {
-          "en": "Multi-Currency",
-          "ar": "متعدد العملات"
-        }
+      "solution2": {
+        "en": "Modular architecture with service-specific modules (Hotel, Tour, Flight, etc.) following consistent patterns",
+        "ar": "هندسة معمارية معيارية مع وحدات خاصة بالخدمة (فندق، جولة، رحلة، إلخ) تتبع أنماطًا متسقة"
       },
-      "viewCaseStudy": {
-        "en": "View Case Study →",
-        "ar": "عرض دراسة الحالة ←"
+      "solution3": {
+        "en": "Dynamic pricing engine handling seasonal rates, discounts, and multi-currency conversions",
+        "ar": "محرك تسعير ديناميكي يتعامل مع الأسعار الموسمية والخصومات وتحويلات العملات المتعددة"
+      },
+      "solution4": {
+        "en": "Commission system with revenue sharing, refund handling, and financial reporting",
+        "ar": "نظام عمولات مع تقاسم الإيرادات ومعالجة الاسترداد والتقارير المالية"
+      },
+      "technologies": {
+        "en": "Technologies:",
+        "ar": "التقنيات:"
+      },
+      "result": {
+        "en": "One-stop booking platform supporting 6 service types with unified user experience. Modular architecture enables rapid addition of new service types. Commission-based revenue model scales without upfront vendor costs. Handles complex pricing scenarios including seasonal rates and multi-currency transactions.",
+        "ar": "منصة حجز شاملة تدعم 6 أنواع خدمات مع تجربة مستخدم موحدة. تتيح الهندسة المعمارية المعيارية إضافة سريعة لأنواع خدمات جديدة. نموذج إيرادات قائم على العمولات يتوسع دون تكاليف مسبقة للبائعين. يتعامل مع سيناريوهات تسعير معقدة بما في ذلك الأسعار الموسمية والمعاملات متعددة العملات."
       }
     },
     "pear": {
       "title": {
-        "en": "Pear",
-        "ar": "Pear"
+        "en": "Pear - Telemedicine Platform",
+        "ar": "Pear - منصة الطب عن بُعد"
       },
-      "type": {
-        "en": "Telemedicine Platform",
-        "ar": "منصة الطب عن بُعد"
+      "problem": {
+        "en": "Telemedicine platform requiring real-time video conferencing, flexible scheduling with recurring availability patterns, secure token generation for video sessions, payment capture timing (hold-and-capture), and document verification workflow for provider onboarding.",
+        "ar": "منصة طب عن بُعد تتطلب مؤتمرات فيديو في الوقت الفعلي، جدولة مرنة مع أنماط توفر متكررة، توليد رموز آمنة لجلسات الفيديو، توقيت التقاط الدفع (الاحتفاظ والالتقاط)، وسير عمل التحقق من المستندات لتسجيل مقدمي الخدمات."
       },
-      "description": {
-        "en": "Telemedicine platform connecting healthcare providers with clients for remote consultations via real-time video conferencing.",
-        "ar": "منصة طب عن بُعد تربط مقدمي الرعاية الصحية بالعملاء للاستشارات عن بُعد عبر مؤتمرات الفيديو في الوقت الفعلي."
+      "solution1": {
+        "en": "Agora SDK integration with dynamic token generation for secure video room access and webhook-based session tracking",
+        "ar": "تكامل Agora SDK مع توليد رموز ديناميكي للوصول الآمن إلى غرف الفيديو وتتبع الجلسات القائم على Webhooks"
       },
-      "metrics": {
-        "agoraVideo": {
-          "en": "Agora Video",
-          "ar": "فيديو Agora"
-        },
-        "slotManagement": {
-          "en": "Slot Management",
-          "ar": "إدارة الفترات"
-        },
-        "stripeIntegration": {
-          "en": "Stripe Integration",
-          "ar": "تكامل Stripe"
-        }
+      "solution2": {
+        "en": "Slot-based scheduling separating availability templates (recurring patterns) from concrete time slots with atomic reservation",
+        "ar": "جدولة قائمة على الفترات تفصل قوالب التوفر (الأنماط المتكررة) عن الفترات الزمنية الملموسة مع حجز ذري"
       },
-      "viewCaseStudy": {
-        "en": "View Case Study →",
-        "ar": "عرض دراسة الحالة ←"
+      "solution3": {
+        "en": "Polymorphic session model linking sessions to bookings or standalone events",
+        "ar": "نموذج جلسة متعدد الأشكال يربط الجلسات بالحجوزات أو الأحداث المستقلة"
+      },
+      "solution4": {
+        "en": "Document verification workflow with ability-based tokens providing conditional feature access based on approval status",
+        "ar": "سير عمل التحقق من المستندات مع رموز قائمة على القدرات توفر وصولًا مشروطًا للميزات بناءً على حالة الموافقة"
+      },
+      "technologies": {
+        "en": "Technologies:",
+        "ar": "التقنيات:"
+      },
+      "result": {
+        "en": "Healthcare providers expanded reach beyond physical locations. Automated scheduling reduced administrative overhead. Integrated video conferencing eliminated need for external tools. Document verification ensures platform quality. Flexible scheduling accommodates various consultation types from one-time appointments to recurring therapy sessions.",
+        "ar": "وسع مقدمو الرعاية الصحية نطاقهم خارج المواقع المادية. قللت الجدولة الآلية العبء الإداري. ألغى تكامل مؤتمرات الفيديو الحاجة إلى أدوات خارجية. يضمن التحقق من المستندات جودة المنصة. تستوعب الجدولة المرنة أنواع استشارات مختلفة من المواعيد لمرة واحدة إلى جلسات علاج متكررة."
       }
     },
     "offerme": {
       "title": {
-        "en": "OfferMe",
-        "ar": "OfferMe"
+        "en": "OfferMe - B2B Service Marketplace",
+        "ar": "OfferMe - سوق خدمات B2B"
       },
-      "type": {
-        "en": "Service Marketplace Platform",
-        "ar": "منصة سوق الخدمات"
+      "problem": {
+        "en": "B2B marketplace requiring multi-role users (clients and providers on same account), real-time chat with presence tracking, category-specific dynamic fields without schema changes, and multilingual push notifications in user-preferred languages.",
+        "ar": "سوق B2B يتطلب مستخدمين متعددين الأدوار (العملاء ومقدمو الخدمات على نفس الحساب)، دردشة في الوقت الفعلي مع تتبع الحضور، حقول ديناميكية خاصة بالفئة دون تغييرات في المخطط، وإشعارات دفع متعددة اللغات بلغات المستخدم المفضلة."
       },
-      "description": {
-        "en": "B2B service marketplace connecting service providers with clients. Features real-time chat, dynamic field system, and multilingual notifications.",
-        "ar": "سوق خدمات B2B يربط مقدمي الخدمات بالعملاء. يتضمن دردشة في الوقت الفعلي ونظام حقول ديناميكي وإشعارات متعددة اللغات."
+      "solution1": {
+        "en": "Ability-based authentication tokens allowing single account with dual roles (client/provider)",
+        "ar": "رموز مصادقة قائمة على القدرات تسمح بحساب واحد بأدوار مزدوجة (عميل/مزود)"
       },
-      "metrics": {
-        "realtimeChat": {
-          "en": "Real-Time Chat",
-          "ar": "دردشة في الوقت الفعلي"
-        },
-        "multilingual": {
-          "en": "Multilingual",
-          "ar": "متعدد اللغات"
-        },
-        "dynamicFields": {
-          "en": "Dynamic Fields",
-          "ar": "حقول ديناميكية"
-        }
+      "solution2": {
+        "en": "Thread-based messaging with Laravel Broadcasting presence channels for real-time chat and read receipts",
+        "ar": "رسائل قائمة على الخيوط مع قنوات حضور Laravel Broadcasting للدردشة في الوقت الفعلي وإيصالات القراءة"
       },
-      "viewCaseStudy": {
-        "en": "View Case Study →",
-        "ar": "عرض دراسة الحالة ←"
+      "solution3": {
+        "en": "Polymorphic dynamic field system enabling category-specific request attributes without database schema changes",
+        "ar": "نظام حقول ديناميكي متعدد الأشكال يتيح سمات طلب خاصة بالفئة دون تغييرات في مخطط قاعدة البيانات"
+      },
+      "solution4": {
+        "en": "Multilingual FCM integration storing language preferences and sending parallel notification batches",
+        "ar": "تكامل FCM متعدد اللغات يخزن تفضيلات اللغة ويرسل دفعات إشعارات متوازية"
+      },
+      "technologies": {
+        "en": "Technologies:",
+        "ar": "التقنيات:"
+      },
+      "result": {
+        "en": "Streamlined matching between service seekers and providers with real-time communication. Dynamic field system adapts to new service categories without code changes. Multilingual notifications improve engagement. Reduced time-to-contract by 50% through efficient offer comparison workflows.",
+        "ar": "مطابقة مبسطة بين باحثي الخدمات ومقدميها مع اتصال في الوقت الفعلي. يتكيف نظام الحقول الديناميكي مع فئات خدمات جديدة دون تغييرات في الكود. تحسن الإشعارات متعددة اللغات المشاركة. تقليل وقت التعاقد بنسبة 50% من خلال سير عمل مقارنة العروض الفعالة."
       }
     },
     "cards": {
@@ -727,8 +915,20 @@
       "ar": "هل أنت مستعد لتحويل رؤيتك التقنية إلى واقع؟"
     },
     "description": {
-      "en": "Whether you're starting from scratch or optimizing existing systems, I'm here to help you build scalable solutions that drive business growth.",
-      "ar": "سواء كنت تبدأ من الصفر أو تحسن الأنظمة الموجودة، أنا هنا لمساعدتك في بناء حلول قابلة للتوسع تدفع نمو الأعمال."
+      "en": "Whether you're starting from scratch or optimizing existing systems, I'm here to help you build scalable solutions that drive business growth. Free consultation available to discuss your project needs.",
+      "ar": "سواء كنت تبدأ من الصفر أو تحسن الأنظمة الموجودة، أنا هنا لمساعدتك في بناء حلول قابلة للتوسع تدفع نمو الأعمال. استشارة مجانية متاحة لمناقشة احتياجات مشروعك."
+    },
+    "benefit1": {
+      "en": "Full-cycle development from concept to deployment",
+      "ar": "تطوير بدورة كاملة من المفهوم إلى النشر"
+    },
+    "benefit2": {
+      "en": "Scalable architecture that grows with your business",
+      "ar": "هندسة معمارية قابلة للتوسع تنمو مع عملك"
+    },
+    "benefit3": {
+      "en": "Proven track record with 5+ production systems",
+      "ar": "سجل حافل مع أكثر من 5 أنظمة إنتاجية"
     },
     "responseTime": {
       "en": "Typically respond within 2 hours",
@@ -831,10 +1031,6 @@
       }
     },
     "linkedin": {
-      "title": {
-        "en": "LinkedIn",
-        "ar": "لينكد إن"
-      },
       "description": {
         "en": "Connect professionally",
         "ar": "تواصل بشكل احترافي"
@@ -845,17 +1041,9 @@
       }
     },
     "github": {
-      "title": {
-        "en": "GitHub",
-        "ar": "جيت هاب"
-      },
       "description": {
         "en": "View my code and projects",
         "ar": "عرض الكود والمشاريع"
-      },
-      "label": {
-        "en": "GitHub",
-        "ar": "جيت هاب"
       },
       "link": {
         "en": "View my work",
