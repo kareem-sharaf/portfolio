@@ -277,14 +277,96 @@
       }
     }
   },
-  "projects": {
+  "methodology": {
     "title": {
-      "en": "Featured Projects",
-      "ar": "المشاريع المميزة"
+      "en": "My Engineering Methodology",
+      "ar": "منهجية الهندسة الخاصة بي"
     },
     "subtitle": {
-      "en": "Production systems I've architected and developed",
-      "ar": "أنظمة إنتاجية قمت بتصميمها وتطويرها"
+      "en": "A proven process for delivering reliable solutions",
+      "ar": "عملية مثبتة لتقديم حلول موثوقة"
+    },
+    "step1": {
+      "title": {
+        "en": "Analyze & Plan",
+        "ar": "تحليل وتخطيط"
+      },
+      "item1": {
+        "en": "Understanding business objectives",
+        "ar": "فهم أهداف الأعمال"
+      },
+      "item2": {
+        "en": "Technical requirements gathering",
+        "ar": "جمع المتطلبات التقنية"
+      },
+      "item3": {
+        "en": "System architecture planning",
+        "ar": "تخطيط هندسة الأنظمة"
+      }
+    },
+    "step2": {
+      "title": {
+        "en": "Design & Architect",
+        "ar": "التصميم والهندسة"
+      },
+      "item1": {
+        "en": "Database design and optimization",
+        "ar": "تصميم وتحسين قواعد البيانات"
+      },
+      "item2": {
+        "en": "API structure and integration planning",
+        "ar": "هيكل API وتخطيط التكامل"
+      },
+      "item3": {
+        "en": "Scalability considerations",
+        "ar": "اعتبارات قابلية التوسع"
+      }
+    },
+    "step3": {
+      "title": {
+        "en": "Build & Implement",
+        "ar": "البناء والتنفيذ"
+      },
+      "item1": {
+        "en": "Clean, maintainable code",
+        "ar": "كود نظيف وقابل للصيانة"
+      },
+      "item2": {
+        "en": "Third-party integrations",
+        "ar": "تكاملات الطرف الثالث"
+      },
+      "item3": {
+        "en": "Real-time features when needed",
+        "ar": "ميزات الوقت الفعلي عند الحاجة"
+      }
+    },
+    "step4": {
+      "title": {
+        "en": "Deploy & Optimize",
+        "ar": "النشر والتحسين"
+      },
+      "item1": {
+        "en": "Performance tuning",
+        "ar": "ضبط الأداء"
+      },
+      "item2": {
+        "en": "Monitoring and maintenance",
+        "ar": "المراقبة والصيانة"
+      },
+      "item3": {
+        "en": "Ongoing optimization",
+        "ar": "التحسين المستمر"
+      }
+    }
+  },
+  "projects": {
+    "title": {
+      "en": "Selected System Implementations",
+      "ar": "تنفيذات الأنظمة المختارة"
+    },
+    "subtitle": {
+      "en": "Real solutions for real business challenges",
+      "ar": "حلول حقيقية لتحديات أعمال حقيقية"
     },
     "filters": {
       "all": {
@@ -329,7 +411,7 @@
     "jaramana": {
       "title": {
         "en": "Jaramana Clinic Center",
-        "ar": "مركز جرمانا الطبي"
+        "ar": "Jaramana Clinic Center"
       },
       "type": {
         "en": "Medical Management System",
@@ -361,7 +443,7 @@
     "elearning": {
       "title": {
         "en": "E-Learning System",
-        "ar": "نظام التعلم الإلكتروني"
+        "ar": "E-Learning System"
       },
       "type": {
         "en": "University Course Management Platform",
@@ -393,7 +475,7 @@
     "umrain": {
       "title": {
         "en": "Umrain",
-        "ar": "عمرين"
+        "ar": "Umrain"
       },
       "type": {
         "en": "Multi-Vendor Travel & Booking Marketplace",
@@ -425,7 +507,7 @@
     "pear": {
       "title": {
         "en": "Pear",
-        "ar": "بير"
+        "ar": "Pear"
       },
       "type": {
         "en": "Telemedicine Platform",
@@ -457,7 +539,7 @@
     "offerme": {
       "title": {
         "en": "OfferMe",
-        "ar": "أوفرمي"
+        "ar": "OfferMe"
       },
       "type": {
         "en": "Service Marketplace Platform",
@@ -485,24 +567,274 @@
         "en": "View Case Study →",
         "ar": "عرض دراسة الحالة ←"
       }
+    },
+    "cards": {
+      "labels": {
+        "challenge": {
+          "en": "Challenge:",
+          "ar": "التحدي:"
+        },
+        "solution": {
+          "en": "Solution:",
+          "ar": "الحل:"
+        },
+        "outcome": {
+          "en": "Outcome:",
+          "ar": "النتيجة:"
+        }
+      },
+      "healthcare": {
+        "title": {
+          "en": "Healthcare Management System",
+          "ar": "نظام إدارة الرعاية الصحية"
+        },
+        "challenge": {
+          "en": "Clinic struggling with manual processes and patient scheduling",
+          "ar": "عيادة تعاني من العمليات اليدوية وجدولة المرضى"
+        },
+        "solution1": {
+          "en": "Automated appointment booking system",
+          "ar": "نظام حجز مواعيد آلي"
+        },
+        "solution2": {
+          "en": "Integrated medical records management",
+          "ar": "إدارة متكاملة للسجلات الطبية"
+        },
+        "solution3": {
+          "en": "Real-time notifications and chat",
+          "ar": "إشعارات ودردشة في الوقت الفعلي"
+        },
+        "outcome1": {
+          "en": "Reduced admin time by",
+          "ar": "تقليل وقت الإدارة بنسبة"
+        },
+        "outcome2": {
+          "en": "improved patient satisfaction by",
+          "ar": "تحسين رضا المرضى بنسبة"
+        }
+      },
+      "elearning": {
+        "title": {
+          "en": "E-Learning Platform",
+          "ar": "منصة التعلم الإلكتروني"
+        },
+        "challenge": {
+          "en": "University needed scalable course management system",
+          "ar": "الجامعة تحتاج نظام إدارة دورات قابل للتوسع"
+        },
+        "solution1": {
+          "en": "Resumable video upload system",
+          "ar": "نظام رفع فيديو قابل للاستئناف"
+        },
+        "solution2": {
+          "en": "Progress tracking and assessments",
+          "ar": "تتبع التقدم والتقييمات"
+        },
+        "solution3": {
+          "en": "Role-based access control",
+          "ar": "التحكم في الوصول القائم على الأدوار"
+        },
+        "outcome1": {
+          "en": "Enabled structured online learning for",
+          "ar": "تمكين التعلم الإلكتروني المنظم لـ"
+        },
+        "outcome1Students": {
+          "en": "students",
+          "ar": "طالب"
+        },
+        "outcome2": {
+          "en": "increased course completion rate by",
+          "ar": "زيادة معدل إتمام الدورة بنسبة"
+        }
+      },
+      "travel": {
+        "title": {
+          "en": "Multi-Vendor Travel Marketplace",
+          "ar": "سوق سفر متعدد البائعين"
+        },
+        "challenge": {
+          "en": "Unified booking system for diverse travel services",
+          "ar": "نظام حجز موحد لخدمات السفر المتنوعة"
+        },
+        "solution1": {
+          "en": "Polymorphic booking architecture",
+          "ar": "هندسة معمارية للحجز متعددة الأشكال"
+        },
+        "solution2": {
+          "en": "Multi-currency and commission system",
+          "ar": "نظام متعدد العملات والعمولات"
+        },
+        "solution3": {
+          "en": "Dynamic pricing engine",
+          "ar": "محرك تسعير ديناميكي"
+        },
+        "outcome1": {
+          "en": "One-stop booking experience across",
+          "ar": "تجربة حجز شاملة عبر"
+        },
+        "outcome1Types": {
+          "en": "service types",
+          "ar": "نوع خدمة"
+        },
+        "outcome2": {
+          "en": "increased platform performance by",
+          "ar": "زيادة أداء المنصة بنسبة"
+        }
+      },
+      "marketplace": {
+        "title": {
+          "en": "B2B Service Marketplace",
+          "ar": "سوق خدمات B2B"
+        },
+        "challenge": {
+          "en": "Connecting service providers with clients efficiently",
+          "ar": "ربط مقدمي الخدمات بالعملاء بكفاءة"
+        },
+        "solution1": {
+          "en": "Real-time chat and notifications",
+          "ar": "دردشة وإشعارات في الوقت الفعلي"
+        },
+        "solution2": {
+          "en": "Dynamic field system for categories",
+          "ar": "نظام حقول ديناميكي للفئات"
+        },
+        "solution3": {
+          "en": "Multilingual support",
+          "ar": "دعم متعدد اللغات"
+        },
+        "outcome1": {
+          "en": "Reduced time-to-contract by",
+          "ar": "تقليل وقت التعاقد بنسبة"
+        },
+        "outcome2": {
+          "en": "increased conversion rate by",
+          "ar": "زيادة معدل التحويل بنسبة"
+        }
+      }
     }
   },
   "contact": {
     "title": {
-      "en": "Let's Connect",
-      "ar": "دعنا نتصل"
+      "en": "Let's Build Your Digital Foundation",
+      "ar": "دعنا نبني أساسك الرقمي"
     },
-    "subtitle": {
-      "en": "Ready to discuss your next project? Let's build something great together.",
-      "ar": "هل أنت مستعد لمناقشة مشروعك القادم؟ دعنا نبني شيئًا رائعًا معًا."
+    "tagline": {
+      "en": "Ready to transform your technical vision into reality?",
+      "ar": "هل أنت مستعد لتحويل رؤيتك التقنية إلى واقع؟"
+    },
+    "description": {
+      "en": "Whether you're starting from scratch or optimizing existing systems, I'm here to help you build scalable solutions that drive business growth.",
+      "ar": "سواء كنت تبدأ من الصفر أو تحسن الأنظمة الموجودة، أنا هنا لمساعدتك في بناء حلول قابلة للتوسع تدفع نمو الأعمال."
+    },
+    "responseTime": {
+      "en": "Typically respond within 2 hours",
+      "ar": "عادة ما أرد خلال ساعتين"
+    },
+    "formTitle": {
+      "en": "Send a Message",
+      "ar": "أرسل رسالة"
+    },
+    "formName": {
+      "en": "Name",
+      "ar": "الاسم"
+    },
+    "formNamePlaceholder": {
+      "en": "Your name",
+      "ar": "اسمك"
+    },
+    "formEmail": {
+      "en": "Email",
+      "ar": "البريد الإلكتروني"
+    },
+    "formEmailPlaceholder": {
+      "en": "your.email@example.com",
+      "ar": "بريدك@example.com"
+    },
+    "formProjectType": {
+      "en": "Project Type",
+      "ar": "نوع المشروع"
+    },
+    "formProjectTypePlaceholder": {
+      "en": "Select project type...",
+      "ar": "اختر نوع المشروع..."
+    },
+    "formProjectType1": {
+      "en": "Web Application",
+      "ar": "تطبيق ويب"
+    },
+    "formProjectType2": {
+      "en": "API Development",
+      "ar": "تطوير API"
+    },
+    "formProjectType3": {
+      "en": "System Architecture",
+      "ar": "هندسة الأنظمة"
+    },
+    "formProjectType4": {
+      "en": "Database Design",
+      "ar": "تصميم قواعد البيانات"
+    },
+    "formProjectType5": {
+      "en": "Consultation",
+      "ar": "استشارة"
+    },
+    "formProjectType6": {
+      "en": "Other",
+      "ar": "أخرى"
+    },
+    "formMessage": {
+      "en": "Message",
+      "ar": "الرسالة"
+    },
+    "formMessagePlaceholder": {
+      "en": "Tell me about your project...",
+      "ar": "أخبرني عن مشروعك..."
+    },
+    "formSubmit": {
+      "en": "Send Message",
+      "ar": "إرسال الرسالة"
+    },
+    "formSuccess": {
+      "en": "Opening your email client... If it doesn't open, please email kareem.sh.ite@gmail.com directly.",
+      "ar": "جارٍ فتح بريدك الإلكتروني... إذا لم يفتح، يرجى إرسال بريد إلكتروني مباشرة إلى kareem.sh.ite@gmail.com"
+    },
+    "formError": {
+      "en": "Please fill in all required fields.",
+      "ar": "يرجى ملء جميع الحقول المطلوبة."
+    },
+    "formEmailError": {
+      "en": "Please enter a valid email address.",
+      "ar": "يرجى إدخال عنوان بريد إلكتروني صحيح."
+    },
+    "whatsapp": {
+      "title": {
+        "en": "Message on WhatsApp",
+        "ar": "رسالة على واتساب"
+      },
+      "description": {
+        "en": "Quick response, direct communication",
+        "ar": "رد سريع، تواصل مباشر"
+      }
     },
     "email": {
+      "title": {
+        "en": "Email",
+        "ar": "البريد الإلكتروني"
+      },
       "label": {
         "en": "Email",
         "ar": "البريد الإلكتروني"
       }
     },
     "linkedin": {
+      "title": {
+        "en": "LinkedIn",
+        "ar": "لينكد إن"
+      },
+      "description": {
+        "en": "Connect professionally",
+        "ar": "تواصل بشكل احترافي"
+      },
       "label": {
         "en": "LinkedIn",
         "ar": "لينكد إن"
@@ -513,6 +845,14 @@
       }
     },
     "github": {
+      "title": {
+        "en": "GitHub",
+        "ar": "جيت هاب"
+      },
+      "description": {
+        "en": "View my code and projects",
+        "ar": "عرض الكود والمشاريع"
+      },
       "label": {
         "en": "GitHub",
         "ar": "جيت هاب"
@@ -521,6 +861,18 @@
         "en": "View my work",
         "ar": "عرض أعمالي"
       }
+    }
+  },
+  "whatsapp": {
+    "tooltip": {
+      "en": "Chat on WhatsApp",
+      "ar": "دردش على واتساب"
+    }
+  },
+  "footer": {
+    "tagline": {
+      "en": "Software Engineering Partner & System Architect",
+      "ar": "شريك هندسة البرمجيات ومهندس الأنظمة"
     }
   },
   "modal": {

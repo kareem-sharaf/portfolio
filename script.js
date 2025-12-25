@@ -127,8 +127,12 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 let translations = {};
 let currentLang = localStorage.getItem('language') || 'en';
 
-// List of project names that should NOT be translated
-// These are brand names and should remain in their original form
+// ============================================
+// TRANSLATION EXCLUSION RULES
+// Terms that should NEVER be translated
+// ============================================
+
+// 1. PROJECT & COMPANY NAMES (Keep as-is)
 const projectNamesNoTranslate = [
     'Umrain',
     'Jaramana',
@@ -136,6 +140,45 @@ const projectNamesNoTranslate = [
     'Pear',
     'OfferMe',
     'E-Learning System'
+];
+
+// 2. TECHNICAL TERMS & PRODUCT NAMES (English only)
+const technicalTermsNoTranslate = [
+    // Languages & Frameworks
+    'PHP', 'Java', 'C++', 'Python', 'HTML', 'CSS', 'JavaScript',
+    'Laravel', 'Django', 'Spring Boot', 'Vue.js',
+    // Databases
+    'PostgreSQL', 'MySQL', 'Firebase', 'Redis',
+    // Services & Platforms
+    'GitHub', 'GitLab', 'LinkedIn', 'WhatsApp', 'AWS', 'Docker',
+    'Stripe', 'PayPal', 'Agora', 'Pusher',
+    // Protocols & Standards
+    'JWT', 'REST', 'API', 'APIs', 'RESTful APIs', 'JSON', 'SQL', 'HTTP',
+    'WebSocket', 'WebSockets', 'RBAC',
+    // Technical Components
+    'Database Design', 'Query Optimization', 'Multi-Gateway',
+    'Webhook Handling', 'Resumable Uploads', 'Progress Tracking',
+    'Multi-Currency', 'Modular Architecture', 'Commission Engine',
+    'Slot Management', 'Dynamic Fields', 'Third-Party APIs',
+    // Tools
+    'Git', 'Postman', 'Laravel Echo', 'Blade Templates',
+    // Abbreviations
+    'CI/CD', 'DevOps', 'B2B', 'LMS'
+];
+
+// 3. CONTACT INFORMATION PATTERNS (Keep as-is)
+const contactInfoPatterns = [
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Email
+    /^\+?[0-9]{10,15}$/, // Phone numbers
+    /^https?:\/\//, // URLs
+    /^wa\.me\//, // WhatsApp links
+    /^mailto:/ // Mailto links
+];
+
+// 4. FILE EXTENSIONS & COMMANDS
+const codeElementsNoTranslate = [
+    '.json', '.js', '.css', '.html', '.php', '.java', '.py',
+    'git commit', 'npm install', 'composer require'
 ];
 
 // Load translations from JSON file
@@ -150,7 +193,8 @@ async function loadTranslations() {
 }
 
 // Get translation by key
-function getTranslation(key) {
+function getTranslation(key, lang = null) {
+    const targetLang = lang || currentLang;
     const keys = key.split('.');
     let value = translations;
     
@@ -162,8 +206,8 @@ function getTranslation(key) {
         }
     }
     
-    if (typeof value === 'object' && currentLang in value) {
-        return value[currentLang];
+    if (typeof value === 'object' && targetLang in value) {
+        return value[targetLang];
     }
     
     return key; // Fallback to key
@@ -171,10 +215,39 @@ function getTranslation(key) {
 
 // Function to check if text should be translated
 function shouldTranslate(text) {
-    // Check if text is a project name that should not be translated
-    return !projectNamesNoTranslate.some(name => 
-        text.trim() === name || text.includes(name)
-    );
+    if (!text || typeof text !== 'string') return true;
+    
+    const trimmedText = text.trim();
+    
+    // 1. Check if text is a project/company name
+    if (projectNamesNoTranslate.some(name => 
+        trimmedText === name || trimmedText.includes(name)
+    )) {
+        return false;
+    }
+    
+    // 2. Check if text contains technical terms (exact match or contains)
+    if (technicalTermsNoTranslate.some(term => {
+        // Exact match
+        if (trimmedText === term) return true;
+        // Contains as whole word (not part of another word)
+        const regex = new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+        return regex.test(trimmedText);
+    })) {
+        return false;
+    }
+    
+    // 3. Check if text matches contact information patterns
+    if (contactInfoPatterns.some(pattern => pattern.test(trimmedText))) {
+        return false;
+    }
+    
+    // 4. Check if text contains code elements
+    if (codeElementsNoTranslate.some(element => trimmedText.includes(element))) {
+        return false;
+    }
+    
+    return true;
 }
 
 // Apply translations to all elements with data-i18n attribute
@@ -193,14 +266,52 @@ function applyTranslations() {
         const key = element.getAttribute('data-i18n');
         const translation = getTranslation(key);
         
-        // Check if the translation is a project name that should not be translated
-        if (translation && translation !== key && shouldTranslate(translation)) {
+        // Skip if translation not found or same as key
+        if (!translation || translation === key) {
+            return;
+        }
+        
+        // Check if the translation should be applied (respects exclusion rules)
+        if (shouldTranslate(translation)) {
             // Update text content
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translation;
+            } else if (element.tagName === 'LABEL') {
+                element.textContent = translation;
             } else {
                 element.textContent = translation;
             }
+        } else {
+            // If translation contains non-translatable terms, use English version
+            // This ensures technical terms stay in English even in Arabic mode
+            const englishTranslation = getTranslation(key, 'en');
+            if (englishTranslation && englishTranslation !== key) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = englishTranslation;
+                } else if (element.tagName === 'LABEL') {
+                    element.textContent = englishTranslation;
+                } else {
+                    element.textContent = englishTranslation;
+                }
+            }
+        }
+    });
+    
+    // Translate placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        const translation = getTranslation(key);
+        if (translation && translation !== key && shouldTranslate(translation)) {
+            element.placeholder = translation;
+        }
+    });
+    
+    // Translate option elements
+    document.querySelectorAll('option[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getTranslation(key);
+        if (translation && translation !== key && shouldTranslate(translation)) {
+            element.textContent = translation;
         }
     });
 }
@@ -255,23 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
-// Contact Form Handling with Web3Forms
+// Contact Form Handling - Mailto
 // ============================================
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Disable submit button
-        const submitBtn = contactForm.querySelector('.btn-submit');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-        
-        // Hide previous messages
-        formMessage.style.display = 'none';
         
         // Get form data
         const formData = {
@@ -284,10 +386,8 @@ if (contactForm) {
         // Validate form
         if (!formData.name || !formData.email || !formData.message) {
             formMessage.className = 'form-message error';
-            formMessage.textContent = 'Please fill in all required fields.';
+            formMessage.textContent = getTranslation('contact.formError') || 'Please fill in all required fields.';
             formMessage.style.display = 'block';
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
             return;
         }
         
@@ -295,98 +395,33 @@ if (contactForm) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
             formMessage.className = 'form-message error';
-            formMessage.textContent = 'Please enter a valid email address.';
+            formMessage.textContent = getTranslation('contact.formEmailError') || 'Please enter a valid email address.';
             formMessage.style.display = 'block';
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
             return;
         }
         
-        // Check if access key is configured
-        const accessKey = 'YOUR_ACCESS_KEY'; // Replace with your Web3Forms access key from https://web3forms.com
+        // Create mailto link with form data
+        const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
+        const body = encodeURIComponent(
+            `Name: ${formData.name}\n` +
+            `Email: ${formData.email}\n` +
+            `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
+            `Message:\n${formData.message}`
+        );
         
-        if (accessKey === 'YOUR_ACCESS_KEY') {
-            // Fallback to mailto if access key not configured
-            const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
-            const body = encodeURIComponent(
-                `Name: ${formData.name}\n` +
-                `Email: ${formData.email}\n` +
-                `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
-                `Message:\n${formData.message}`
-            );
-            
-            window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
-            
-            formMessage.className = 'form-message success';
-            formMessage.textContent = 'Opening your email client... If it doesn\'t open, please email kareem.sh.ite@gmail.com directly.';
-            formMessage.style.display = 'block';
-            
-            setTimeout(() => {
-                contactForm.reset();
-                formMessage.style.display = 'none';
-            }, 5000);
-            
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-            return;
-        }
+        // Open email client
+        window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
         
-        try {
-            // Send email using Web3Forms API
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    access_key: accessKey,
-                    subject: `Portfolio Contact: ${formData.projectType || 'General Inquiry'}`,
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    message: `Project Type: ${formData.projectType || 'Not specified'}\n\nMessage:\n${formData.message}`,
-                    to_email: 'kareem.sh.ite@gmail.com'
-                })
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-                // Show success message
-                formMessage.className = 'form-message success';
-                formMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-                formMessage.style.display = 'block';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            } else {
-                throw new Error(result.message || 'Failed to send message');
-            }
-        } catch (error) {
-            console.error('Error sending message:', error);
-            // Fallback to mailto on error
-            const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
-            const body = encodeURIComponent(
-                `Name: ${formData.name}\n` +
-                `Email: ${formData.email}\n` +
-                `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
-                `Message:\n${formData.message}`
-            );
-            
-            window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
-            
-            formMessage.className = 'form-message success';
-            formMessage.textContent = 'Opening your email client as fallback...';
-            formMessage.style.display = 'block';
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-        }
+        // Show success message
+        formMessage.className = 'form-message success';
+        formMessage.textContent = getTranslation('contact.formSuccess') || 'Opening your email client... If it doesn\'t open, please email kareem.sh.ite@gmail.com directly.';
+        formMessage.style.display = 'block';
+        
+        // Reset form after 3 seconds
+        setTimeout(() => {
+            contactForm.reset();
+            formMessage.style.display = 'none';
+        }, 5000);
     });
 }
 

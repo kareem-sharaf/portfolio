@@ -1,0 +1,478 @@
+/* ============================================
+   Technical Background Animations
+   Professional animated backgrounds for developer portfolios
+   ============================================ */
+
+.technical-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.technical-bg.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* GPU Acceleration */
+.technical-bg,
+.technical-bg * {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+    .technical-bg,
+    .technical-bg * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ============================================
+   Color Schemes - Light/Dark Theme Support
+   ============================================ */
+
+/* Light Theme */
+[data-theme="light"] .technical-bg,
+.technical-bg {
+    --bg-primary: rgba(66, 153, 225, 0.06);
+    --bg-secondary: rgba(0, 181, 216, 0.04);
+    --bg-accent: rgba(56, 178, 172, 0.1);
+    --bg-node: rgba(66, 153, 225, 0.18);
+    --bg-connection: rgba(66, 153, 225, 0.1);
+    --bg-pulse: rgba(0, 181, 216, 0.15);
+}
+
+/* Dark Theme */
+[data-theme="dark"] .technical-bg {
+    --bg-primary: rgba(66, 153, 225, 0.1);
+    --bg-secondary: rgba(0, 181, 216, 0.06);
+    --bg-accent: rgba(56, 178, 172, 0.15);
+    --bg-node: rgba(66, 153, 225, 0.25);
+    --bg-connection: rgba(66, 153, 225, 0.15);
+    --bg-pulse: rgba(0, 181, 216, 0.2);
+}
+
+/* ============================================
+   OPTION 1: Data Flow Network
+   SVG-based animated nodes and connections
+   ============================================ */
+
+.data-flow-network {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.data-flow-network svg {
+    width: 100%;
+    height: 100%;
+}
+
+.data-flow-node {
+    fill: var(--bg-node);
+    opacity: 0.7;
+    animation: nodePulse 4s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+}
+
+.data-flow-node:nth-child(odd) {
+    animation-delay: 0s;
+}
+
+.data-flow-node:nth-child(even) {
+    animation-delay: 2s;
+}
+
+.data-flow-connection {
+    stroke: var(--bg-connection);
+    stroke-width: 1.5;
+    fill: none;
+    opacity: 0.5;
+    stroke-dasharray: 8, 4;
+    animation: connectionFlow 4s linear infinite;
+}
+
+.data-flow-particle {
+    fill: var(--bg-accent);
+    opacity: 0.6;
+    animation: particleMove 2s linear infinite;
+}
+
+@keyframes nodePulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes connectionFlow {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        stroke-dashoffset: 12;
+        opacity: 0.2;
+    }
+}
+
+@keyframes particleMove {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(200px, 200px);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   OPTION 2: Binary Code Matrix Rain
+   Canvas-based falling tech terms
+   ============================================ */
+
+.matrix-rain {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.matrix-rain canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ============================================
+   OPTION 3: Server Status Dashboard
+   Grid of server nodes with activity pulses
+   ============================================ */
+
+.server-dashboard {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 2rem;
+    padding: 3rem;
+    opacity: 0.7;
+}
+
+.server-node {
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-connection);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    min-height: 60px;
+}
+
+.server-node::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--bg-accent);
+    opacity: 0;
+    animation: serverPulse 3s ease-in-out infinite;
+}
+
+.server-node.active::before {
+    opacity: 0.8;
+    animation: serverPulse 1.5s ease-in-out infinite;
+}
+
+.server-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--bg-accent);
+    opacity: 0.6;
+    animation: indicatorBlink 2s ease-in-out infinite;
+}
+
+.server-node.active .server-indicator {
+    background: var(--bg-pulse);
+    animation: indicatorBlink 0.8s ease-in-out infinite;
+}
+
+.server-load-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--bg-primary);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.server-load-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--bg-secondary), var(--bg-accent));
+    width: 0%;
+    animation: loadFill 4s ease-in-out infinite;
+}
+
+.server-node.active .server-load-fill {
+    animation: loadFill 2s ease-in-out infinite;
+}
+
+@keyframes serverPulse {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes indicatorBlink {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes loadFill {
+    0% {
+        width: 20%;
+    }
+
+    50% {
+        width: 80%;
+    }
+
+    100% {
+        width: 20%;
+    }
+}
+
+/* Data transfer animation between nodes */
+.server-transfer {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--bg-accent);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: dataTransfer 3s linear infinite;
+}
+
+@keyframes dataTransfer {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(30px, 30px) scale(1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(150px, 120px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(200px, 150px) scale(0);
+    }
+}
+
+/* ============================================
+   OPTION 4: Waveform Signal Processing
+   Multiple layers of waveform visualizations
+   ============================================ */
+
+/* ============================================
+   OPTION 5: Subtle Waveform (Role-Weaver Style)
+   Very subtle, abstract waveform background
+   ============================================ */
+
+.subtle-waveform {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.subtle-waveform canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.waveform-signal {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.waveform-signal canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Base waveform layer */
+.waveform-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.02;
+}
+
+/* Data packet layer */
+.waveform-packets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+}
+
+/* Peak indicators */
+.waveform-peak {
+    position: absolute;
+    width: 2px;
+    background: var(--bg-accent);
+    opacity: 0;
+    animation: peakIndicator 2s ease-out infinite;
+}
+
+@keyframes peakIndicator {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scaleY(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+}
+
+/* ============================================
+   Section-Specific Adjustments
+   ============================================ */
+
+/* Background is fixed, so opacity applies globally */
+/* Sections already have their own backgrounds, so content is protected */
+
+/* Ensure content containers are above background */
+.hero .container,
+.value-proposition .container,
+.technology .container,
+.methodology .container,
+.projects .container,
+.contact .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   Mobile Optimizations
+   ============================================ */
+
+@media (max-width: 768px) {
+    .server-dashboard {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    /* Reduce animation complexity on mobile */
+    .technical-bg {
+        opacity: 0.7;
+    }
+
+    .value-proposition .technical-bg,
+    .technology .technical-bg,
+    .methodology .technical-bg,
+    .projects .technical-bg {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .server-dashboard {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .technical-bg {
+        opacity: 0.5;
+    }
+}
+
+/* ============================================
+   Hover Intensity (Optional Enhancement)
+   ============================================ */
+
+@media (hover: hover) {
+    body:hover .technical-bg {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+}

@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="technical-background.css" />
+    <!-- Technical Background Animation System -->
 </head>
 
 <body>
@@ -23,7 +25,7 @@
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
         </svg>
-        <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+        <span class="whatsapp-tooltip" data-i18n="whatsapp.tooltip">Chat on WhatsApp</span>
     </a>
 
     <!-- Header Navigation -->
@@ -340,18 +342,19 @@
     <!-- Methodology Section -->
     <section id="methodology" class="methodology">
         <div class="container">
-            <h2 class="section-title">My Engineering Methodology</h2>
-            <p class="section-subtitle">A proven process for delivering reliable solutions</p>
+            <h2 class="section-title" data-i18n="methodology.title">My Engineering Methodology</h2>
+            <p class="section-subtitle" data-i18n="methodology.subtitle">A proven process for delivering reliable
+                solutions</p>
 
             <div class="methodology-steps">
                 <div class="method-step">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <h3>Analyze & Plan</h3>
+                        <h3 data-i18n="methodology.step1.title">Analyze & Plan</h3>
                         <ul>
-                            <li>Understanding business objectives</li>
-                            <li>Technical requirements gathering</li>
-                            <li>System architecture planning</li>
+                            <li data-i18n="methodology.step1.item1">Understanding business objectives</li>
+                            <li data-i18n="methodology.step1.item2">Technical requirements gathering</li>
+                            <li data-i18n="methodology.step1.item3">System architecture planning</li>
                         </ul>
                     </div>
                 </div>
@@ -359,11 +362,11 @@
                 <div class="method-step">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h3>Design & Architect</h3>
+                        <h3 data-i18n="methodology.step2.title">Design & Architect</h3>
                         <ul>
-                            <li>Database design and optimization</li>
-                            <li>API structure and integration planning</li>
-                            <li>Scalability considerations</li>
+                            <li data-i18n="methodology.step2.item1">Database design and optimization</li>
+                            <li data-i18n="methodology.step2.item2">API structure and integration planning</li>
+                            <li data-i18n="methodology.step2.item3">Scalability considerations</li>
                         </ul>
                     </div>
                 </div>
@@ -371,11 +374,11 @@
                 <div class="method-step">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>Build & Implement</h3>
+                        <h3 data-i18n="methodology.step3.title">Build & Implement</h3>
                         <ul>
-                            <li>Clean, maintainable code</li>
-                            <li>Third-party integrations</li>
-                            <li>Real-time features when needed</li>
+                            <li data-i18n="methodology.step3.item1">Clean, maintainable code</li>
+                            <li data-i18n="methodology.step3.item2">Third-party integrations</li>
+                            <li data-i18n="methodology.step3.item3">Real-time features when needed</li>
                         </ul>
                     </div>
                 </div>
@@ -383,11 +386,11 @@
                 <div class="method-step">
                     <div class="step-number">04</div>
                     <div class="step-content">
-                        <h3>Deploy & Optimize</h3>
+                        <h3 data-i18n="methodology.step4.title">Deploy & Optimize</h3>
                         <ul>
-                            <li>Performance tuning</li>
-                            <li>Monitoring and maintenance</li>
-                            <li>Ongoing optimization</li>
+                            <li data-i18n="methodology.step4.item1">Performance tuning</li>
+                            <li data-i18n="methodology.step4.item2">Monitoring and maintenance</li>
+                            <li data-i18n="methodology.step4.item3">Ongoing optimization</li>
                         </ul>
                     </div>
                 </div>
@@ -398,98 +401,112 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Selected System Implementations</h2>
-            <p class="section-subtitle">Real solutions for real business challenges</p>
+            <h2 class="section-title" data-i18n="projects.title">Selected System Implementations</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Real solutions for real business challenges</p>
 
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">🏥</div>
-                    <h3>Healthcare Management System</h3>
+                    <h3 data-i18n="projects.cards.healthcare.title">Healthcare Management System</h3>
                     <div class="project-challenge">
-                        <strong>Challenge:</strong> Clinic struggling with manual processes and patient scheduling
+                        <strong data-i18n="projects.cards.labels.challenge">Challenge:</strong> <span
+                            data-i18n="projects.cards.healthcare.challenge">Clinic struggling with manual processes and
+                            patient scheduling</span>
                     </div>
                     <div class="project-solution">
-                        <strong>Solution:</strong>
+                        <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
                         <ul>
-                            <li>Automated appointment booking system</li>
-                            <li>Integrated medical records management</li>
-                            <li>Real-time notifications and chat</li>
+                            <li data-i18n="projects.cards.healthcare.solution1">Automated appointment booking system
+                            </li>
+                            <li data-i18n="projects.cards.healthcare.solution2">Integrated medical records management
+                            </li>
+                            <li data-i18n="projects.cards.healthcare.solution3">Real-time notifications and chat</li>
                         </ul>
                     </div>
                     <div class="project-outcome">
-                        <strong>Outcome:</strong>
-                        <span class="outcome-metric">Reduced admin time by <span class="metric-value">60%</span></span>,
-                        <span class="outcome-metric">improved patient satisfaction by <span
-                                class="metric-value">40%</span></span>
+                        <strong data-i18n="projects.cards.labels.outcome">Outcome:</strong>
+                        <span class="outcome-metric"><span data-i18n="projects.cards.healthcare.outcome1">Reduced admin
+                                time by</span> <span class="metric-value">60%</span></span>,
+                        <span class="outcome-metric"><span data-i18n="projects.cards.healthcare.outcome2">improved
+                                patient satisfaction by</span> <span class="metric-value">40%</span></span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-icon">🎓</div>
-                    <h3>E-Learning Platform</h3>
+                    <h3 data-i18n="projects.cards.elearning.title">E-Learning Platform</h3>
                     <div class="project-challenge">
-                        <strong>Challenge:</strong> University needed scalable course management system
+                        <strong data-i18n="projects.cards.labels.challenge">Challenge:</strong> <span
+                            data-i18n="projects.cards.elearning.challenge">University needed scalable course management
+                            system</span>
                     </div>
                     <div class="project-solution">
-                        <strong>Solution:</strong>
+                        <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
                         <ul>
-                            <li>Resumable video upload system</li>
-                            <li>Progress tracking and assessments</li>
-                            <li>Role-based access control</li>
+                            <li data-i18n="projects.cards.elearning.solution1">Resumable video upload system</li>
+                            <li data-i18n="projects.cards.elearning.solution2">Progress tracking and assessments</li>
+                            <li data-i18n="projects.cards.elearning.solution3">Role-based access control</li>
                         </ul>
                     </div>
                     <div class="project-outcome">
-                        <strong>Outcome:</strong>
-                        <span class="outcome-metric">Enabled structured online learning for <span
-                                class="metric-value">5,000+</span> students</span>,
-                        <span class="outcome-metric">increased course completion rate by <span
-                                class="metric-value">35%</span></span>
+                        <strong data-i18n="projects.cards.labels.outcome">Outcome:</strong>
+                        <span class="outcome-metric"><span data-i18n="projects.cards.elearning.outcome1">Enabled
+                                structured online learning for</span> <span class="metric-value">5,000+</span> <span
+                                data-i18n="projects.cards.elearning.outcome1Students">students</span></span>,
+                        <span class="outcome-metric"><span data-i18n="projects.cards.elearning.outcome2">increased
+                                course completion rate by</span> <span class="metric-value">35%</span></span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-icon">✈️</div>
-                    <h3>Multi-Vendor Travel Marketplace</h3>
+                    <h3 data-i18n="projects.cards.travel.title">Multi-Vendor Travel Marketplace</h3>
                     <div class="project-challenge">
-                        <strong>Challenge:</strong> Unified booking system for diverse travel services
+                        <strong data-i18n="projects.cards.labels.challenge">Challenge:</strong> <span
+                            data-i18n="projects.cards.travel.challenge">Unified booking system for diverse travel
+                            services</span>
                     </div>
                     <div class="project-solution">
-                        <strong>Solution:</strong>
+                        <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
                         <ul>
-                            <li>Polymorphic booking architecture</li>
-                            <li>Multi-currency and commission system</li>
-                            <li>Dynamic pricing engine</li>
+                            <li data-i18n="projects.cards.travel.solution1">Polymorphic booking architecture</li>
+                            <li data-i18n="projects.cards.travel.solution2">Multi-currency and commission system</li>
+                            <li data-i18n="projects.cards.travel.solution3">Dynamic pricing engine</li>
                         </ul>
                     </div>
                     <div class="project-outcome">
-                        <strong>Outcome:</strong>
-                        <span class="outcome-metric">One-stop booking experience across <span
-                                class="metric-value">6</span> service types</span>,
-                        <span class="outcome-metric">increased platform performance by <span
-                                class="metric-value">40%</span></span>
+                        <strong data-i18n="projects.cards.labels.outcome">Outcome:</strong>
+                        <span class="outcome-metric"><span data-i18n="projects.cards.travel.outcome1">One-stop booking
+                                experience across</span> <span class="metric-value">6</span> <span
+                                data-i18n="projects.cards.travel.outcome1Types">service types</span></span>,
+                        <span class="outcome-metric"><span data-i18n="projects.cards.travel.outcome2">increased platform
+                                performance by</span> <span class="metric-value">40%</span></span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-icon">💼</div>
-                    <h3>B2B Service Marketplace</h3>
+                    <h3 data-i18n="projects.cards.marketplace.title">B2B Service Marketplace</h3>
                     <div class="project-challenge">
-                        <strong>Challenge:</strong> Connecting service providers with clients efficiently
+                        <strong data-i18n="projects.cards.labels.challenge">Challenge:</strong> <span
+                            data-i18n="projects.cards.marketplace.challenge">Connecting service providers with clients
+                            efficiently</span>
                     </div>
                     <div class="project-solution">
-                        <strong>Solution:</strong>
+                        <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
                         <ul>
-                            <li>Real-time chat and notifications</li>
-                            <li>Dynamic field system for categories</li>
-                            <li>Multilingual support</li>
+                            <li data-i18n="projects.cards.marketplace.solution1">Real-time chat and notifications</li>
+                            <li data-i18n="projects.cards.marketplace.solution2">Dynamic field system for categories
+                            </li>
+                            <li data-i18n="projects.cards.marketplace.solution3">Multilingual support</li>
                         </ul>
                     </div>
                     <div class="project-outcome">
-                        <strong>Outcome:</strong>
-                        <span class="outcome-metric">Reduced time-to-contract by <span
-                                class="metric-value">50%</span></span>,
-                        <span class="outcome-metric">increased conversion rate by <span
-                                class="metric-value">28%</span></span>
+                        <strong data-i18n="projects.cards.labels.outcome">Outcome:</strong>
+                        <span class="outcome-metric"><span data-i18n="projects.cards.marketplace.outcome1">Reduced
+                                time-to-contract by</span> <span class="metric-value">50%</span></span>,
+                        <span class="outcome-metric"><span data-i18n="projects.cards.marketplace.outcome2">increased
+                                conversion rate by</span> <span class="metric-value">28%</span></span>
                     </div>
                 </div>
             </div>
@@ -501,9 +518,10 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-text">
-                    <h2>Let's Build Your Digital Foundation</h2>
-                    <p class="contact-tagline">Ready to transform your technical vision into reality?</p>
-                    <p class="contact-description">
+                    <h2 data-i18n="contact.title">Let's Build Your Digital Foundation</h2>
+                    <p class="contact-tagline" data-i18n="contact.tagline">Ready to transform your technical vision into
+                        reality?</p>
+                    <p class="contact-description" data-i18n="contact.description">
                         Whether you're starting from scratch or optimizing existing systems, I'm here to help you build
                         scalable solutions that drive business growth.
                     </p>
@@ -513,41 +531,50 @@
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
-                        <span>Typically respond within 2 hours</span>
+                        <span data-i18n="contact.responseTime">Typically respond within 2 hours</span>
                     </div>
                 </div>
 
                 <div class="contact-options-wrapper">
                     <!-- Contact Form -->
-                    <form class="contact-form" id="contactForm">
-                        <h3>Send a Message</h3>
+                    <form class="contact-form" id="contactForm" autocomplete="on">
+                        <h3 data-i18n="contact.formTitle">Send a Message</h3>
                         <div class="form-group">
-                            <label for="contactName">Name</label>
-                            <input type="text" id="contactName" name="name" required placeholder="Your name">
+                            <label for="contactName" data-i18n="contact.formName">Name</label>
+                            <input type="text" id="contactName" name="name" autocomplete="name" required
+                                data-i18n-placeholder="contact.formNamePlaceholder" placeholder="Your name">
                         </div>
                         <div class="form-group">
-                            <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" name="email" required
+                            <label for="contactEmail" data-i18n="contact.formEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" autocomplete="email" required
+                                data-i18n-placeholder="contact.formEmailPlaceholder"
                                 placeholder="your.email@example.com">
                         </div>
                         <div class="form-group">
-                            <label for="contactProjectType">Project Type</label>
-                            <select id="contactProjectType" name="projectType">
-                                <option value="">Select project type...</option>
-                                <option value="web-application">Web Application</option>
-                                <option value="api-development">API Development</option>
-                                <option value="system-architecture">System Architecture</option>
-                                <option value="database-design">Database Design</option>
-                                <option value="consultation">Consultation</option>
-                                <option value="other">Other</option>
+                            <label for="contactProjectType" data-i18n="contact.formProjectType">Project Type</label>
+                            <select id="contactProjectType" name="projectType" autocomplete="organization-title">
+                                <option value="" data-i18n="contact.formProjectTypePlaceholder">Select project type...
+                                </option>
+                                <option value="web-application" data-i18n="contact.formProjectType1">Web Application
+                                </option>
+                                <option value="api-development" data-i18n="contact.formProjectType2">API Development
+                                </option>
+                                <option value="system-architecture" data-i18n="contact.formProjectType3">System
+                                    Architecture</option>
+                                <option value="database-design" data-i18n="contact.formProjectType4">Database Design
+                                </option>
+                                <option value="consultation" data-i18n="contact.formProjectType5">Consultation</option>
+                                <option value="other" data-i18n="contact.formProjectType6">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="contactMessage">Message</label>
-                            <textarea id="contactMessage" name="message" rows="5" required
+                            <label for="contactMessage" data-i18n="contact.formMessage">Message</label>
+                            <textarea id="contactMessage" name="message" rows="5" autocomplete="off" required
+                                data-i18n-placeholder="contact.formMessagePlaceholder"
                                 placeholder="Tell me about your project..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-submit" data-i18n="contact.formSubmit">Send
+                            Message</button>
                         <div class="form-message" id="formMessage"></div>
                     </form>
 
@@ -562,8 +589,8 @@
                                 </svg>
                             </div>
                             <div class="contact-details">
-                                <h3>Message on WhatsApp</h3>
-                                <p>Quick response, direct communication</p>
+                                <h3 data-i18n="contact.whatsapp.title">Message on WhatsApp</h3>
+                                <p data-i18n="contact.whatsapp.description">Quick response, direct communication</p>
                             </div>
                         </a>
 
@@ -578,8 +605,8 @@
                                 </svg>
                             </div>
                             <div class="contact-details">
-                                <h3>Email</h3>
-                                <p>kareem.sh.ite@gmail.com</p>
+                                <h3 data-i18n="contact.email.title">Email</h3>
+                                <p data-no-translate>kareem.sh.ite@gmail.com</p>
                             </div>
                         </a>
 
@@ -592,8 +619,8 @@
                                 </svg>
                             </div>
                             <div class="contact-details">
-                                <h3>LinkedIn</h3>
-                                <p>Connect professionally</p>
+                                <h3 data-i18n="contact.linkedin.title">LinkedIn</h3>
+                                <p data-i18n="contact.linkedin.description">Connect professionally</p>
                             </div>
                         </a>
 
@@ -606,8 +633,8 @@
                                 </svg>
                             </div>
                             <div class="contact-details">
-                                <h3>GitHub</h3>
-                                <p>View my code and projects</p>
+                                <h3 data-i18n="contact.github.title">GitHub</h3>
+                                <p data-i18n="contact.github.description">View my code and projects</p>
                             </div>
                         </a>
                     </div>
@@ -619,11 +646,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Kareem Sharaf. Software Engineering Partner & System Architect.</p>
+            <p>&copy; 2024 Kareem Sharaf. <span data-i18n="footer.tagline">Software Engineering Partner & System
+                    Architect</span>.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="technical-background.js"></script>
 </body>
 
 </html>
