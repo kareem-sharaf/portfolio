@@ -215,6 +215,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
+// Contact Form Handling
+// ============================================
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+            name: document.getElementById('contactName').value,
+            email: document.getElementById('contactEmail').value,
+            projectType: document.getElementById('contactProjectType').value,
+            message: document.getElementById('contactMessage').value
+        };
+        
+        // Create mailto link with form data
+        const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
+        const body = encodeURIComponent(
+            `Name: ${formData.name}\n` +
+            `Email: ${formData.email}\n` +
+            `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
+            `Message:\n${formData.message}`
+        );
+        
+        // Open email client
+        window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Show success message
+        formMessage.className = 'form-message success';
+        formMessage.textContent = 'Opening your email client... If it doesn\'t open, please email kareem.sh.ite@gmail.com directly.';
+        formMessage.style.display = 'block';
+        
+        // Reset form after 3 seconds
+        setTimeout(() => {
+            contactForm.reset();
+            formMessage.style.display = 'none';
+        }, 5000);
+    });
+}
+
+// ============================================
 // WhatsApp Button Analytics (Optional)
 // ============================================
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
