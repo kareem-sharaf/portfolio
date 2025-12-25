@@ -827,17 +827,9 @@
       }
     },
     "linkedin": {
-      "title": {
-        "en": "LinkedIn",
-        "ar": "لينكد إن"
-      },
       "description": {
         "en": "Connect professionally",
         "ar": "تواصل بشكل احترافي"
-      },
-      "label": {
-        "en": "LinkedIn",
-        "ar": "لينكد إن"
       },
       "link": {
         "en": "Connect with me",
@@ -845,10 +837,6 @@
       }
     },
     "github": {
-      "title": {
-        "en": "GitHub",
-        "ar": "جيت هاب"
-      },
       "description": {
         "en": "View my code and projects",
         "ar": "عرض الكود والمشاريع"

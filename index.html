@@ -18,6 +18,49 @@
 </head>
 
 <body>
+    <!-- Technical Background Animation System -->
+    <div id="tech-background" class="technical-background" aria-hidden="true">
+        <!-- Canvas for particle system -->
+        <canvas id="bg-canvas" class="bg-layer bg-canvas"></canvas>
+
+        <!-- SVG for geometric shapes -->
+        <svg class="bg-layer bg-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+            preserveAspectRatio="none">
+            <defs>
+                <!-- Elegant Shape Gradients -->
+                <radialGradient id="nodeGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="rgba(99, 102, 241, 0.15)" />
+                    <stop offset="60%" stop-color="rgba(139, 92, 246, 0.1)" />
+                    <stop offset="100%" stop-color="transparent" />
+                </radialGradient>
+                <radialGradient id="nodeGradientDark" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="rgba(99, 102, 241, 0.2)" />
+                    <stop offset="60%" stop-color="rgba(139, 92, 246, 0.15)" />
+                    <stop offset="100%" stop-color="transparent" />
+                </radialGradient>
+            </defs>
+            <!-- Floating nodes will be injected here -->
+        </svg>
+
+        <!-- CSS animated elements -->
+        <div class="bg-layer bg-css">
+            <div class="grid-mesh"></div>
+            <div class="floating-nodes"></div>
+        </div>
+
+        <!-- Interactive highlight layer -->
+        <div class="bg-layer bg-interactive">
+            <div class="mouse-ripple"></div>
+        </div>
+    </div>
+
+    <!-- Optional: Background Controls (hidden by default, can be enabled) -->
+    <div class="bg-controls" style="display: none;">
+        <button class="bg-toggle active" data-quality="high">High Quality</button>
+        <button class="bg-toggle" data-quality="low">Performance Mode</button>
+        <button class="bg-toggle" data-quality="off">Background Off</button>
+    </div>
+
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/963959378002" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
         aria-label="Contact on WhatsApp">
@@ -82,7 +125,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -123,15 +165,6 @@
                             →</a>
                         <a href="#technology" class="btn btn-secondary" data-i18n="hero.ctaSecondary">View Technical
                             Expertise</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-image-placeholder">
-                        <div class="tech-visualization">
-                            <div class="tech-circle tech-circle-1"></div>
-                            <div class="tech-circle tech-circle-2"></div>
-                            <div class="tech-circle tech-circle-3"></div>
-                        </div>
                     </div>
                 </div>
             </div>

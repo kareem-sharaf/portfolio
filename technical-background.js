@@ -1,727 +1,614 @@
 // ============================================
-// Technical Background Animation Controller
-// Professional animated backgrounds for developer portfolios
-//
-// AVAILABLE STYLES:
-// - 'subtle-waveform': Very subtle waveform pattern (Role-Weaver style) [DEFAULT]
-// - 'data-flow': Animated nodes and connections (SVG-based)
-// - 'matrix-rain': Falling tech terms (Canvas-based)
-// - 'server-dashboard': Server status grid (CSS-based)
-// - 'waveform-signal': Signal processing waveforms (Canvas-based)
-//
-// USAGE:
-// Switch style: window.technicalBackground.switchStyle('style-name')
-// Enable auto-cycle: window.technicalBackground.startAutoCycle()
-// Stop auto-cycle: window.technicalBackground.stopAutoCycle()
-//
+// Premium Neural Network Background System
+// AI/Intelligence Visualization
+// Advanced Neural Network & Data Processing
 // ============================================
 
 class TechnicalBackground {
-  constructor() {
-    this.currentStyle = localStorage.getItem('bgStyle') || 'subtle-waveform';
-    this.container = null;
-    this.animationInstance = null;
-    this.autoCycleInterval = null;
-    this.isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    this.init();
-  }
-
-  init() {
-    // Create container
-    this.createContainer();
-    
-    // Wait a bit to ensure DOM is ready
-    if (!this.container) {
-      console.error('Technical Background: Failed to create container');
-      return;
-    }
-    
-    // Initialize the selected animation style
-    this.setStyle(this.currentStyle);
-    
-    // Listen for theme changes
-    this.watchThemeChanges();
-    
-    // Listen for reduced motion preference
-    this.watchReducedMotion();
-    
-    // Optional: Auto-cycle every 30 seconds (disabled by default)
-    // this.startAutoCycle();
-  }
-
-  createContainer() {
-    // Check if container already exists
-    let existingContainer = document.getElementById('technicalBackground');
-    if (existingContainer) {
-      this.container = existingContainer;
-      return;
-    }
-    
-    this.container = document.createElement('div');
-    this.container.className = 'technical-bg';
-    this.container.id = 'technicalBackground';
-    
-    // Insert at the beginning of body to ensure it's behind everything
-    if (document.body) {
-      document.body.insertBefore(this.container, document.body.firstChild);
-      console.log('Technical Background: Container created and added to body');
-    } else {
-      console.error('Technical Background: document.body is not ready');
-      // Retry after a short delay
-      setTimeout(() => {
-        if (document.body && this.container) {
-          document.body.insertBefore(this.container, document.body.firstChild);
-          console.log('Technical Background: Container added after retry');
-        }
-      }, 100);
-    }
-  }
-
-  setStyle(style) {
-    if (!this.container) {
-      console.error('Technical Background: Container not available');
-      return;
-    }
-    
-    if (this.isReducedMotion) {
-      console.log('Technical Background: Reduced motion detected, skipping animation');
-      this.container.innerHTML = '';
-      return;
-    }
-
-    this.currentStyle = style;
-    localStorage.setItem('bgStyle', style);
-    this.container.innerHTML = '';
-    console.log('Technical Background: Setting style to', style);
-
-    try {
-      switch (style) {
-        case 'data-flow':
-          this.initDataFlowNetwork();
-          break;
-        case 'matrix-rain':
-          this.initMatrixRain();
-          break;
-        case 'server-dashboard':
-          this.initServerDashboard();
-          break;
-        case 'waveform-signal':
-          this.initWaveformSignal();
-          break;
-        case 'subtle-waveform':
-          this.initSubtleWaveform();
-          break;
-        default:
-          this.initSubtleWaveform();
-      }
-    } catch (error) {
-      console.error('Technical Background: Error initializing style', style, error);
-    }
-  }
-
-  // ============================================
-  // OPTION 1: Data Flow Network
-  // ============================================
-  initDataFlowNetwork() {
-    if (!this.container) return;
-    
-    const wrapper = document.createElement('div');
-    wrapper.className = 'data-flow-network';
-    
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('viewBox', '0 0 1200 800');
-    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
-    
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    
-    // Create gradient for connections
-    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-    gradient.setAttribute('id', 'connectionGradient');
-    gradient.setAttribute('x1', '0%');
-    gradient.setAttribute('y1', '0%');
-    gradient.setAttribute('x2', '100%');
-    gradient.setAttribute('y2', '100%');
-    
-    const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-    stop1.setAttribute('offset', '0%');
-    stop1.setAttribute('stop-color', 'currentColor');
-    stop1.setAttribute('stop-opacity', '0.1');
-    
-    const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-    stop2.setAttribute('offset', '100%');
-    stop2.setAttribute('stop-color', 'currentColor');
-    stop2.setAttribute('stop-opacity', '0.4');
-    
-    gradient.appendChild(stop1);
-    gradient.appendChild(stop2);
-    defs.appendChild(gradient);
-    svg.appendChild(defs);
-    
-    // Create nodes (15-20 nodes)
-    const nodes = [];
-    const nodeCount = 18;
-    
-    for (let i = 0; i < nodeCount; i++) {
-      const node = {
-        x: Math.random() * 1200,
-        y: Math.random() * 800,
-        size: 4 + Math.random() * 8, // 4-12px
-        id: `node-${i}`
-      };
-      nodes.push(node);
-      
-      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      circle.setAttribute('cx', node.x);
-      circle.setAttribute('cy', node.y);
-      circle.setAttribute('r', node.size);
-      circle.setAttribute('class', 'data-flow-node');
-      circle.style.animationDelay = `${Math.random() * 4}s`;
-      svg.appendChild(circle);
-    }
-    
-    // Create connections between nearby nodes
-    nodes.forEach((node, i) => {
-      nodes.slice(i + 1).forEach(otherNode => {
-        const distance = Math.sqrt(
-          Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
-        );
+    constructor() {
+        this.canvas = null;
+        this.ctx = null;
+        this.svgContainer = null;
+        this.particles = [];
+        this.nodes = [];
+        this.mouse = { x: 0, y: 0 };
+        this.animationId = null;
+        this.rippleElement = null;
         
-        // Only connect nodes within 300px
-        if (distance < 300 && Math.random() > 0.7) {
-          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-          
-          // Create bezier curve
-          const dx = otherNode.x - node.x;
-          const dy = otherNode.y - node.y;
-          const cp1x = node.x + dx * 0.3 + (Math.random() - 0.5) * 100;
-          const cp1y = node.y + dy * 0.3 + (Math.random() - 0.5) * 100;
-          const cp2x = node.x + dx * 0.7 + (Math.random() - 0.5) * 100;
-          const cp2y = node.y + dy * 0.7 + (Math.random() - 0.5) * 100;
-          
-          path.setAttribute('d', `M ${node.x} ${node.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${otherNode.x} ${otherNode.y}`);
-          path.setAttribute('class', 'data-flow-connection');
-          path.style.animationDelay = `${Math.random() * 4}s`;
-          svg.appendChild(path);
+        this.settings = {
+            particleCount: 60,
+            nodeCount: 20,
+            highQuality: true,
+            enabled: true,
+            mouseInteraction: true,
+            elegantMode: true  // Elegant floating shapes mode
+        };
+        
+        // Shape types for elegant design
+        this.shapeTypes = ['circle', 'square', 'diamond'];
+        this.activeConnections = new Set();
+        this.connectionFlowInterval = null;
+        
+        // Detect mobile device
+        this.isMobile = window.innerWidth <= 768;
+        if (this.isMobile) {
+            this.settings.particleCount = 40;
+            this.settings.nodeCount = 15;
         }
-      });
-    });
-    
-    wrapper.appendChild(svg);
-    this.container.appendChild(wrapper);
-  }
-
-  // ============================================
-  // OPTION 2: Binary Code Matrix Rain
-  // ============================================
-  initMatrixRain() {
-    if (!this.container) return;
-    
-    const wrapper = document.createElement('div');
-    wrapper.className = 'matrix-rain';
-    
-    const canvas = document.createElement('canvas');
-    wrapper.appendChild(canvas);
-    this.container.appendChild(wrapper);
-    
-    const ctx = canvas.getContext('2d');
-    
-    // Set canvas size
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Tech terms and code snippets
-    const techTerms = [
-      'API', 'JSON', 'SQL', 'HTTP', 'REST', 'RESTful', 'GET', 'POST', 'PUT', 'DELETE',
-      'Laravel', 'Django', 'Spring', 'Boot', 'MySQL', 'PostgreSQL', 'Vue', 'React',
-      'Git', 'GitHub', 'Docker', 'AWS', 'Azure', 'Redis', 'Cache', 'Queue', 'Job',
-      'async', 'await', 'promise', 'callback', 'middleware', 'route', 'controller',
-      'model', 'view', 'migration', 'seeder', 'factory', 'test', 'unit', 'integration'
-    ];
-    
-    // Stream configuration
-    const streams = [];
-    const streamCount = Math.min(25, Math.floor(canvas.width / 30));
-    const fontSize = 14;
-    const columnWidth = canvas.width / streamCount;
-    
-    for (let i = 0; i < streamCount; i++) {
-      streams.push({
-        x: i * columnWidth,
-        y: Math.random() * -canvas.height,
-        speed: 2 + Math.random() * 3,
-        chars: Array.from({ length: Math.floor(Math.random() * 20) + 10 }, () => 
-          techTerms[Math.floor(Math.random() * techTerms.length)]
-        )
-      });
+        
+        this.init();
     }
     
-    // Animation loop
-    let animationId;
-    const animate = () => {
-      // Clear with fade effect for trailing
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      ctx.fillStyle = isDark ? 'rgba(26, 32, 44, 0.08)' : 'rgba(248, 250, 252, 0.08)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      // Set text properties
-      ctx.fillStyle = isDark ? 'rgba(66, 153, 225, 0.12)' : 'rgba(66, 153, 225, 0.08)';
-      ctx.font = `${fontSize}px 'Inter', monospace`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      
-      streams.forEach(stream => {
-        stream.y += stream.speed;
+    init() {
+        this.setupElements();
+        this.createNodes();
+        this.createParticles();
+        this.setupEventListeners();
+        this.loadPreferences();
+        this.animate();
+    }
+    
+    setupElements() {
+        // Get or create canvas
+        this.canvas = document.getElementById('bg-canvas');
+        if (!this.canvas) {
+            console.error('Technical Background: Canvas element not found');
+            return;
+        }
         
-        stream.chars.forEach((char, index) => {
-          const y = stream.y + index * fontSize * 1.2;
-          const opacity = Math.max(0, 1 - (index * 0.08));
-          
-          ctx.globalAlpha = opacity * 0.25;
-          ctx.fillText(char, stream.x + columnWidth / 2, y);
+        this.ctx = this.canvas.getContext('2d');
+        this.resizeCanvas();
+        
+        // Get SVG container
+        this.svgContainer = document.querySelector('.bg-svg');
+        if (!this.svgContainer) {
+            console.error('Technical Background: SVG container not found');
+            return;
+        }
+        
+        console.log('Technical Background: Elements found successfully');
+        
+        // Get ripple element
+        this.rippleElement = document.querySelector('.mouse-ripple');
+        
+        // Window resize handler
+        window.addEventListener('resize', () => {
+            this.resizeCanvas();
+            // Adjust particle count on resize
+            const wasMobile = this.isMobile;
+            this.isMobile = window.innerWidth <= 768;
+            
+            if (wasMobile !== this.isMobile) {
+                this.settings.particleCount = this.isMobile ? 40 : 80;
+                this.settings.nodeCount = this.isMobile ? 15 : 25;
+                this.createParticles();
+            }
+        });
+    }
+    
+    resizeCanvas() {
+        if (this.canvas) {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+        }
+    }
+    
+    createNodes() {
+        if (!this.svgContainer) return;
+        
+        // Clear existing nodes (keep defs)
+        const existingNodes = this.svgContainer.querySelectorAll('.svg-node');
+        existingNodes.forEach(node => node.remove());
+        
+        this.nodes = [];
+        
+        for (let i = 0; i < this.settings.nodeCount; i++) {
+            const node = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            
+            // Random position (percentage-based for responsiveness)
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            // Elegant floating shapes - circles, squares, diamonds
+            const shapeTypeRoll = Math.random();
+            let shapeType, size;
+            
+            if (shapeTypeRoll < 0.6) {
+                // Circles (60%) - Most common
+                shapeType = 'circle';
+                size = 6 + Math.random() * 10; // 6-16px
+                node.setAttribute('cx', `${x}%`);
+                node.setAttribute('cy', `${y}%`);
+                node.setAttribute('r', size);
+            } else if (shapeTypeRoll < 0.85) {
+                // Squares (25%)
+                shapeType = 'square';
+                size = 8 + Math.random() * 8; // 8-16px
+                node = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                node.setAttribute('x', `${x - size/2}%`);
+                node.setAttribute('y', `${y - size/2}%`);
+                node.setAttribute('width', size);
+                node.setAttribute('height', size);
+                node.setAttribute('rx', size * 0.15); // Rounded corners
+            } else {
+                // Diamonds (15%)
+                shapeType = 'diamond';
+                size = 10 + Math.random() * 8; // 10-18px
+                node = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+                const points = [
+                    `${x}%,${y - size/2}%`,
+                    `${x + size/2}%,${y}%`,
+                    `${x}%,${y + size/2}%`,
+                    `${x - size/2}%,${y}%`
+                ].join(' ');
+                node.setAttribute('points', points);
+            }
+            
+            // Set attributes
+            node.setAttribute('class', `svg-node node-${shapeType}`);
+            node.setAttribute('fill', `url(#nodeGradient)`);
+            
+            // Elegant floating animations
+            const duration = 25 + Math.random() * 20; // 25-45s for slower, more elegant movement
+            const delay = Math.random() * 3;
+            node.style.animation = `elegantFloat ${duration}s infinite ease-in-out ${delay}s`;
+            
+            // Optional: Add subtle pulse to some shapes
+            if (Math.random() > 0.7) {
+                node.style.animation += `, subtlePulse ${4 + Math.random() * 3}s infinite ease-in-out`;
+            }
+            
+            // Optional: Gentle rotation for squares and diamonds
+            if ((shapeType === 'square' || shapeType === 'diamond') && Math.random() > 0.5) {
+                const rotateDuration = 30 + Math.random() * 20;
+                node.style.animation += `, gentleRotate ${rotateDuration}s linear infinite`;
+            }
+            
+            this.svgContainer.appendChild(node);
+            this.nodes.push({ 
+                element: node, 
+                x, 
+                y, 
+                size,
+                type: shapeType
+            });
+        }
+        
+        console.log(`Technical Background: Created ${this.nodes.length} nodes`);
+        
+        // Create connections between nearby nodes
+        this.createConnections();
+    }
+    
+    createConnections() {
+        // Remove existing connections - keep minimal for elegant design
+        const existingConnections = this.svgContainer.querySelectorAll('.node-connection');
+        existingConnections.forEach(conn => conn.remove());
+        
+        this.activeConnections.clear();
+        
+        // Create minimal, elegant connections - fewer and more subtle
+        const maxDistance = 25; // percentage
+        const connectionProbability = 0.92; // Only 8% of close nodes connect (more elegant, less busy)
+        
+        for (let i = 0; i < this.nodes.length; i++) {
+            for (let j = i + 1; j < this.nodes.length; j++) {
+                const node1 = this.nodes[i];
+                const node2 = this.nodes[j];
+                
+                const dx = node1.x - node2.x;
+                const dy = node1.y - node2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // Only connect if within maxDistance and random chance
+                if (distance < maxDistance && Math.random() > connectionProbability) {
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', `${node1.x}%`);
+                    line.setAttribute('y1', `${node1.y}%`);
+                    line.setAttribute('x2', `${node2.x}%`);
+                    line.setAttribute('y2', `${node2.y}%`);
+                    line.setAttribute('class', 'node-connection');
+                    line.setAttribute('stroke', 'rgba(99, 102, 241, 0.15)');
+                    line.setAttribute('stroke-width', '0.5');
+                    line.setAttribute('opacity', '0.3');
+                    
+                    // Store connection reference
+                    const connectionId = `${i}-${j}`;
+                    line.dataset.connectionId = connectionId;
+                    this.activeConnections.add(connectionId);
+                    
+                    // Subtle animation
+                    const animDuration = 4 + Math.random() * 3;
+                    line.style.animation = `connectionPulse ${animDuration}s infinite ease-in-out`;
+                    line.style.animationDelay = `${Math.random() * 2}s`;
+                    
+                    this.svgContainer.appendChild(line);
+                }
+            }
+        }
+    }
+    
+    createParticles() {
+        if (!this.canvas) return;
+        
+        this.particles = [];
+        
+        for (let i = 0; i < this.settings.particleCount; i++) {
+            // Elegant particles - simpler and more refined
+            const color = this.getThemeColor('particle');
+            const baseSpeed = 0.5 + Math.random() * 0.5; // Slower, more elegant
+            
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                size: 1 + Math.random() * 2,
+                speedX: (-0.3 + Math.random() * 0.6) * baseSpeed,
+                speedY: (-0.2 + Math.random() * 0.4) * baseSpeed,
+                color: color,
+                trail: [],
+                maxTrailLength: 4,
+                repulsionForce: 0.08 // Gentle repulsion
+            });
+        }
+    }
+    
+    getThemeColor(type) {
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+        const isDark = theme === 'dark';
+        
+        const colors = {
+            particle: isDark ? 'rgba(99, 102, 241, 0.12)' : 'rgba(99, 102, 241, 0.08)',
+            connection: isDark ? 'rgba(139, 92, 246, 0.1)' : 'rgba(139, 92, 246, 0.08)',
+            trail: isDark ? 'rgba(99, 102, 241, 0.04)' : 'rgba(99, 102, 241, 0.03)'
+        };
+        
+        return colors[type] || colors.particle;
+    }
+    
+    drawParticles() {
+        if (!this.ctx || !this.canvas || !this.settings.enabled) return;
+        
+        // Clear with very subtle fade for trail effect
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+        const clearColor = theme === 'dark' 
+            ? 'rgba(26, 32, 44, 0.03)' 
+            : 'rgba(248, 250, 252, 0.03)';
+        
+        this.ctx.fillStyle = clearColor;
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        // Debug: Check if particles exist
+        if (this.particles.length === 0) {
+            console.warn('Technical Background: No particles to draw');
+            this.createParticles();
+        }
+        
+        // Draw connections between close particles (high quality only)
+        if (this.settings.highQuality) {
+            this.drawParticleConnections();
+        }
+        
+        // Update and draw particles
+        this.particles.forEach(particle => {
+            // Store position for trail
+            particle.trail.push({ x: particle.x, y: particle.y });
+            if (particle.trail.length > particle.maxTrailLength) {
+                particle.trail.shift();
+            }
+            
+            // Draw trail (very subtle)
+            if (this.settings.highQuality && particle.trail.length > 1) {
+                this.ctx.beginPath();
+                this.ctx.moveTo(particle.trail[0].x, particle.trail[0].y);
+                
+                for (let i = 1; i < particle.trail.length; i++) {
+                    this.ctx.lineTo(particle.trail[i].x, particle.trail[i].y);
+                }
+                
+                this.ctx.strokeStyle = this.getThemeColor('trail');
+                this.ctx.lineWidth = 0.5;
+                this.ctx.stroke();
+            }
+            
+            // Gentle mouse interaction - particles gently avoid cursor
+            if (this.settings.mouseInteraction) {
+                const dx = particle.x - this.mouse.x; // Repulsion
+                const dy = particle.y - this.mouse.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100) {
+                    const force = (100 - distance) / 100;
+                    // Gentle repulsion for elegant effect
+                    particle.speedX += (dx / distance) * force * particle.repulsionForce;
+                    particle.speedY += (dy / distance) * force * particle.repulsionForce;
+                }
+            }
+            
+            // Update position
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+            
+            // Boundary check with wrap
+            if (particle.x < -10) particle.x = this.canvas.width + 10;
+            if (particle.x > this.canvas.width + 10) particle.x = -10;
+            if (particle.y < -10) particle.y = this.canvas.height + 10;
+            if (particle.y > this.canvas.height + 10) particle.y = -10;
+            
+            // Gentle damping
+            particle.speedX *= 0.99;
+            particle.speedY *= 0.99;
+            
+            // Draw particle
+            this.ctx.beginPath();
+            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = particle.color;
+            this.ctx.fill();
+        });
+    }
+    
+    drawParticleConnections() {
+        const maxDistance = 100; // Reduced for more elegant look
+        
+        for (let i = 0; i < this.particles.length; i++) {
+            for (let j = i + 1; j < this.particles.length; j++) {
+                const p1 = this.particles[i];
+                const p2 = this.particles[j];
+                
+                const dx = p1.x - p2.x;
+                const dy = p1.y - p2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < maxDistance) {
+                    const opacity = (1 - (distance / maxDistance)) * 0.03; // More subtle
+                    
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(p1.x, p1.y);
+                    this.ctx.lineTo(p2.x, p2.y);
+                    this.ctx.strokeStyle = this.getThemeColor('connection');
+                    this.ctx.globalAlpha = opacity;
+                    this.ctx.lineWidth = 0.5;
+                    this.ctx.stroke();
+                    this.ctx.globalAlpha = 1;
+                }
+            }
+        }
+    }
+    
+    drawWaveforms() {
+        // Elegant waveform patterns similar to reference site
+        if (!this.waveTime) this.waveTime = 0;
+        this.waveTime += 0.01;
+        
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+        const waveColor = theme === 'dark' 
+            ? 'rgba(99, 102, 241, 0.05)' 
+            : 'rgba(99, 102, 241, 0.04)';
+        
+        this.ctx.strokeStyle = waveColor;
+        this.ctx.lineWidth = 1.5;
+        this.ctx.globalAlpha = 0.6;
+        
+        // Draw 3-4 subtle waveforms
+        const waveCount = 3;
+        const waveHeight = this.canvas.height / (waveCount + 1);
+        
+        for (let i = 0; i < waveCount; i++) {
+            this.ctx.beginPath();
+            const y = waveHeight * (i + 1);
+            const amplitude = 30 + Math.sin(this.waveTime + i) * 10;
+            const frequency = 0.005 + (i * 0.002);
+            const phase = this.waveTime * 0.5 + (i * Math.PI);
+            
+            for (let x = 0; x < this.canvas.width; x += 2) {
+                const waveY = y + Math.sin(x * frequency + phase) * amplitude;
+                if (x === 0) {
+                    this.ctx.moveTo(x, waveY);
+                } else {
+                    this.ctx.lineTo(x, waveY);
+                }
+            }
+            
+            this.ctx.stroke();
+        }
+        
+        this.ctx.globalAlpha = 1;
+    }
+    
+    setupEventListeners() {
+        // Mouse movement for interactive highlights
+        if (this.settings.mouseInteraction) {
+            let mouseMoveThrottle = 0;
+            window.addEventListener('mousemove', (e) => {
+                // Throttle mouse updates for performance
+                mouseMoveThrottle++;
+                if (mouseMoveThrottle % 2 === 0) return;
+                
+                this.mouse.x = e.clientX;
+                this.mouse.y = e.clientY;
+                
+                // Update ripple position
+                if (this.rippleElement) {
+                    this.rippleElement.style.left = `${e.clientX}px`;
+                    this.rippleElement.style.top = `${e.clientY}px`;
+                    this.rippleElement.classList.add('active');
+                    
+                    // Remove active class after animation
+                    setTimeout(() => {
+                        this.rippleElement.classList.remove('active');
+                    }, 300);
+                }
+            });
+        }
+        
+        // Quality toggles (if controls are enabled)
+        document.querySelectorAll('.bg-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const quality = button.dataset.quality;
+                this.setQuality(quality);
+            });
         });
         
-        // Reset stream when it goes off screen
-        if (stream.y > canvas.height + fontSize * 10) {
-          stream.y = -fontSize * 10;
-          stream.chars = Array.from({ length: Math.floor(Math.random() * 20) + 10 }, () => 
-            techTerms[Math.floor(Math.random() * techTerms.length)]
-          );
-        }
-      });
-      
-      ctx.globalAlpha = 1;
-      animationId = requestAnimationFrame(animate);
-    };
-    
-    animate();
-    
-    // Store animation ID for cleanup
-    this.animationInstance = { cancel: () => cancelAnimationFrame(animationId), cleanup: () => window.removeEventListener('resize', resizeCanvas) };
-  }
-
-  // ============================================
-  // OPTION 3: Server Status Dashboard
-  // ============================================
-  initServerDashboard() {
-    if (!this.container) return;
-    
-    const wrapper = document.createElement('div');
-    wrapper.className = 'server-dashboard';
-    
-    const nodeCount = 48; // 8x6 grid
-    
-    for (let i = 0; i < nodeCount; i++) {
-      const node = document.createElement('div');
-      node.className = 'server-node';
-      
-      // Randomly activate some nodes (30%)
-      if (Math.random() > 0.7) {
-        node.classList.add('active');
-      }
-      
-      const indicator = document.createElement('div');
-      indicator.className = 'server-indicator';
-      indicator.style.animationDelay = `${Math.random() * 2}s`;
-      
-      const loadBar = document.createElement('div');
-      loadBar.className = 'server-load-bar';
-      
-      const loadFill = document.createElement('div');
-      loadFill.className = 'server-load-fill';
-      loadFill.style.animationDelay = `${Math.random() * 4}s`;
-      
-      loadBar.appendChild(loadFill);
-      node.appendChild(indicator);
-      node.appendChild(loadBar);
-      
-      wrapper.appendChild(node);
-      
-      // Occasionally create data transfer animations
-      if (Math.random() > 0.95) {
-        setTimeout(() => {
-          this.createDataTransfer(node, wrapper);
-        }, Math.random() * 3000);
-      }
-    }
-    
-    this.container.appendChild(wrapper);
-    
-    // Periodically trigger data transfers
-    setInterval(() => {
-      const nodes = wrapper.querySelectorAll('.server-node');
-      if (nodes.length > 0 && Math.random() > 0.8) {
-        const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
-        this.createDataTransfer(randomNode, wrapper);
-      }
-    }, 4000);
-  }
-
-  createDataTransfer(sourceNode, container) {
-    const transfer = document.createElement('div');
-    transfer.className = 'server-transfer';
-    
-    const rect = sourceNode.getBoundingClientRect();
-    const containerRect = container.getBoundingClientRect();
-    
-    const startX = rect.left - containerRect.left + rect.width / 2;
-    const startY = rect.top - containerRect.top + rect.height / 2;
-    
-    transfer.style.left = `${startX}px`;
-    transfer.style.top = `${startY}px`;
-    
-    container.appendChild(transfer);
-    
-    setTimeout(() => {
-      transfer.remove();
-    }, 3000);
-  }
-
-  // ============================================
-  // OPTION 4: Waveform Signal Processing
-  // ============================================
-  initWaveformSignal() {
-    if (!this.container) return;
-    
-    const wrapper = document.createElement('div');
-    wrapper.className = 'waveform-signal';
-    
-    const canvas = document.createElement('canvas');
-    wrapper.appendChild(canvas);
-    this.container.appendChild(wrapper);
-    
-    const ctx = canvas.getContext('2d');
-    
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Wave configuration
-    const waves = [];
-    const waveCount = 4;
-    
-    for (let i = 0; i < waveCount; i++) {
-      waves.push({
-        frequency: 0.01 + Math.random() * 0.02,
-        amplitude: 30 + Math.random() * 50,
-        phase: Math.random() * Math.PI * 2,
-        speed: 0.02 + Math.random() * 0.03,
-        yOffset: (canvas.height / (waveCount + 1)) * (i + 1),
-        wavelength: 100 + Math.random() * 200
-      });
-    }
-    
-    // Data packets
-    const packets = [];
-    const packetCount = 8;
-    
-    for (let i = 0; i < packetCount; i++) {
-      packets.push({
-        x: Math.random() * canvas.width,
-        y: (canvas.height / (waveCount + 1)) * (Math.floor(Math.random() * waveCount) + 1),
-        speed: 1 + Math.random() * 2,
-        size: 3 + Math.random() * 5,
-        opacity: 0.3 + Math.random() * 0.4
-      });
-    }
-    
-    let time = 0;
-    let animationId;
-    
-    const animate = () => {
-      // Clear with fade
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      ctx.strokeStyle = isDark ? 'rgba(66, 153, 225, 0.15)' : 'rgba(66, 153, 225, 0.08)';
-      ctx.lineWidth = 2;
-      
-      // Draw base waveforms
-      waves.forEach(wave => {
-        ctx.beginPath();
-        ctx.globalAlpha = 0.3;
-        
-        for (let x = 0; x < canvas.width; x += 2) {
-          const y = wave.yOffset + Math.sin((x * wave.frequency) + (time * wave.speed) + wave.phase) * wave.amplitude;
-          if (x === 0) {
-            ctx.moveTo(x, y);
-          } else {
-            ctx.lineTo(x, y);
-          }
+        // Respect reduced motion preference
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (reducedMotion.matches) {
+            this.settings.mouseInteraction = false;
+            this.setQuality('low');
         }
         
-        ctx.stroke();
-      });
-      
-      // Draw data packets
-      ctx.fillStyle = isDark ? 'rgba(0, 181, 216, 0.2)' : 'rgba(0, 181, 216, 0.15)';
-      packets.forEach(packet => {
-        packet.x += packet.speed;
-        if (packet.x > canvas.width) {
-          packet.x = -packet.size;
-          packet.y = (canvas.height / (waveCount + 1)) * (Math.floor(Math.random() * waveCount) + 1);
+        // Watch for theme changes
+        this.watchThemeChanges();
+        
+        // Watch for reduced motion changes
+        if (reducedMotion.addEventListener) {
+            reducedMotion.addEventListener('change', (e) => {
+                if (e.matches) {
+                    this.settings.mouseInteraction = false;
+                    this.setQuality('low');
+                }
+            });
+        }
+    }
+    
+    watchThemeChanges() {
+        const observer = new MutationObserver(() => {
+            // Update node gradients
+            const theme = document.documentElement.getAttribute('data-theme') || 'light';
+            const gradientId = theme === 'dark' ? 'nodeGradientDark' : 'nodeGradient';
+            
+            if (this.nodes) {
+                this.nodes.forEach(node => {
+                    node.element.setAttribute('fill', `url(#${gradientId})`);
+                });
+            }
+            
+            // Update particle colors
+            this.particles.forEach(particle => {
+                particle.color = this.getThemeColor('particle');
+            });
+        });
+        
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-theme']
+        });
+    }
+    
+    setQuality(quality) {
+        const bgContainer = document.getElementById('tech-background');
+        if (!bgContainer) return;
+        
+        switch(quality) {
+            case 'high':
+                this.settings.particleCount = this.isMobile ? 60 : 120;
+                this.settings.nodeCount = this.isMobile ? 20 : 30;
+                this.settings.highQuality = true;
+                this.settings.enabled = true;
+                bgContainer.classList.remove('low-quality', 'off');
+                break;
+            case 'low':
+                this.settings.particleCount = this.isMobile ? 20 : 40;
+                this.settings.nodeCount = this.isMobile ? 10 : 15;
+                this.settings.highQuality = false;
+                this.settings.enabled = true;
+                bgContainer.classList.add('low-quality');
+                bgContainer.classList.remove('off');
+                break;
+            case 'off':
+                this.settings.enabled = false;
+                bgContainer.classList.add('off');
+                break;
         }
         
-        ctx.globalAlpha = packet.opacity;
-        ctx.fillRect(packet.x, packet.y - packet.size / 2, packet.size, packet.size);
-      });
-      
-      // Occasionally draw peak indicators
-      if (Math.random() > 0.98) {
-        const peakX = Math.random() * canvas.width;
-        const peakY = waves[Math.floor(Math.random() * waves.length)].yOffset;
-        const peakHeight = 40 + Math.random() * 60;
+        // Update UI
+        document.querySelectorAll('.bg-toggle').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.quality === quality);
+        });
         
-        ctx.strokeStyle = isDark ? 'rgba(56, 178, 172, 0.4)' : 'rgba(56, 178, 172, 0.3)';
-        ctx.lineWidth = 3;
-        ctx.globalAlpha = 0.6;
-        ctx.beginPath();
-        ctx.moveTo(peakX, peakY);
-        ctx.lineTo(peakX, peakY - peakHeight);
-        ctx.stroke();
-      }
-      
-      ctx.globalAlpha = 1;
-      time += 0.016; // ~60fps
-      
-      animationId = requestAnimationFrame(animate);
-    };
-    
-    animate();
-    
-    this.animationInstance = { cancel: () => cancelAnimationFrame(animationId), cleanup: () => window.removeEventListener('resize', resizeCanvas) };
-  }
-
-  // ============================================
-  // OPTION 5: Subtle Waveform (Role-Weaver Style)
-  // Very subtle, abstract waveform background
-  // ============================================
-  initSubtleWaveform() {
-    if (!this.container) {
-      console.error('Technical Background: Container not available in initSubtleWaveform');
-      return;
-    }
-    
-    console.log('Technical Background: Initializing subtle waveform animation');
-    const wrapper = document.createElement('div');
-    wrapper.className = 'subtle-waveform';
-    
-    const canvas = document.createElement('canvas');
-    wrapper.appendChild(canvas);
-    this.container.appendChild(wrapper);
-    console.log('Technical Background: Canvas created and added to container');
-    
-    const ctx = canvas.getContext('2d');
-    
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Very subtle waveform configuration
-    const waves = [];
-    const waveCount = 3; // Fewer waves for subtlety
-    
-    for (let i = 0; i < waveCount; i++) {
-      waves.push({
-        frequency: 0.003 + Math.random() * 0.004, // Very slow
-        amplitude: 20 + Math.random() * 40,
-        phase: Math.random() * Math.PI * 2,
-        speed: 0.008 + Math.random() * 0.01, // Very slow movement
-        yOffset: (canvas.height / (waveCount + 2)) * (i + 1.5),
-        wavelength: 150 + Math.random() * 200
-      });
-    }
-    
-    // Subtle particles/glow effect
-    const particles = [];
-    const particleCount = 15;
-    
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: 1 + Math.random() * 2,
-        opacity: 0.02 + Math.random() * 0.04,
-        pulseSpeed: 0.01 + Math.random() * 0.02
-      });
-    }
-    
-    let time = 0;
-    let animationId;
-    
-    const animate = () => {
-      // Clear with very subtle fade for trailing effect
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      ctx.fillStyle = isDark ? 'rgba(26, 32, 44, 0.03)' : 'rgba(248, 250, 252, 0.03)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      // Draw very subtle waveforms
-      ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)';
-      ctx.lineWidth = 1.5;
-      ctx.globalAlpha = 0.4;
-      
-      waves.forEach(wave => {
-        ctx.beginPath();
-        
-        for (let x = 0; x < canvas.width; x += 3) {
-          const y = wave.yOffset + Math.sin((x * wave.frequency) + (time * wave.speed) + wave.phase) * wave.amplitude;
-          if (x === 0) {
-            ctx.moveTo(x, y);
-          } else {
-            ctx.lineTo(x, y);
-          }
+        // Recreate particles and nodes with new counts
+        if (this.settings.enabled) {
+            this.createParticles();
+            this.createNodes();
         }
         
-        ctx.stroke();
-      });
-      
-      // Draw subtle particles/glow
-      particles.forEach(particle => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-        
-        // Pulse opacity
-        const pulse = Math.sin(time * particle.pulseSpeed) * 0.5 + 0.5;
-        ctx.globalAlpha = particle.opacity * pulse;
-        
-        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 1)' : 'rgba(66, 153, 225, 1)';
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      
-      ctx.globalAlpha = 1;
-      time += 0.01; // Slow time progression
-      
-      animationId = requestAnimationFrame(animate);
-    };
+        // Save preference
+        localStorage.setItem('bg-quality', quality);
+    }
     
-    animate();
-    
-    this.animationInstance = { 
-      cancel: () => cancelAnimationFrame(animationId), 
-      cleanup: () => window.removeEventListener('resize', resizeCanvas) 
-    };
-  }
-
-  // ============================================
-  // Utility Methods
-  // ============================================
-  
-  watchThemeChanges() {
-    // Theme changes are handled via CSS variables, but we can update canvas-based animations
-    const observer = new MutationObserver(() => {
-      if (this.currentStyle === 'matrix-rain' || this.currentStyle === 'waveform-signal' || this.currentStyle === 'subtle-waveform') {
-        // Reinitialize to pick up new theme colors
-        this.setStyle(this.currentStyle);
-      }
-    });
-    
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-theme']
-    });
-  }
-
-  watchReducedMotion() {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    mediaQuery.addEventListener('change', (e) => {
-      this.isReducedMotion = e.matches;
-      if (e.matches) {
-        this.container.innerHTML = '';
-        if (this.animationInstance && this.animationInstance.cancel) {
-          this.animationInstance.cancel();
+    loadPreferences() {
+        const savedQuality = localStorage.getItem('bg-quality');
+        if (savedQuality) {
+            this.setQuality(savedQuality);
         }
-        if (this.animationInstance && this.animationInstance.cleanup) {
-          this.animationInstance.cleanup();
+    }
+    
+    animate() {
+        if (this.settings.enabled) {
+            this.drawParticles();
         }
-      } else {
-        this.setStyle(this.currentStyle);
-      }
-    });
-  }
-
-  startAutoCycle() {
-    if (this.autoCycleInterval) {
-      clearInterval(this.autoCycleInterval);
+        
+        this.animationId = requestAnimationFrame(() => this.animate());
     }
     
-    const styles = ['data-flow', 'matrix-rain', 'server-dashboard', 'waveform-signal'];
-    let currentIndex = styles.indexOf(this.currentStyle);
-    if (currentIndex === -1) currentIndex = 0;
+    updateColors(themeColors) {
+        // Update CSS custom properties
+        if (themeColors) {
+            document.documentElement.style.setProperty('--bg-node-primary', themeColors.primary);
+            document.documentElement.style.setProperty('--bg-node-secondary', themeColors.secondary);
+            document.documentElement.style.setProperty('--bg-particle', themeColors.primary);
+            document.documentElement.style.setProperty('--bg-connection', themeColors.secondary);
+            document.documentElement.style.setProperty('--bg-ripple', themeColors.accent);
+        }
+    }
     
-    this.autoCycleInterval = setInterval(() => {
-      if (!this.isReducedMotion) {
-        currentIndex = (currentIndex + 1) % styles.length;
-        this.switchStyle(styles[currentIndex]);
-      }
-    }, 30000); // 30 seconds
-  }
-  
-  stopAutoCycle() {
-    if (this.autoCycleInterval) {
-      clearInterval(this.autoCycleInterval);
-      this.autoCycleInterval = null;
+    destroy() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+        }
+        this.particles = [];
+        this.nodes = [];
     }
-  }
-
-  // Public API
-  switchStyle(style) {
-    if (this.animationInstance && this.animationInstance.cancel) {
-      this.animationInstance.cancel();
-    }
-    if (this.animationInstance && this.animationInstance.cleanup) {
-      this.animationInstance.cleanup();
-    }
-    this.setStyle(style);
-  }
 }
+
+// Add CSS for neural network animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes connectionPulse {
+        0%, 100% {
+            opacity: 0.3;
+            stroke-width: 1;
+        }
+        50% {
+            opacity: 0.6;
+            stroke-width: 1.2;
+        }
+    }
+`;
+document.head.appendChild(style);
 
 // Initialize when DOM is ready
 let technicalBackground;
 
 function initTechnicalBackground() {
-  try {
-    technicalBackground = new TechnicalBackground();
-    
-    // Expose to window for manual control if needed
-    window.technicalBackground = technicalBackground;
-    
-    console.log('Technical Background initialized with style:', technicalBackground.currentStyle);
-  } catch (error) {
-    console.error('Technical Background: Failed to initialize', error);
-  }
+    try {
+        technicalBackground = new TechnicalBackground();
+        
+        // Expose to window for manual control
+        window.technicalBackground = technicalBackground;
+        
+        console.log('Technical Background: Initialized successfully');
+    } catch (error) {
+        console.error('Technical Background: Failed to initialize', error);
+    }
 }
 
-// Try to initialize immediately if DOM is already loaded
+// Initialize
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initTechnicalBackground);
+    document.addEventListener('DOMContentLoaded', initTechnicalBackground);
 } else {
-  // DOM is already loaded
-  initTechnicalBackground();
+    initTechnicalBackground();
 }
 
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = TechnicalBackground;
+    module.exports = TechnicalBackground;
 }
-
