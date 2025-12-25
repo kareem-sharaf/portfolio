@@ -117,6 +117,134 @@
       }
     }
   },
+  "value": {
+    "title": {
+      "en": "How I Transform Technical Challenges into Business Solutions",
+      "ar": "كيف أحول التحديات التقنية إلى حلول أعمال"
+    },
+    "card1": {
+      "title": {
+        "en": "System Architecture & Design",
+        "ar": "هندسة وتصميم الأنظمة"
+      },
+      "focus": {
+        "en": "Planning scalable systems from ground up",
+        "ar": "تخطيط أنظمة قابلة للتوسع من الصفر"
+      },
+      "benefit": {
+        "en": "Future-proof infrastructure that grows with you",
+        "ar": "بنية تحتية مستقبلية تنمو معك"
+      }
+    },
+    "card2": {
+      "title": {
+        "en": "Full-Cycle Development",
+        "ar": "التطوير بدورة كاملة"
+      },
+      "focus": {
+        "en": "From concept to deployment and maintenance",
+        "ar": "من المفهوم إلى النشر والصيانة"
+      },
+      "benefit": {
+        "en": "One partner for your entire technical journey",
+        "ar": "شريك واحد لرحلتك التقنية الكاملة"
+      }
+    },
+    "card3": {
+      "title": {
+        "en": "Performance Optimization",
+        "ar": "تحسين الأداء"
+      },
+      "focus": {
+        "en": "Systems that are fast, reliable, efficient",
+        "ar": "أنظمة سريعة وموثوقة وفعالة"
+      },
+      "benefit": {
+        "en": "Technology that works harder so you don't have to",
+        "ar": "تقنية تعمل بجد حتى لا تضطر أنت لذلك"
+      }
+    }
+  },
+  "technology": {
+    "title": {
+      "en": "Technical Environments I Work With",
+      "ar": "البيئات التقنية التي أعمل بها"
+    },
+    "subtitle": {
+      "en": "A versatile toolkit for building robust digital solutions",
+      "ar": "مجموعة أدوات متنوعة لبناء حلول رقمية قوية"
+    },
+    "backend": {
+      "title": {
+        "en": "Backend Core",
+        "ar": "الخلفية الأساسية"
+      },
+      "description": {
+        "en": "Building robust server-side logic and APIs",
+        "ar": "بناء منطق خادم قوي وواجهات برمجة التطبيقات"
+      }
+    },
+    "frameworks": {
+      "title": {
+        "en": "Frameworks",
+        "ar": "أطر العمل"
+      },
+      "description": {
+        "en": "Modern frameworks for rapid development",
+        "ar": "أطر عمل حديثة للتطوير السريع"
+      }
+    },
+    "databases": {
+      "title": {
+        "en": "Databases",
+        "ar": "قواعد البيانات"
+      },
+      "description": {
+        "en": "Designing efficient data storage and retrieval",
+        "ar": "تصميم تخزين واسترجاع بيانات فعال"
+      }
+    },
+    "frontend": {
+      "title": {
+        "en": "Frontend",
+        "ar": "واجهة المستخدم"
+      },
+      "description": {
+        "en": "Creating intuitive user interfaces",
+        "ar": "إنشاء واجهات مستخدم بديهية"
+      }
+    },
+    "realtime": {
+      "title": {
+        "en": "Real-Time & Messaging",
+        "ar": "الوقت الفعلي والرسائل"
+      },
+      "description": {
+        "en": "Enabling instant communication and updates",
+        "ar": "تمكين الاتصال والتحديثات الفورية"
+      }
+    },
+    "apis": {
+      "title": {
+        "en": "APIs & Integration",
+        "ar": "واجهات برمجة التطبيقات والتكامل"
+      },
+      "description": {
+        "en": "Connecting systems and services seamlessly",
+        "ar": "ربط الأنظمة والخدمات بسلاسة"
+      }
+    },
+    "tools": {
+      "title": {
+        "en": "Tools",
+        "ar": "الأدوات"
+      },
+      "description": {
+        "en": "Version control and collaboration",
+        "ar": "التحكم بالإصدارات والتعاون"
+      }
+    }
+  },
   "skills": {
     "title": {
       "en": "Technical Expertise",

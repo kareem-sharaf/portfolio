@@ -302,10 +302,37 @@ if (contactForm) {
             return;
         }
         
+        // Check if access key is configured
+        const accessKey = 'YOUR_ACCESS_KEY'; // Replace with your Web3Forms access key from https://web3forms.com
+        
+        if (accessKey === 'YOUR_ACCESS_KEY') {
+            // Fallback to mailto if access key not configured
+            const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
+                `Message:\n${formData.message}`
+            );
+            
+            window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
+            
+            formMessage.className = 'form-message success';
+            formMessage.textContent = 'Opening your email client... If it doesn\'t open, please email kareem.sh.ite@gmail.com directly.';
+            formMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                contactForm.reset();
+                formMessage.style.display = 'none';
+            }, 5000);
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            return;
+        }
+        
         try {
             // Send email using Web3Forms API
-            // Note: Replace 'YOUR_ACCESS_KEY' with your actual Web3Forms access key
-            // Get your free access key from: https://web3forms.com
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
@@ -313,7 +340,7 @@ if (contactForm) {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    access_key: 'YOUR_ACCESS_KEY', // Replace with your Web3Forms access key
+                    access_key: accessKey,
                     subject: `Portfolio Contact: ${formData.projectType || 'General Inquiry'}`,
                     from_name: formData.name,
                     from_email: formData.email,
@@ -342,8 +369,19 @@ if (contactForm) {
             }
         } catch (error) {
             console.error('Error sending message:', error);
-            formMessage.className = 'form-message error';
-            formMessage.textContent = 'Failed to send message. Please try again or email kareem.sh.ite@gmail.com directly.';
+            // Fallback to mailto on error
+            const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
+                `Message:\n${formData.message}`
+            );
+            
+            window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
+            
+            formMessage.className = 'form-message success';
+            formMessage.textContent = 'Opening your email client as fallback...';
             formMessage.style.display = 'block';
         } finally {
             submitBtn.disabled = false;
