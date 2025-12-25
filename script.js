@@ -188,7 +188,7 @@ async function loadTranslations() {
         translations = await response.json();
         applyTranslations();
     } catch (error) {
-        console.error('Error loading translations:', error);
+        // Error loading translations
     }
 }
 
@@ -271,8 +271,9 @@ function applyTranslations() {
             return;
         }
         
-        // Check if the translation should be applied (respects exclusion rules)
-        if (shouldTranslate(translation)) {
+        // Always apply translation if it exists and is different from key
+        // The translation itself may contain technical terms, which is fine
+        if (translation && translation !== key) {
             // Update text content
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translation;
@@ -280,19 +281,6 @@ function applyTranslations() {
                 element.textContent = translation;
             } else {
                 element.textContent = translation;
-            }
-        } else {
-            // If translation contains non-translatable terms, use English version
-            // This ensures technical terms stay in English even in Arabic mode
-            const englishTranslation = getTranslation(key, 'en');
-            if (englishTranslation && englishTranslation !== key) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = englishTranslation;
-                } else if (element.tagName === 'LABEL') {
-                    element.textContent = englishTranslation;
-                } else {
-                    element.textContent = englishTranslation;
-                }
             }
         }
     });
@@ -432,6 +420,6 @@ if (contactForm) {
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
     link.addEventListener('click', () => {
         // You can add analytics tracking here
-        console.log('WhatsApp link clicked');
+        // WhatsApp link clicked
     });
 });

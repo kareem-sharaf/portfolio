@@ -15,7 +15,7 @@
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    overflow: hidden;
+    overflow: visible;
     opacity: 1;
     transition: opacity 0.5s ease;
     background: transparent;
@@ -81,17 +81,17 @@
    ============================================ */
 :root {
     /* Primary Colors - Soft & Elegant */
-    --bg-accent-1: rgba(99, 102, 241, 0.08);
+    --bg-accent-1: rgba(99, 102, 241, 0.15);
     /* Indigo */
-    --bg-accent-2: rgba(139, 92, 246, 0.06);
+    --bg-accent-2: rgba(139, 92, 246, 0.12);
     /* Purple */
-    --bg-accent-3: rgba(59, 130, 246, 0.05);
+    --bg-accent-3: rgba(59, 130, 246, 0.1);
     /* Blue */
 
     /* Floating Shapes */
-    --shape-primary: rgba(99, 102, 241, 0.12);
-    --shape-secondary: rgba(139, 92, 246, 0.1);
-    --shape-tertiary: rgba(59, 130, 246, 0.08);
+    --shape-primary: rgba(99, 102, 241, 0.18);
+    --shape-secondary: rgba(139, 92, 246, 0.15);
+    --shape-tertiary: rgba(59, 130, 246, 0.12);
 
     /* Wave Effects */
     --wave-primary: rgba(99, 102, 241, 0.04);
@@ -108,13 +108,13 @@
 }
 
 [data-theme="dark"] {
-    --bg-accent-1: rgba(99, 102, 241, 0.12);
-    --bg-accent-2: rgba(139, 92, 246, 0.1);
-    --bg-accent-3: rgba(59, 130, 246, 0.08);
+    --bg-accent-1: rgba(99, 102, 241, 0.2);
+    --bg-accent-2: rgba(139, 92, 246, 0.18);
+    --bg-accent-3: rgba(59, 130, 246, 0.15);
 
-    --shape-primary: rgba(99, 102, 241, 0.16);
-    --shape-secondary: rgba(139, 92, 246, 0.14);
-    --shape-tertiary: rgba(59, 130, 246, 0.12);
+    --shape-primary: rgba(99, 102, 241, 0.22);
+    --shape-secondary: rgba(139, 92, 246, 0.2);
+    --shape-tertiary: rgba(59, 130, 246, 0.18);
 
     --wave-primary: rgba(99, 102, 241, 0.06);
     --wave-secondary: rgba(139, 92, 246, 0.05);
@@ -132,34 +132,36 @@
 .binary-char {
     position: absolute;
     font-family: 'Courier New', monospace;
-    font-weight: 600;
-    color: rgba(66, 153, 225, 0.4);
+    font-weight: 700;
+    color: rgba(66, 153, 225, 0.6);
     user-select: none;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.8;
+    text-shadow: 0 0 8px rgba(66, 153, 225, 0.3);
 }
 
 [data-theme="dark"] .binary-char {
-    color: rgba(96, 165, 250, 0.5);
-    opacity: 0.7;
+    color: rgba(96, 165, 250, 0.9);
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(96, 165, 250, 0.6), 0 0 24px rgba(96, 165, 250, 0.4);
 }
 
 @keyframes binaryFloat {
     0%, 100% {
         transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 0.4;
+        opacity: 0.8;
     }
     25% {
         transform: translateY(-20px) translateX(10px) rotate(5deg);
-        opacity: 0.7;
+        opacity: 1;
     }
     50% {
         transform: translateY(-10px) translateX(-15px) rotate(-5deg);
-        opacity: 0.5;
+        opacity: 0.9;
     }
     75% {
         transform: translateY(-25px) translateX(5px) rotate(3deg);
-        opacity: 0.8;
+        opacity: 1;
     }
 }
 
@@ -168,20 +170,21 @@
    ============================================ */
 .tech-icon-wrapper {
     position: absolute;
-    opacity: 0.3;
-    color: rgba(66, 153, 225, 0.4);
+    opacity: 0.7;
+    color: rgba(66, 153, 225, 0.8);
     transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
 [data-theme="dark"] .tech-icon-wrapper {
-    color: rgba(96, 165, 250, 0.5);
-    opacity: 0.4;
+    color: rgba(96, 165, 250, 0.9);
+    opacity: 0.8;
 }
 
 .tech-icon-wrapper svg {
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0 2px 4px rgba(66, 153, 225, 0.2));
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 2px 6px rgba(66, 153, 225, 0.4));
 }
 
 [data-theme="dark"] .tech-icon-wrapper svg {
@@ -191,15 +194,15 @@
 @keyframes techIconFloat {
     0%, 100% {
         transform: translateY(0) translateX(0) rotate(0deg) scale(1);
-        opacity: 0.3;
+        opacity: 0.7;
     }
     33% {
         transform: translateY(-30px) translateX(15px) rotate(10deg) scale(1.1);
-        opacity: 0.5;
+        opacity: 0.9;
     }
     66% {
         transform: translateY(-15px) translateX(-20px) rotate(-10deg) scale(0.9);
-        opacity: 0.4;
+        opacity: 0.8;
     }
 }
 

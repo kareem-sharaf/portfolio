@@ -54,7 +54,6 @@ class TechnicalBackground {
         // Get or create canvas
         this.canvas = document.getElementById('bg-canvas');
         if (!this.canvas) {
-            console.error('Technical Background: Canvas element not found');
             return;
         }
         
@@ -64,11 +63,8 @@ class TechnicalBackground {
         // Get SVG container
         this.svgContainer = document.querySelector('.bg-svg');
         if (!this.svgContainer) {
-            console.error('Technical Background: SVG container not found');
             return;
         }
-        
-        console.log('Technical Background: Elements found successfully');
         
         // Get ripple element
         this.rippleElement = document.querySelector('.mouse-ripple');
@@ -107,7 +103,7 @@ class TechnicalBackground {
         this.nodes = [];
         
         for (let i = 0; i < this.settings.nodeCount; i++) {
-            const node = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            let node;
             
             // Random position (percentage-based for responsiveness)
             const x = Math.random() * 100;
@@ -121,6 +117,7 @@ class TechnicalBackground {
                 // Circles (60%) - Most common
                 shapeType = 'circle';
                 size = 6 + Math.random() * 10; // 6-16px
+                node = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 node.setAttribute('cx', `${x}%`);
                 node.setAttribute('cy', `${y}%`);
                 node.setAttribute('r', size);
@@ -139,11 +136,12 @@ class TechnicalBackground {
                 shapeType = 'diamond';
                 size = 10 + Math.random() * 8; // 10-18px
                 node = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+                // Convert percentage to viewBox coordinates (0-100)
                 const points = [
-                    `${x}%,${y - size/2}%`,
-                    `${x + size/2}%,${y}%`,
-                    `${x}%,${y + size/2}%`,
-                    `${x - size/2}%,${y}%`
+                    `${x},${y - size/2}`,
+                    `${x + size/2},${y}`,
+                    `${x},${y + size/2}`,
+                    `${x - size/2},${y}`
                 ].join(' ');
                 node.setAttribute('points', points);
             }
@@ -178,7 +176,6 @@ class TechnicalBackground {
             });
         }
         
-        console.log(`Technical Background: Created ${this.nodes.length} nodes`);
         
         // Create connections between nearby nodes
         this.createConnections();
@@ -234,13 +231,15 @@ class TechnicalBackground {
     
     createBinaryCode() {
         const binaryLayer = document.getElementById('binary-layer');
-        if (!binaryLayer) return;
+        if (!binaryLayer) {
+            return;
+        }
         
         // Clear existing
         binaryLayer.innerHTML = '';
         
         // Create binary code elements (0 and 1)
-        const binaryCount = this.isMobile ? 30 : 50;
+        const binaryCount = this.isMobile ? 40 : 60;
         const binaryChars = ['0', '1'];
         
         for (let i = 0; i < binaryCount; i++) {
@@ -257,38 +256,41 @@ class TechnicalBackground {
             const duration = 15 + Math.random() * 10;
             binary.style.animation = `binaryFloat ${duration}s infinite ease-in-out ${delay}s`;
             
-            // Random size
-            const size = 12 + Math.random() * 8;
+            // Random size - make them bigger and more visible
+            const size = 16 + Math.random() * 12;
             binary.style.fontSize = `${size}px`;
             
             binaryLayer.appendChild(binary);
         }
+        
     }
     
     createTechIcons() {
         const techIconsLayer = document.getElementById('tech-icons-layer');
-        if (!techIconsLayer) return;
+        if (!techIconsLayer) {
+            return;
+        }
         
         // Clear existing
         techIconsLayer.innerHTML = '';
         
-        // Tech icons SVG paths
+        // Tech icons SVG paths - make them bigger
         const techIcons = [
             // Database icon
-            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><ellipse cx="12" cy="19" rx="9" ry="3"/><line x1="3" y1="5" x2="3" y2="19"/><line x1="21" y1="5" x2="21" y2="19"/></svg>',
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><ellipse cx="12" cy="19" rx="9" ry="3"/><line x1="3" y1="5" x2="3" y2="19"/><line x1="21" y1="5" x2="21" y2="19"/></svg>',
             // Server icon
-            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>',
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>',
             // Code icon
-            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
             // API icon
-            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>',
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>',
             // Network icon
-            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="7.5" y1="7.5" x2="10.5" y2="10.5"/><line x1="13.5" y1="10.5" x2="16.5" y2="7.5"/><line x1="7.5" y1="16.5" x2="10.5" y2="13.5"/><line x1="13.5" y1="13.5" x2="16.5" y2="16.5"/></svg>',
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="7.5" y1="7.5" x2="10.5" y2="10.5"/><line x1="13.5" y1="10.5" x2="16.5" y2="7.5"/><line x1="7.5" y1="16.5" x2="10.5" y2="13.5"/><line x1="13.5" y1="13.5" x2="16.5" y2="16.5"/></svg>',
             // Terminal icon
-            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>'
+            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>'
         ];
         
-        const iconCount = this.isMobile ? 8 : 15;
+        const iconCount = this.isMobile ? 12 : 20;
         
         for (let i = 0; i < iconCount; i++) {
             const iconWrapper = document.createElement('div');
@@ -313,6 +315,7 @@ class TechnicalBackground {
             
             techIconsLayer.appendChild(iconWrapper);
         }
+        
     }
     
     createParticles() {
@@ -358,15 +361,14 @@ class TechnicalBackground {
         // Clear with very subtle fade for trail effect
         const theme = document.documentElement.getAttribute('data-theme') || 'light';
         const clearColor = theme === 'dark' 
-            ? 'rgba(26, 32, 44, 0.03)' 
-            : 'rgba(248, 250, 252, 0.03)';
+            ? 'rgba(15, 23, 42, 0.05)' 
+            : 'rgba(248, 250, 252, 0.05)';
         
         this.ctx.fillStyle = clearColor;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
-        // Debug: Check if particles exist
+        // Check if particles exist
         if (this.particles.length === 0) {
-            console.warn('Technical Background: No particles to draw');
             this.createParticles();
         }
         
@@ -679,14 +681,18 @@ let technicalBackground;
 
 function initTechnicalBackground() {
     try {
+        // Check if background is disabled in localStorage
+        const bgQuality = localStorage.getItem('bg-quality');
+        if (bgQuality === 'off') {
+            return;
+        }
+        
         technicalBackground = new TechnicalBackground();
         
         // Expose to window for manual control
         window.technicalBackground = technicalBackground;
-        
-        console.log('Technical Background: Initialized successfully');
     } catch (error) {
-        console.error('Technical Background: Failed to initialize', error);
+        // Failed to initialize
     }
 }
 

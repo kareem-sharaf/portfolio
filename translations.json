@@ -31,8 +31,8 @@
       "ar": "من الرؤية إلى الواقع القابل للتوسع"
     },
     "subHeadline": {
-      "en": "Software Engineering Partner & System Architect",
-      "ar": "شريك هندسة البرمجيات ومهندس الأنظمة"
+      "en": "Backend Engineer who builds scalable systems",
+      "ar": "مهندس خلفية يبني أنظمة قابلة للتوسع"
     },
     "tagline": {
       "en": "Building robust digital foundations that power business growth",
@@ -72,8 +72,8 @@
     },
     "cta": {
       "viewProjects": {
-        "en": "View My Projects",
-        "ar": "عرض مشاريعي"
+        "en": "View Projects →",
+        "ar": "عرض المشاريع ←"
       },
       "getInTouch": {
         "en": "Get In Touch",
@@ -90,13 +90,17 @@
       "en": "About Me",
       "ar": "نبذة عني"
     },
+    "subtitle": {
+      "en": "Building robust digital foundations that power business growth",
+      "ar": "بناء أسس رقمية قوية تدعم نمو الأعمال"
+    },
     "lead": {
       "en": "I believe backend systems should be invisible yet indispensable. With 5+ production systems across healthcare, education, and e-commerce, I specialize in architecting robust, scalable solutions that handle complex business logic seamlessly.",
       "ar": "أؤمن بأن أنظمة الخلفية يجب أن تكون غير مرئية ولكن لا غنى عنها. مع أكثر من 5 أنظمة إنتاجية في مجالات الرعاية الصحية والتعليم والتجارة الإلكترونية، أتخصص في تصميم حلول قوية وقابلة للتوسع تتعامل مع منطق الأعمال المعقد بسلاسة."
     },
     "paragraph1": {
       "en": "As a Backend Software Engineer & Architect, I've successfully delivered enterprise-grade systems handling real-time communication, payment processing, multi-vendor architectures, and complex data workflows. My expertise spans multiple technologies including Laravel, Django, Spring Boot, and various cloud services.",
-      "ar": "كمهندس برمجيات ومهندس معماري للأنظمة الخلفية، نجحت في تقديم أنظمة على مستوى المؤسسات تتعامل مع الاتصالات في الوقت الفعلي ومعالجة المدفوعات وهندسة متعددة البائعين وتدفقات البيانات المعقدة. تمتد خبرتي عبر تقنيات متعددة بما في ذلك Laravel وDjango وSpring Boot وخدمات السحابة المختلفة."
+      "ar": "كمهندس برمجيات خلفية ومهندس معماري، نجحت في تقديم أنظمة على مستوى المؤسسات تتعامل مع الاتصالات في الوقت الفعلي ومعالجة المدفوعات والهندسة المعمارية متعددة البائعين وتدفقات البيانات المعقدة. تمتد خبرتي عبر تقنيات متعددة بما في ذلك Laravel وDjango وSpring Boot وخدمات السحابة المختلفة."
     },
     "paragraph2": {
       "en": "I focus on clean code, scalable architectures, and measurable impact. Every system I build is designed with performance, security, and maintainability in mind.",
@@ -827,6 +831,10 @@
       }
     },
     "linkedin": {
+      "title": {
+        "en": "LinkedIn",
+        "ar": "لينكد إن"
+      },
       "description": {
         "en": "Connect professionally",
         "ar": "تواصل بشكل احترافي"
@@ -837,6 +845,10 @@
       }
     },
     "github": {
+      "title": {
+        "en": "GitHub",
+        "ar": "جيت هاب"
+      },
       "description": {
         "en": "View my code and projects",
         "ar": "عرض الكود والمشاريع"
