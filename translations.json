@@ -4,16 +4,20 @@
       "en": "Home",
       "ar": "الرئيسية"
     },
-    "about": {
-      "en": "About",
-      "ar": "نبذة عني"
+    "services": {
+      "en": "Services",
+      "ar": "الخدمات"
     },
-    "skills": {
-      "en": "Skills",
-      "ar": "المهارات"
+    "technology": {
+      "en": "Technology",
+      "ar": "التقنيات"
+    },
+    "approach": {
+      "en": "Approach",
+      "ar": "المنهجية"
     },
     "projects": {
-      "en": "Projects",
+      "en": "Work",
       "ar": "المشاريع"
     },
     "contact": {
@@ -22,6 +26,38 @@
     }
   },
   "hero": {
+    "mainHeadline": {
+      "en": "From Vision to Scalable Reality",
+      "ar": "من الرؤية إلى الواقع القابل للتوسع"
+    },
+    "subHeadline": {
+      "en": "Software Engineering Partner & System Architect",
+      "ar": "شريك هندسة البرمجيات ومهندس الأنظمة"
+    },
+    "tagline": {
+      "en": "Building robust digital foundations that power business growth",
+      "ar": "بناء أسس رقمية قوية تدعم نمو الأعمال"
+    },
+    "value1": {
+      "en": "Full-cycle system design & implementation",
+      "ar": "تصميم وتنفيذ الأنظمة بدورة كاملة"
+    },
+    "value2": {
+      "en": "Scalable architecture for future growth",
+      "ar": "هندسة معمارية قابلة للتوسع للنمو المستقبلي"
+    },
+    "value3": {
+      "en": "Clean code that's maintainable and efficient",
+      "ar": "كود نظيف قابل للصيانة وفعال"
+    },
+    "ctaPrimary": {
+      "en": "Discuss Your Project →",
+      "ar": "ناقش مشروعك ←"
+    },
+    "ctaSecondary": {
+      "en": "View Technical Expertise",
+      "ar": "عرض الخبرة التقنية"
+    },
     "title": {
       "en": "Engineering Scalable Systems",
       "ar": "هندسة أنظمة قابلة للتوسع"
@@ -366,4 +402,3 @@
     }
   }
 }
-

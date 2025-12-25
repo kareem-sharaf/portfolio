@@ -122,8 +122,9 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // ============================================
-// Language Switcher (if translations are needed)
+// Language Switcher & Translation System
 // ============================================
+let translations = {};
 let currentLang = localStorage.getItem('language') || 'en';
 
 // List of project names that should NOT be translated
@@ -137,6 +138,37 @@ const projectNamesNoTranslate = [
     'E-Learning System'
 ];
 
+// Load translations from JSON file
+async function loadTranslations() {
+    try {
+        const response = await fetch('translations.json');
+        translations = await response.json();
+        applyTranslations();
+    } catch (error) {
+        console.error('Error loading translations:', error);
+    }
+}
+
+// Get translation by key
+function getTranslation(key) {
+    const keys = key.split('.');
+    let value = translations;
+    
+    for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+            value = value[k];
+        } else {
+            return key; // Return key if translation not found
+        }
+    }
+    
+    if (typeof value === 'object' && currentLang in value) {
+        return value[currentLang];
+    }
+    
+    return key; // Fallback to key
+}
+
 // Function to check if text should be translated
 function shouldTranslate(text) {
     // Check if text is a project name that should not be translated
@@ -145,29 +177,31 @@ function shouldTranslate(text) {
     );
 }
 
-// Enhanced translation function that respects no-translate elements
-// This ensures project names like "Umrain", "Jaramana", "Pear", "OfferMe" are never translated
-function applyTranslationsSafe() {
-    // Skip elements with data-no-translate attribute
-    // Usage in HTML: <h3 data-i18n="projects.umrain.title" data-no-translate>Umrain</h3>
+// Apply translations to all elements with data-i18n attribute
+function applyTranslations() {
+    const htmlElement = document.documentElement;
+    htmlElement.setAttribute('lang', currentLang);
+    htmlElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+    
+    // Translate all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         // Check if element has data-no-translate attribute
         if (element.hasAttribute('data-no-translate')) {
             return; // Skip this element - it should not be translated
         }
         
-        // Check if the text content is a project name that should not be translated
-        const originalText = element.textContent.trim();
-        if (!shouldTranslate(originalText)) {
-            return; // Skip project names - keep them in original language
-        }
+        const key = element.getAttribute('data-i18n');
+        const translation = getTranslation(key);
         
-        // Apply translation here if translation system is added
-        // const key = element.getAttribute('data-i18n');
-        // const translation = getTranslation(key);
-        // if (translation && translation !== key) {
-        //     element.textContent = translation;
-        // }
+        // Check if the translation is a project name that should not be translated
+        if (translation && translation !== key && shouldTranslate(translation)) {
+            // Update text content
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translation;
+            } else {
+                element.textContent = translation;
+            }
+        }
     });
 }
 
@@ -182,8 +216,8 @@ function initLanguageSwitcher() {
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            // Apply translations (respecting no-translate elements)
-            applyTranslationsSafe();
+            // Apply translations
+            applyTranslations();
         });
     });
     
@@ -195,8 +229,9 @@ function initLanguageSwitcher() {
     });
 }
 
-// Initialize language switcher
+// Initialize language switcher and load translations
 initLanguageSwitcher();
+loadTranslations();
 
 // ============================================
 // Initialize on DOM Load
@@ -212,48 +247,108 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroVisual) {
         heroVisual.style.animation = 'fadeInRight 0.8s ease';
     }
+    
+    // Apply translations after DOM is loaded
+    if (Object.keys(translations).length > 0) {
+        applyTranslations();
+    }
 });
 
 // ============================================
-// Contact Form Handling
+// Contact Form Handling with Web3Forms
 // ============================================
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+        
+        // Disable submit button
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        // Hide previous messages
+        formMessage.style.display = 'none';
         
         // Get form data
         const formData = {
-            name: document.getElementById('contactName').value,
-            email: document.getElementById('contactEmail').value,
+            name: document.getElementById('contactName').value.trim(),
+            email: document.getElementById('contactEmail').value.trim(),
             projectType: document.getElementById('contactProjectType').value,
-            message: document.getElementById('contactMessage').value
+            message: document.getElementById('contactMessage').value.trim()
         };
         
-        // Create mailto link with form data
-        const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
-        const body = encodeURIComponent(
-            `Name: ${formData.name}\n` +
-            `Email: ${formData.email}\n` +
-            `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
-            `Message:\n${formData.message}`
-        );
+        // Validate form
+        if (!formData.name || !formData.email || !formData.message) {
+            formMessage.className = 'form-message error';
+            formMessage.textContent = 'Please fill in all required fields.';
+            formMessage.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            return;
+        }
         
-        // Open email client
-        window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            formMessage.className = 'form-message error';
+            formMessage.textContent = 'Please enter a valid email address.';
+            formMessage.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            return;
+        }
         
-        // Show success message
-        formMessage.className = 'form-message success';
-        formMessage.textContent = 'Opening your email client... If it doesn\'t open, please email kareem.sh.ite@gmail.com directly.';
-        formMessage.style.display = 'block';
-        
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            contactForm.reset();
-            formMessage.style.display = 'none';
-        }, 5000);
+        try {
+            // Send email using Web3Forms API
+            // Note: Replace 'YOUR_ACCESS_KEY' with your actual Web3Forms access key
+            // Get your free access key from: https://web3forms.com
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: 'YOUR_ACCESS_KEY', // Replace with your Web3Forms access key
+                    subject: `Portfolio Contact: ${formData.projectType || 'General Inquiry'}`,
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    message: `Project Type: ${formData.projectType || 'Not specified'}\n\nMessage:\n${formData.message}`,
+                    to_email: 'kareem.sh.ite@gmail.com'
+                })
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // Show success message
+                formMessage.className = 'form-message success';
+                formMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            } else {
+                throw new Error(result.message || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            formMessage.className = 'form-message error';
+            formMessage.textContent = 'Failed to send message. Please try again or email kareem.sh.ite@gmail.com directly.';
+            formMessage.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        }
     });
 }
 
