@@ -630,6 +630,22 @@
       "result": {
         "en": "Eliminated manual scheduling conflicts and paper-based record keeping entirely. The dual authentication model meets HIPAA-aligned security requirements out of the box. Real-time patient-doctor chat reduced phone-based coordination overhead. Full rescheduling history gives staff complete visibility into each patient's care continuity. Reduced administrative workload by 60% and measurably improved patient satisfaction.",
         "ar": "قضى على تعارضات الجدولة اليدوية وحفظ السجلات الورقية بالكامل. نموذج المصادقة المزدوجة يلبي متطلبات الأمان المتوافقة مع HIPAA من الصندوق. قللت الدردشة الفورية بين المريض والطبيب العبء الإداري للتنسيق الهاتفي. يمنح تاريخ إعادة الجدولة الكامل فريق العمل رؤية شاملة لاستمرارية رعاية كل مريض. قلّل عبء العمل الإداري بنسبة 60% وحسّن رضا المرضى بشكل ملموس."
+      },
+      "metric1": {
+        "en": "Medical records locked after finalization — no modification possible",
+        "ar": "السجلات الطبية تُقفل بعد الإنهاء — لا تعديل ممكن"
+      },
+      "metric2": {
+        "en": "Separate employee/patient endpoints preventing role manipulation",
+        "ar": "نقاط نهاية منفصلة للموظفين/المرضى تمنع التلاعب بالأدوار"
+      },
+      "metric3": {
+        "en": "Schedule engine with holiday awareness and slot generation",
+        "ar": "محرك جدولة مع وعي بالعطل الرسمية وتوليد الفترات"
+      },
+      "metric4": {
+        "en": "Parent-child bookings preserving full rescheduling history",
+        "ar": "حجوزات أب-فرع تحفظ كامل تاريخ إعادة الجدولة"
       }
     },
     "elearning": {
@@ -664,6 +680,22 @@
       "result": {
         "en": "Enabled structured online learning for 5,000+ students across a proper academic hierarchy. Resumable uploads eliminated instructor frustration over dropped connections for large lecture files. Accurate progress tracking gives students and admins clear visibility into completion status at all times. Course completion rate increased by 35%. Automated enrollment and payment processing significantly reduced administrative overhead.",
         "ar": "مكّن التعلم الإلكتروني المنظم لأكثر من 5000 طالب عبر هيكل أكاديمي حقيقي. الرفع القابل للاستئناف أزال إحباط المدرسين من ضياع ملفات المحاضرات الكبيرة عند انقطاع الاتصال. تتبع التقدم الدقيق يمنح الطلاب والمسؤولين رؤية واضحة لحالة الإتمام في كل وقت. ارتفع معدل إتمام الدورات بنسبة 35%. أتمتة التسجيل والدفع قلّصت العبء الإداري بشكل ملحوظ."
+      },
+      "metric1": {
+        "en": "Progress queries optimized via denormalization + signals",
+        "ar": "استعلامات التقدم محسّنة عبر إلغاء التطبيع والإشارات"
+      },
+      "metric2": {
+        "en": "Designed for university-scale concurrent enrollment",
+        "ar": "مصمم للتسجيل المتزامن على نطاق جامعي"
+      },
+      "metric3": {
+        "en": "Chunked video uploads surviving connection drops",
+        "ar": "رفع فيديو مجزّأ يتحمل انقطاع الاتصال"
+      },
+      "metric4": {
+        "en": "Celery tasks for batch recalculation and heavy operations",
+        "ar": "مهام Celery لإعادة الحساب الدفعي والعمليات الثقيلة"
       }
     },
     "umrain": {
@@ -698,6 +730,22 @@
       "result": {
         "en": "One platform serving 6 distinct travel service types under a unified customer experience. The modular design allows new service types to be onboarded without architectural changes. The commission model scales vendor count without upfront cost exposure. Multi-gateway payment support (Stripe, PayPal, Paystack) reduces checkout abandonment across international markets.",
         "ar": "منصة واحدة تخدم 6 أنواع خدمات سفر مختلفة تحت تجربة عملاء موحدة. يتيح التصميم المعياري إضافة أنواع خدمات جديدة دون تغييرات معمارية. نموذج العمولة يُوسّع عدد البائعين دون التعرض لتكاليف مسبقة. دعم بوابات الدفع المتعددة (Stripe، PayPal، Paystack) يقلل التخلي عن عملية الدفع في الأسواق الدولية."
+      },
+      "metric1": {
+        "en": "Unified through one polymorphic booking interface",
+        "ar": "موحدة عبر واجهة حجز متعددة الأشكال واحدة"
+      },
+      "metric2": {
+        "en": "Integrated via Strategy pattern (Stripe, PayPal, Paystack)",
+        "ar": "مدمجة عبر نمط Strategy (Stripe، PayPal، Paystack)"
+      },
+      "metric3": {
+        "en": "New service types added without modifying core booking logic",
+        "ar": "أنواع خدمات جديدة تُضاف دون تعديل منطق الحجز الأساسي"
+      },
+      "metric4": {
+        "en": "Atomic bookings with commission calculation and payment",
+        "ar": "حجوزات ذرية مع حساب العمولة والدفع"
       }
     },
     "pear": {
@@ -732,6 +780,22 @@
       "result": {
         "en": "Providers can reach patients beyond their physical catchment area with no dependency on external tools. Atomic slot reservation handles concurrent booking attempts reliably under load. The verified-provider gate maintains platform quality without manual admin intervention. The hold-and-capture model eliminates payment disputes for no-shows and late cancellations.",
         "ar": "يستطيع المزودون الوصول إلى المرضى خارج نطاقهم الجغرافي دون الاعتماد على أدوات خارجية. حجز الفترات الذري يتعامل بشكل موثوق مع محاولات الحجز المتزامنة تحت الضغط. بوابة التحقق من المزودين تحافظ على جودة المنصة دون تدخل يدوي من الإدارة. نموذج الاحتجاز والالتقاط يُلغي نزاعات الدفع عند الغياب أو الإلغاء المتأخر."
+      },
+      "metric1": {
+        "en": "Slot reservation designed to prevent double-booking",
+        "ar": "حجز فترات مصمم لمنع الحجز المزدوج"
+      },
+      "metric2": {
+        "en": "Dynamic Agora token generation scoped to each video room",
+        "ar": "توليد رموز Agora ديناميكية محددة النطاق لكل غرفة فيديو"
+      },
+      "metric3": {
+        "en": "Payment charged only after session completes via Stripe",
+        "ar": "الدفع يُحصّل فقط بعد اكتمال الجلسة عبر Stripe"
+      },
+      "metric4": {
+        "en": "Provider features unlocked progressively via verification workflow",
+        "ar": "ميزات المزود تُفتح تدريجياً عبر سير عمل التحقق"
       }
     },
     "offerme": {
@@ -766,6 +830,22 @@
       "result": {
         "en": "Buyers and sellers operate from a single account without friction or confusion. The dynamic field system has the capacity to absorb new service categories without a single migration. Multilingual notifications improve engagement across different markets. Efficient offer comparison workflows reduced average time-to-contract by 50%.",
         "ar": "المشترون والبائعون يعملون من حساب واحد دون احتكاك أو ارتباك. نظام الحقول الديناميكي قادر على استيعاب فئات خدمات جديدة دون migration واحد. الإشعارات متعددة اللغات تُحسّن المشاركة عبر أسواق مختلفة. سير عمل مقارنة العروض الفعّال قلّص متوسط وقت التعاقد بنسبة 50%."
+      },
+      "metric1": {
+        "en": "Single account with client/provider abilities via token scopes",
+        "ar": "حساب واحد بقدرات عميل/مزود عبر نطاقات الرموز"
+      },
+      "metric2": {
+        "en": "New service categories added without database migrations",
+        "ar": "فئات خدمات جديدة تُضاف دون ترحيلات قواعد البيانات"
+      },
+      "metric3": {
+        "en": "Presence channels with read receipts via Laravel Broadcasting",
+        "ar": "قنوات حضور مع إيصالات قراءة عبر Laravel Broadcasting"
+      },
+      "metric4": {
+        "en": "FCM notifications sent in each user's preferred language",
+        "ar": "إشعارات FCM تُرسل بلغة كل مستخدم المفضلة"
       }
     },
     "cards": {
