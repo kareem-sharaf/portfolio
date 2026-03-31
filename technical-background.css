@@ -29,12 +29,15 @@
     display: none;
 }
 
-/* GPU Acceleration */
-.technical-background,
-.technical-background * {
-    will-change: transform, opacity;
+/* GPU Acceleration — scoped to canvas and animated layers only */
+.technical-background {
     transform: translateZ(0);
     backface-visibility: hidden;
+}
+
+.bg-canvas,
+.bg-svg {
+    will-change: transform, opacity;
 }
 
 /* ============================================
@@ -585,4 +588,17 @@
 
 .technical-background.low-quality .bg-canvas {
     image-rendering: pixelated;
+}
+
+/* Mobile: hide canvas, show subtle static gradient */
+@media (max-width: 768px) {
+    .technical-background .bg-canvas,
+    .technical-background .bg-svg {
+        display: none;
+    }
+
+    .technical-background {
+        background: radial-gradient(ellipse at 30% 20%, rgba(66, 153, 225, 0.06) 0%, transparent 60%),
+                    radial-gradient(ellipse at 70% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 60%);
+    }
 }

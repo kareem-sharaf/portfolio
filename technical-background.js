@@ -686,7 +686,12 @@ function initTechnicalBackground() {
         if (bgQuality === 'off') {
             return;
         }
-        
+
+        // Skip canvas animation on mobile for better performance/battery
+        if (window.innerWidth <= 768) {
+            return;
+        }
+
         technicalBackground = new TechnicalBackground();
         
         // Expose to window for manual control

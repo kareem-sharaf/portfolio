@@ -43,26 +43,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ============================================
 // Active Navigation Highlighting
 // ============================================
+// Throttled scroll handler using requestAnimationFrame
+let scrollTicking = false;
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-    const headerHeight = 100;
+    if (!scrollTicking) {
+        requestAnimationFrame(() => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+            const headerHeight = 100;
 
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - headerHeight;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - headerHeight;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('active');
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    if (navLink && !navLink.closest('.nav-brand')) {
+                        navLink.classList.add('active');
+                    }
+                }
             });
-            if (navLink && !navLink.closest('.nav-brand')) {
-                navLink.classList.add('active');
-            }
-        }
-    });
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }
 });
 
 // ============================================
