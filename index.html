@@ -43,6 +43,13 @@
     }
     </script>
 
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="32x32">
+    <link rel="icon" href="assets/favicon/icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/favicon/icon-192.png">
+    <link rel="manifest" href="manifest.json">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -122,10 +129,10 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                <li><a href="#engineering-mindset" data-i18n="nav.mindset">Engineering</a></li>
-                <li><a href="#technology" data-i18n="nav.technology">Technology</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Work</a></li>
                 <li><a href="#case-study" data-i18n="nav.casestudy">Case Study</a></li>
+                <li><a href="#engineering-mindset" data-i18n="nav.mindset">Engineering</a></li>
+                <li><a href="#technology" data-i18n="nav.technology">Technology</a></li>
                 <li><a href="#recruiters" data-i18n="nav.recruiters">Profile</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
@@ -213,58 +220,635 @@
         </div>
     </section>
 
-    <!-- Value Proposition Section -->
-    <section id="value" class="value-proposition">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title" data-i18n="value.title">How I Transform Technical Challenges into Business
-                Solutions</h2>
-            <p class="section-subtitle" data-i18n="value.subtitle">Building systems that drive real business value and
-                measurable results</p>
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="9" y1="3" x2="9" y2="21"></line>
-                            <line x1="3" y1="9" x2="21" y2="9"></line>
-                        </svg>
+            <h2 class="section-title" data-i18n="projects.title">Selected System Implementations</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Real solutions for real business challenges</p>
+
+            <div class="projects-grid">
+                <!-- Umrain - Multi-Vendor Travel Marketplace -->
+                <div class="project-card project-card-collapsed">
+                    <div class="project-screenshot">
+                        <img src="assets/projects/umrain.webp" alt="Umrain Travel Marketplace dashboard" loading="lazy" width="600" height="340">
                     </div>
-                    <h3 data-i18n="value.card1.title">System Architecture & Design</h3>
-                    <p class="value-focus" data-i18n="value.card1.focus">Planning scalable systems from ground up</p>
-                    <p class="value-benefit" data-i18n="value.card1.benefit">Future-proof infrastructure that grows with
-                        your business without costly rewrites</p>
+                    <div class="project-icon">✈️</div>
+                    <h3 data-i18n="projects.umrain.title">Umrain - Multi-Vendor Travel Marketplace</h3>
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Stripe</span>
+                        <span>Pusher</span>
+                    </div>
+                    <div class="project-challenge">
+                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
+                        <span data-i18n="projects.umrain.problem">Need for a unified booking platform supporting 6+
+                            service types (hotels, tours, flights, boats, cars, events) with different booking models,
+                            pricing structures, and availability systems. Required commission engine, multi-currency
+                            support, and vendor management.</span>
+                    </div>
+                    <div class="project-details-collapsible">
+                        <div class="project-solution">
+                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
+                            <ul>
+                                <li data-i18n="projects.umrain.solution1">Polymorphic booking architecture allowing
+                                    unified
+                                    booking flow across diverse service types</li>
+                                <li data-i18n="projects.umrain.solution2">Modular architecture with service-specific
+                                    modules
+                                    (Hotel, Tour, Flight, etc.) following consistent patterns</li>
+                                <li data-i18n="projects.umrain.solution3">Dynamic pricing engine handling seasonal
+                                    rates,
+                                    discounts, and multi-currency conversions</li>
+                                <li data-i18n="projects.umrain.solution4">Commission system with revenue sharing, refund
+                                    handling, and financial reporting</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <strong data-i18n="projects.umrain.technologies">Technologies:</strong>
+                            <span>Laravel 10, MySQL, Eloquent ORM, Polymorphic Relationships, Stripe/PayPal/Paystack,
+                                Multi-Gateway Payment Integration, Pusher (Real-Time), Spatie Permission, Nested Sets
+                                for
+                                Hierarchical Data</span>
+                        </div>
+                        <div class="project-outcome">
+                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
+                            <span data-i18n="projects.umrain.result">One-stop booking platform supporting 6 service
+                                types
+                                with unified user experience. Modular architecture enables rapid addition of new service
+                                types. Commission-based revenue model scales without upfront vendor costs. Handles
+                                complex
+                                pricing scenarios including seasonal rates and multi-currency transactions.</span>
+                        </div>
+                        <div class="project-metrics">
+                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <span class="metric-number">6 types</span>
+                                    <span class="metric-desc" data-i18n="projects.umrain.metric1">Unified through one polymorphic booking interface</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">3 gateways</span>
+                                    <span class="metric-desc" data-i18n="projects.umrain.metric2">Integrated via Strategy pattern (Stripe, PayPal, Paystack)</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Modular</span>
+                                    <span class="metric-desc" data-i18n="projects.umrain.metric3">New service types added without modifying core booking logic</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Transactional</span>
+                                    <span class="metric-desc" data-i18n="projects.umrain.metric4">Atomic bookings with commission calculation and payment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
+                        <span class="toggle-text-expand">View Details →</span>
+                        <span class="toggle-text-collapse">Show Less ↑</span>
+                    </button>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                <!-- OfferMe - B2B Service Marketplace -->
+                <div class="project-card project-card-collapsed">
+                    <div class="project-screenshot">
+                        <img src="assets/projects/offerme.webp" alt="OfferMe B2B Service Marketplace" loading="lazy" width="600" height="340">
                     </div>
-                    <h3 data-i18n="value.card2.title">Full-Cycle Development</h3>
-                    <p class="value-focus" data-i18n="value.card2.focus">From concept to deployment and maintenance</p>
-                    <p class="value-benefit" data-i18n="value.card2.benefit">One partner for your entire technical
-                        journey - no handoffs, no delays</p>
+                    <div class="project-icon">💼</div>
+                    <h3 data-i18n="projects.offerme.title">OfferMe - B2B Service Marketplace</h3>
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Firebase</span>
+                        <span>Pusher</span>
+                    </div>
+                    <div class="project-challenge">
+                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
+                        <span data-i18n="projects.offerme.problem">B2B marketplace requiring multi-role users (clients
+                            and providers on same account), real-time chat with presence tracking, category-specific
+                            dynamic fields without schema changes, and multilingual push notifications in user-preferred
+                            languages.</span>
+                    </div>
+                    <div class="project-details-collapsible">
+                        <div class="project-solution">
+                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
+                            <ul>
+                                <li data-i18n="projects.offerme.solution1">Ability-based authentication tokens allowing
+                                    single account with dual roles (client/provider)</li>
+                                <li data-i18n="projects.offerme.solution2">Thread-based messaging with Laravel
+                                    Broadcasting
+                                    presence channels for real-time chat and read receipts</li>
+                                <li data-i18n="projects.offerme.solution3">Polymorphic dynamic field system enabling
+                                    category-specific request attributes without database schema changes</li>
+                                <li data-i18n="projects.offerme.solution4">Multilingual FCM integration storing language
+                                    preferences and sending parallel notification batches</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <strong data-i18n="projects.offerme.technologies">Technologies:</strong>
+                            <span>Laravel 10, Laravel Sanctum, Laravel Broadcasting, MySQL, Firebase Cloud Messaging,
+                                Pusher, Spatie Translatable, Spatie Permission, Eloquent Polymorphic Relationships,
+                                Event-Driven Architecture</span>
+                        </div>
+                        <div class="project-outcome">
+                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
+                            <span data-i18n="projects.offerme.result">Streamlined matching between service seekers and
+                                providers with real-time communication. Dynamic field system adapts to new service
+                                categories without code changes. Multilingual notifications improve engagement across
+                                user base. Efficient offer comparison workflow designed to shorten time-to-contract.</span>
+                        </div>
+                        <div class="project-metrics">
+                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <span class="metric-number">Dual-role</span>
+                                    <span class="metric-desc" data-i18n="projects.offerme.metric1">Single account with client/provider abilities via token scopes</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Schema-free</span>
+                                    <span class="metric-desc" data-i18n="projects.offerme.metric2">New service categories added without database migrations</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Real-time</span>
+                                    <span class="metric-desc" data-i18n="projects.offerme.metric3">Presence channels with read receipts via Laravel Broadcasting</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Multilingual</span>
+                                    <span class="metric-desc" data-i18n="projects.offerme.metric4">FCM notifications sent in each user's preferred language</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
+                        <span class="toggle-text-expand">View Details →</span>
+                        <span class="toggle-text-collapse">Show Less ↑</span>
+                    </button>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                        </svg>
+                <!-- Pear - Telemedicine Platform -->
+                <div class="project-card project-card-collapsed">
+                    <div class="project-screenshot">
+                        <img src="assets/projects/pear.webp" alt="Pear Telemedicine Platform" loading="lazy" width="600" height="340">
                     </div>
-                    <h3 data-i18n="value.card3.title">Performance & Scalability</h3>
-                    <p class="value-focus" data-i18n="value.card3.focus">Systems that are fast, reliable, efficient</p>
-                    <p class="value-benefit" data-i18n="value.card3.benefit">Optimized systems that handle growth
-                        seamlessly, reducing infrastructure costs</p>
+                    <div class="project-icon">🏥</div>
+                    <h3 data-i18n="projects.pear.title">Pear - Telemedicine Platform</h3>
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Agora</span>
+                        <span>Stripe</span>
+                    </div>
+                    <div class="project-challenge">
+                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
+                        <span data-i18n="projects.pear.problem">Telemedicine platform requiring real-time video
+                            conferencing, flexible scheduling with recurring availability patterns, secure token
+                            generation for video sessions, payment capture timing (hold-and-capture), and document
+                            verification workflow for provider onboarding.</span>
+                    </div>
+                    <div class="project-details-collapsible">
+                        <div class="project-solution">
+                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
+                            <ul>
+                                <li data-i18n="projects.pear.solution1">Agora SDK integration with dynamic token
+                                    generation
+                                    for secure video room access and webhook-based session tracking</li>
+                                <li data-i18n="projects.pear.solution2">Slot-based scheduling separating availability
+                                    templates (recurring patterns) from concrete time slots with atomic reservation</li>
+                                <li data-i18n="projects.pear.solution3">Polymorphic session model linking sessions to
+                                    bookings or standalone events</li>
+                                <li data-i18n="projects.pear.solution4">Document verification workflow with
+                                    ability-based
+                                    tokens providing conditional feature access based on approval status</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <strong data-i18n="projects.pear.technologies">Technologies:</strong>
+                            <span>Laravel 10, Laravel Sanctum, MySQL, Agora.io SDK, Stripe Payment Processing, Firebase
+                                Cloud Messaging, Laravel Broadcasting, Spatie Permission, Webhook Handlers, Event-Driven
+                                Notifications</span>
+                        </div>
+                        <div class="project-outcome">
+                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
+                            <span data-i18n="projects.pear.result">Healthcare providers expanded reach beyond physical
+                                locations. Automated scheduling reduced administrative overhead. Integrated video
+                                conferencing eliminated need for external tools. Document verification ensures platform
+                                quality. Flexible scheduling accommodates various consultation types from one-time
+                                appointments to recurring therapy sessions.</span>
+                        </div>
+                        <div class="project-metrics">
+                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <span class="metric-number">Atomic</span>
+                                    <span class="metric-desc" data-i18n="projects.pear.metric1">Slot reservation designed to prevent double-booking</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Per-session</span>
+                                    <span class="metric-desc" data-i18n="projects.pear.metric2">Dynamic Agora token generation scoped to each video room</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Hold → Capture</span>
+                                    <span class="metric-desc" data-i18n="projects.pear.metric3">Payment charged only after session completes via Stripe</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Gated access</span>
+                                    <span class="metric-desc" data-i18n="projects.pear.metric4">Provider features unlocked progressively via verification workflow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
+                        <span class="toggle-text-expand">View Details →</span>
+                        <span class="toggle-text-collapse">Show Less ↑</span>
+                    </button>
+                </div>
+
+                <!-- E-Learning System -->
+                <div class="project-card project-card-collapsed">
+                    <div class="project-screenshot">
+                        <img src="assets/projects/elearning.webp" alt="E-Learning University LMS" loading="lazy" width="600" height="340">
+                    </div>
+                    <div class="project-icon">🎓</div>
+                    <h3 data-i18n="projects.elearning.title">E-Learning System - University LMS</h3>
+                    <div class="project-tech">
+                        <span>Django</span>
+                        <span>PostgreSQL</span>
+                        <span>Celery</span>
+                        <span>AWS S3</span>
+                    </div>
+                    <div class="project-challenge">
+                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
+                        <span data-i18n="projects.elearning.problem">University needed scalable LMS with hierarchical
+                            organization (universities → colleges → courses), resumable video uploads for large files,
+                            accurate progress tracking across multiple completion criteria, course approval workflow,
+                            and payment integration with coupon system.</span>
+                    </div>
+                    <div class="project-details-collapsible">
+                        <div class="project-solution">
+                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
+                            <ul>
+                                <li data-i18n="projects.elearning.solution1">Multi-level hierarchy with ForeignKey
+                                    relationships matching institutional structures</li>
+                                <li data-i18n="projects.elearning.solution2">Resumable upload support using django-tus
+                                    and
+                                    drf-chunked-upload for handling large video files with upload session tracking</li>
+                                <li data-i18n="projects.elearning.solution3">Denormalized progress fields updated
+                                    through
+                                    Django signals with background batch recalculation when content changes</li>
+                                <li data-i18n="projects.elearning.solution4">Status-based workflow with admin approval
+                                    gates
+                                    and custom RBAC permission classes</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <strong data-i18n="projects.elearning.technologies">Technologies:</strong>
+                            <span>Django 5.0+, Django REST Framework, PostgreSQL, Django REST Framework SimpleJWT,
+                                Celery
+                                5.3+, Redis, django-tus, drf-chunked-upload, AWS S3, Custom Permission Classes, Django
+                                Signals</span>
+                        </div>
+                        <div class="project-outcome">
+                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
+                            <span data-i18n="projects.elearning.result">Enabled structured online learning at university
+                                scale with proper academic organization. Progress tracking provides clear visibility
+                                into learning journey. Resumable uploads ensure reliable video delivery even on unstable
+                                connections. Automated enrollment and payment system designed to reduce
+                                administrative overhead significantly.</span>
+                        </div>
+                        <div class="project-metrics">
+                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <span class="metric-number">O(n×m) → O(1)</span>
+                                    <span class="metric-desc" data-i18n="projects.elearning.metric1">Progress queries optimized via denormalization + signals</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Scalable</span>
+                                    <span class="metric-desc" data-i18n="projects.elearning.metric2">Designed for university-scale concurrent enrollment</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Resumable</span>
+                                    <span class="metric-desc" data-i18n="projects.elearning.metric3">Chunked video uploads surviving connection drops</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Background</span>
+                                    <span class="metric-desc" data-i18n="projects.elearning.metric4">Celery tasks for batch recalculation and heavy operations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
+                        <span class="toggle-text-expand">View Details →</span>
+                        <span class="toggle-text-collapse">Show Less ↑</span>
+                    </button>
+                </div>
+
+                <!-- Jaramana Clinic -->
+                <div class="project-card project-card-collapsed">
+                    <div class="project-screenshot">
+                        <img src="assets/projects/jaramana.webp" alt="Jaramana Clinic Medical Management" loading="lazy" width="600" height="340">
+                    </div>
+                    <div class="project-icon">🏥</div>
+                    <h3 data-i18n="projects.jaramana.title">Jaramana Clinic Center - Medical Management</h3>
+                    <div class="project-tech">
+                        <span>Spring Boot</span>
+                        <span>PostgreSQL</span>
+                        <span>WebSocket</span>
+                        <span>JWT</span>
+                    </div>
+                    <div class="project-challenge">
+                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
+                        <span data-i18n="projects.jaramana.problem">Medical clinic management system requiring secure
+                            dual authentication (employees vs patients), real-time availability calculation considering
+                            work schedules and holidays, immutable medical records after finalization, WebSocket chat
+                            security, and appointment rescheduling with history tracking.</span>
+                    </div>
+                    <div class="project-details-collapsible">
+                        <div class="project-solution">
+                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
+                            <ul>
+                                <li data-i18n="projects.jaramana.solution1">Separate authentication endpoints
+                                    (/api/auth/employee/login and /api/auth/patient/login) preventing client-controlled
+                                    user
+                                    type manipulation</li>
+                                <li data-i18n="projects.jaramana.solution2">Work schedule templates with day-of-week
+                                    patterns, holiday date range checking, and dynamic slot generation</li>
+                                <li data-i18n="projects.jaramana.solution3">isFinalized boolean flag with business logic
+                                    preventing modifications after record completion</li>
+                                <li data-i18n="projects.jaramana.solution4">WebSocket channel interceptors validating
+                                    JWT
+                                    tokens with session-based access control</li>
+                                <li data-i18n="projects.jaramana.solution5">Parent-child booking relationships
+                                    maintaining
+                                    rescheduling history</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <strong data-i18n="projects.jaramana.technologies">Technologies:</strong>
+                            <span>Spring Boot 3.2.8, Spring Security, Spring Data JPA, PostgreSQL, Spring WebSocket
+                                (STOMP),
+                                JWT (jjwt), Firebase Admin SDK, MapStruct (DTO Mapping), Flyway Migrations, Jakarta Bean
+                                Validation</span>
+                        </div>
+                        <div class="project-outcome">
+                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
+                            <span data-i18n="projects.jaramana.result">Digitized clinic operations replacing manual
+                                paperwork workflows. Appointment booking system designed to prevent double-booking and
+                                scheduling conflicts. Medical record system maintains comprehensive patient history
+                                improving continuity of care. Real-time chat facilitates patient-doctor communication.
+                                Dual authentication enforces strict access control aligned with healthcare security
+                                standards.</span>
+                        </div>
+                        <div class="project-metrics">
+                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <span class="metric-number">Immutable</span>
+                                    <span class="metric-desc" data-i18n="projects.jaramana.metric1">Medical records locked after finalization — no modification possible</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Dual Auth</span>
+                                    <span class="metric-desc" data-i18n="projects.jaramana.metric2">Separate employee/patient endpoints preventing role manipulation</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Conflict-free</span>
+                                    <span class="metric-desc" data-i18n="projects.jaramana.metric3">Schedule engine with holiday awareness and slot generation</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">Auditable</span>
+                                    <span class="metric-desc" data-i18n="projects.jaramana.metric4">Parent-child bookings preserving full rescheduling history</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
+                        <span class="toggle-text-expand">View Details →</span>
+                        <span class="toggle-text-collapse">Show Less ↑</span>
+                    </button>
                 </div>
             </div>
-            <div class="value-cta">
-                <a href="#contact" class="btn btn-primary" data-i18n="value.cta">Let's Build Your System →</a>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="case-study" class="case-study-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="casestudy.title">Deep Dive: System Architecture</h2>
+            <p class="section-subtitle" data-i18n="casestudy.subtitle">A closer look at how I approach complex backend problems</p>
+
+            <div class="case-study-content">
+                <div class="cs-header">
+                    <h3 data-i18n="casestudy.umrain.title">Umrain — Multi-Vendor Travel Marketplace</h3>
+                    <p class="cs-tagline" data-i18n="casestudy.umrain.tagline">One booking engine. Six service types. Three payment gateways. One shared interface.</p>
+                </div>
+
+                <!-- Problem -->
+                <div class="cs-block">
+                    <h4 data-i18n="casestudy.labels.problem">The Problem</h4>
+                    <p data-i18n="casestudy.umrain.problem">A travel marketplace needed to support hotels, tours, flights, boats, car rentals, and events — each with completely different booking models, pricing structures, and availability logic. The traditional approach would mean 6 separate booking systems with duplicated payment logic, separate admin panels, and inconsistent APIs. Every new service type would take weeks to build from scratch.</p>
+                </div>
+
+                <!-- Architecture -->
+                <div class="cs-block">
+                    <h4 data-i18n="casestudy.labels.architecture">Architecture Overview</h4>
+                    <div class="architecture-diagram">
+                        <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" class="arch-svg">
+                            <defs>
+                                <linearGradient id="archGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.1"/>
+                                    <stop offset="100%" stop-color="var(--color-secondary)" stop-opacity="0.1"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Client Layer -->
+                            <rect x="100" y="10" width="600" height="45" rx="8" fill="url(#archGrad1)" stroke="var(--color-secondary)" stroke-width="1.5"/>
+                            <text x="400" y="38" text-anchor="middle" fill="var(--color-text-headers)" font-size="14" font-weight="600">Client Layer (Vue.js)</text>
+                            <!-- Arrow -->
+                            <line x1="400" y1="55" x2="400" y2="75" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--color-border-hover)"/></marker></defs>
+                            <!-- API Gateway -->
+                            <rect x="100" y="75" width="600" height="55" rx="8" fill="url(#archGrad1)" stroke="var(--color-primary)" stroke-width="1.5"/>
+                            <text x="400" y="100" text-anchor="middle" fill="var(--color-text-headers)" font-size="14" font-weight="600">API Gateway (Laravel)</text>
+                            <text x="400" y="120" text-anchor="middle" fill="var(--color-text-muted)" font-size="11">Auth Middleware (Sanctum + RBAC)</text>
+                            <!-- Arrows to modules -->
+                            <line x1="200" y1="130" x2="200" y2="160" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <line x1="340" y1="130" x2="340" y2="160" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <line x1="480" y1="130" x2="480" y2="160" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <line x1="620" y1="130" x2="620" y2="160" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <!-- Service Modules -->
+                            <rect x="130" y="160" width="140" height="70" rx="8" fill="var(--color-bg-section)" stroke="var(--color-accent)" stroke-width="1.5"/>
+                            <text x="200" y="185" text-anchor="middle" fill="var(--color-text-headers)" font-size="13" font-weight="600">Hotel Module</text>
+                            <text x="200" y="218" text-anchor="middle" fill="var(--color-accent)" font-size="10" font-style="italic">implements Bookable</text>
+                            <rect x="270" y="160" width="140" height="70" rx="8" fill="var(--color-bg-section)" stroke="var(--color-accent)" stroke-width="1.5"/>
+                            <text x="340" y="185" text-anchor="middle" fill="var(--color-text-headers)" font-size="13" font-weight="600">Tour Module</text>
+                            <text x="340" y="218" text-anchor="middle" fill="var(--color-accent)" font-size="10" font-style="italic">implements Bookable</text>
+                            <rect x="410" y="160" width="140" height="70" rx="8" fill="var(--color-bg-section)" stroke="var(--color-accent)" stroke-width="1.5"/>
+                            <text x="480" y="185" text-anchor="middle" fill="var(--color-text-headers)" font-size="13" font-weight="600">Flight Module</text>
+                            <text x="480" y="218" text-anchor="middle" fill="var(--color-accent)" font-size="10" font-style="italic">implements Bookable</text>
+                            <rect x="550" y="160" width="140" height="70" rx="8" fill="var(--color-bg-section)" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="5,3"/>
+                            <text x="620" y="185" text-anchor="middle" fill="var(--color-text-headers)" font-size="13" font-weight="600">+ 3 More</text>
+                            <text x="620" y="218" text-anchor="middle" fill="var(--color-accent)" font-size="10" font-style="italic">implements Bookable</text>
+                            <!-- Converge arrow -->
+                            <line x1="200" y1="230" x2="400" y2="270" stroke="var(--color-border-hover)" stroke-width="1.5"/>
+                            <line x1="340" y1="230" x2="400" y2="270" stroke="var(--color-border-hover)" stroke-width="1.5"/>
+                            <line x1="480" y1="230" x2="400" y2="270" stroke="var(--color-border-hover)" stroke-width="1.5"/>
+                            <line x1="620" y1="230" x2="400" y2="270" stroke="var(--color-border-hover)" stroke-width="1.5"/>
+                            <!-- Polymorphic Booking Engine -->
+                            <rect x="280" y="270" width="240" height="55" rx="10" fill="var(--color-primary)" stroke="none"/>
+                            <text x="400" y="295" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Polymorphic</text>
+                            <text x="400" y="313" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="12">Booking Engine</text>
+                            <!-- Arrows to subsystems -->
+                            <line x1="320" y1="325" x2="200" y2="370" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <line x1="400" y1="325" x2="400" y2="370" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <line x1="480" y1="325" x2="600" y2="370" stroke="var(--color-border-hover)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                            <!-- Subsystems -->
+                            <rect x="120" y="370" width="160" height="55" rx="8" fill="url(#archGrad1)" stroke="var(--color-secondary)" stroke-width="1.5"/>
+                            <text x="200" y="395" text-anchor="middle" fill="var(--color-text-headers)" font-size="13" font-weight="600">Pricing Engine</text>
+                            <text x="200" y="413" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">Multi-currency</text>
+                            <rect x="320" y="370" width="160" height="55" rx="8" fill="url(#archGrad1)" stroke="var(--color-secondary)" stroke-width="1.5"/>
+                            <text x="400" y="395" text-anchor="middle" fill="var(--color-text-headers)" font-size="13" font-weight="600">Payment Gateway</text>
+                            <text x="400" y="413" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">Strategy Pattern</text>
+                            <rect x="520" y="370" width="160" height="55" rx="8" fill="url(#archGrad1)" stroke="var(--color-secondary)" stroke-width="1.5"/>
+                            <text x="600" y="395" text-anchor="middle" fill="var(--color-text-headers)" font-size="13" font-weight="600">Commission System</text>
+                            <text x="600" y="413" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">Revenue Sharing</text>
+                            <!-- Payment providers -->
+                            <line x1="340" y1="425" x2="300" y2="470" stroke="var(--color-border-hover)" stroke-width="1.2"/>
+                            <line x1="400" y1="425" x2="400" y2="470" stroke="var(--color-border-hover)" stroke-width="1.2"/>
+                            <line x1="460" y1="425" x2="500" y2="470" stroke="var(--color-border-hover)" stroke-width="1.2"/>
+                            <rect x="250" y="470" width="100" height="35" rx="6" fill="var(--color-bg-section)" stroke="var(--color-border)" stroke-width="1"/>
+                            <text x="300" y="492" text-anchor="middle" fill="var(--color-text-body)" font-size="12" font-weight="500">Stripe</text>
+                            <rect x="350" y="470" width="100" height="35" rx="6" fill="var(--color-bg-section)" stroke="var(--color-border)" stroke-width="1"/>
+                            <text x="400" y="492" text-anchor="middle" fill="var(--color-text-body)" font-size="12" font-weight="500">PayPal</text>
+                            <rect x="450" y="470" width="100" height="35" rx="6" fill="var(--color-bg-section)" stroke="var(--color-border)" stroke-width="1"/>
+                            <text x="500" y="492" text-anchor="middle" fill="var(--color-text-body)" font-size="12" font-weight="500">Paystack</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Key Decisions -->
+                <div class="cs-block">
+                    <h4 data-i18n="casestudy.labels.decisions">Key Technical Decisions</h4>
+                    <div class="decisions-grid">
+                        <div class="decision-card">
+                            <h5 data-i18n="casestudy.umrain.decision1.title">Why Polymorphic Relationships over Single Table Inheritance?</h5>
+                            <p data-i18n="casestudy.umrain.decision1.desc">STI would bloat the bookings table with nullable columns for each service type. Polymorphic relationships keep each service's data normalized while allowing unified queries through the Bookable interface. Adding a new service = one new model implementing Bookable, not a table migration.</p>
+                        </div>
+                        <div class="decision-card">
+                            <h5 data-i18n="casestudy.umrain.decision2.title">Why Strategy Pattern for Payments?</h5>
+                            <p data-i18n="casestudy.umrain.decision2.desc">Vendors operate in different regions: Stripe for US/EU, PayPal for global, Paystack for Africa. Each gateway is wrapped behind a PaymentProcessor interface. Adding a new payment gateway means implementing one new class — existing booking logic remains untouched.</p>
+                        </div>
+                        <div class="decision-card">
+                            <h5 data-i18n="casestudy.umrain.decision3.title">Why a Separate Pricing Engine?</h5>
+                            <p data-i18n="casestudy.umrain.decision3.desc">Hotels use per-night with seasonal rates. Tours use per-person with group discounts. Flights use dynamic fare classes. Extracting pricing into a dedicated engine with per-type calculators keeps booking logic clean and testable. Each calculator handles only its own pricing rules.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Pattern -->
+                <div class="cs-block">
+                    <h4 data-i18n="casestudy.labels.code">Core Architecture Pattern</h4>
+                    <div class="code-block cs-code-block">
+                        <pre><code>// The Bookable Interface — every service type implements this
+interface Bookable
+{
+    public function calculatePrice(BookingRequest $request): Money;
+    public function checkAvailability(DateRange $range): bool;
+    public function generateBookingReference(): string;
+}
+
+// Hotel implementation
+class HotelRoom extends Model implements Bookable
+{
+    public function bookings(): MorphMany
+    {
+        return $this->morphMany(Booking::class, 'bookable');
+    }
+
+    public function calculatePrice(BookingRequest $request): Money
+    {
+        return $this->pricingEngine
+            ->forDateRange($request->checkIn, $request->checkOut)
+            ->applySeasonal($this->seasonal_rates)
+            ->convertTo($request->currency)
+            ->calculate();
+    }
+}
+
+// BookingService — works with ANY bookable type
+class BookingService
+{
+    public function create(BookingRequest $request): Booking
+    {
+        $bookable = $this->resolveBookable(
+            $request->bookable_type,
+            $request->bookable_id
+        );
+
+        if (!$bookable->checkAvailability($request->dateRange)) {
+            throw new AvailabilityException('Selected dates unavailable');
+        }
+
+        $price = $bookable->calculatePrice($request);
+
+        return DB::transaction(function () use ($bookable, $request, $price) {
+            $booking = Booking::create([
+                'bookable_type' => get_class($bookable),
+                'bookable_id'   => $bookable->id,
+                'user_id'       => auth()->id(),
+                'total'         => $price->amount,
+                'currency'      => $price->currency,
+                'reference'     => $bookable->generateBookingReference(),
+            ]);
+
+            $this->paymentService->charge($booking, $request->gateway);
+            $this->commissionService->calculate($booking);
+
+            return $booking;
+        });
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div class="cs-block">
+                    <h4 data-i18n="casestudy.labels.challenges">Challenges Solved</h4>
+                    <div class="challenges-list">
+                        <div class="challenge-item">
+                            <strong data-i18n="casestudy.umrain.challenge1.title">Multi-currency pricing with seasonal rates:</strong>
+                            <span data-i18n="casestudy.umrain.challenge1.desc">Built a pricing pipeline that chains seasonal rate lookup → discount application → currency conversion, each step isolated and testable independently.</span>
+                        </div>
+                        <div class="challenge-item">
+                            <strong data-i18n="casestudy.umrain.challenge2.title">Commission calculation across payment gateways:</strong>
+                            <span data-i18n="casestudy.umrain.challenge2.desc">Each gateway returns different fee structures. The commission engine normalizes fees before calculating vendor payouts, ensuring accurate revenue splitting regardless of payment method.</span>
+                        </div>
+                        <div class="challenge-item">
+                            <strong data-i18n="casestudy.umrain.challenge3.title">Real-time availability across time zones:</strong>
+                            <span data-i18n="casestudy.umrain.challenge3.desc">Hotel availability is date-based, tour availability is slot-based, flight availability is seat-based. Unified the availability check behind the Bookable interface while preserving type-specific logic.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="cs-block">
+                    <h4 data-i18n="casestudy.labels.results">Results</h4>
+                    <div class="cs-results-grid">
+                        <div class="cs-result">
+                            <span class="cs-result-value">6 service types</span>
+                            <span class="cs-result-label" data-i18n="casestudy.umrain.result1">running on one unified polymorphic booking engine</span>
+                        </div>
+                        <div class="cs-result">
+                            <span class="cs-result-value">1 new class</span>
+                            <span class="cs-result-label" data-i18n="casestudy.umrain.result2">is all it takes to add a new service type to the platform</span>
+                        </div>
+                        <div class="cs-result">
+                            <span class="cs-result-value">3 gateways</span>
+                            <span class="cs-result-label" data-i18n="casestudy.umrain.result3">integrated without modifying existing booking logic</span>
+                        </div>
+                        <div class="cs-result">
+                            <span class="cs-result-value">Isolated</span>
+                            <span class="cs-result-label" data-i18n="casestudy.umrain.result4">pricing, payment, and commission — each testable independently</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -626,92 +1210,22 @@ public MedicalRecord update(Long id, RecordDTO dto) {
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section id="methodology" class="methodology">
-        <div class="container">
-            <h2 class="section-title" data-i18n="methodology.title">My Engineering Methodology</h2>
-            <p class="section-subtitle" data-i18n="methodology.subtitle">A proven process for delivering reliable
-                solutions</p>
-
-            <div class="methodology-steps">
-                <div class="method-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3 data-i18n="methodology.step1.title">Analyze & Plan</h3>
-                        <ul>
-                            <li data-i18n="methodology.step1.item1">Understanding business objectives</li>
-                            <li data-i18n="methodology.step1.item2">Technical requirements gathering</li>
-                            <li data-i18n="methodology.step1.item3">System architecture planning</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="method-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3 data-i18n="methodology.step2.title">Design & Architect</h3>
-                        <ul>
-                            <li data-i18n="methodology.step2.item1">Database design and optimization</li>
-                            <li data-i18n="methodology.step2.item2">API structure and integration planning</li>
-                            <li data-i18n="methodology.step2.item3">Scalability considerations</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="method-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3 data-i18n="methodology.step3.title">Build & Implement</h3>
-                        <ul>
-                            <li data-i18n="methodology.step3.item1">Clean, maintainable code</li>
-                            <li data-i18n="methodology.step3.item2">Third-party integrations</li>
-                            <li data-i18n="methodology.step3.item3">Real-time features when needed</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="method-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3 data-i18n="methodology.step4.title">Deploy & Optimize</h3>
-                        <ul>
-                            <li data-i18n="methodology.step4.item1">Performance tuning</li>
-                            <li data-i18n="methodology.step4.item2">Monitoring and maintenance</li>
-                            <li data-i18n="methodology.step4.item3">Ongoing optimization</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About & Skills Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about.title">About Me</h2>
-            <p class="section-subtitle" data-i18n="about.subtitle">Building robust digital foundations that power
-                business growth</p>
-
-            <div class="about-content">
-                <div class="about-text">
-                    <p data-i18n="about.paragraph1">As a Backend Software Engineer & Architect, I've successfully
-                        delivered enterprise-grade systems handling real-time communication, payment processing,
-                        multi-vendor architectures, and complex data workflows. My expertise spans multiple technologies
-                        including Laravel, Django, Spring Boot, and various cloud services.</p>
-                    <p data-i18n="about.paragraph2">I focus on clean code, scalable architectures, and measurable
-                        impact.
-                        Every system I build is designed with performance, security, and maintainability in mind.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- For Recruiters Section -->
+    <!-- Professional Profile Section (merged About + Recruiters) -->
     <section id="recruiters" class="recruiters-section">
         <div class="container">
             <h2 class="section-title" data-i18n="recruiters.title">Professional Profile</h2>
             <p class="section-subtitle" data-i18n="recruiters.subtitle">Technical expertise and professional experience
                 overview</p>
+
+            <div class="about-intro">
+                <p data-i18n="about.paragraph1">As a Backend Software Engineer & Architect, I've successfully
+                    delivered enterprise-grade systems handling real-time communication, payment processing,
+                    multi-vendor architectures, and complex data workflows. My expertise spans multiple technologies
+                    including Laravel, Django, Spring Boot, and various cloud services.</p>
+                <p data-i18n="about.paragraph2">I focus on clean code, scalable architectures, and measurable
+                    impact.
+                    Every system I build is designed with performance, security, and maintainability in mind.</p>
+            </div>
 
             <div class="recruiters-content">
                 <div class="recruiters-grid">
@@ -803,591 +1317,6 @@ public MedicalRecord update(Long id, RecordDTO dto) {
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title" data-i18n="projects.title">Selected System Implementations</h2>
-            <p class="section-subtitle" data-i18n="projects.subtitle">Real solutions for real business challenges</p>
-
-            <div class="projects-grid">
-                <!-- Umrain - Multi-Vendor Travel Marketplace -->
-                <div class="project-card project-card-collapsed">
-                    <div class="project-icon">✈️</div>
-                    <h3 data-i18n="projects.umrain.title">Umrain - Multi-Vendor Travel Marketplace</h3>
-                    <div class="project-tech">
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Stripe</span>
-                        <span>Pusher</span>
-                    </div>
-                    <div class="project-challenge">
-                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
-                        <span data-i18n="projects.umrain.problem">Need for a unified booking platform supporting 6+
-                            service types (hotels, tours, flights, boats, cars, events) with different booking models,
-                            pricing structures, and availability systems. Required commission engine, multi-currency
-                            support, and vendor management.</span>
-                    </div>
-                    <div class="project-details-collapsible">
-                        <div class="project-solution">
-                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
-                            <ul>
-                                <li data-i18n="projects.umrain.solution1">Polymorphic booking architecture allowing
-                                    unified
-                                    booking flow across diverse service types</li>
-                                <li data-i18n="projects.umrain.solution2">Modular architecture with service-specific
-                                    modules
-                                    (Hotel, Tour, Flight, etc.) following consistent patterns</li>
-                                <li data-i18n="projects.umrain.solution3">Dynamic pricing engine handling seasonal
-                                    rates,
-                                    discounts, and multi-currency conversions</li>
-                                <li data-i18n="projects.umrain.solution4">Commission system with revenue sharing, refund
-                                    handling, and financial reporting</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <strong data-i18n="projects.umrain.technologies">Technologies:</strong>
-                            <span>Laravel 10, MySQL, Eloquent ORM, Polymorphic Relationships, Stripe/PayPal/Paystack,
-                                Multi-Gateway Payment Integration, Pusher (Real-Time), Spatie Permission, Nested Sets
-                                for
-                                Hierarchical Data</span>
-                        </div>
-                        <div class="project-outcome">
-                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
-                            <span data-i18n="projects.umrain.result">One-stop booking platform supporting 6 service
-                                types
-                                with unified user experience. Modular architecture enables rapid addition of new service
-                                types. Commission-based revenue model scales without upfront vendor costs. Handles
-                                complex
-                                pricing scenarios including seasonal rates and multi-currency transactions.</span>
-                        </div>
-                        <div class="project-metrics">
-                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
-                            <div class="metrics-grid">
-                                <div class="metric-item">
-                                    <span class="metric-number">6 types</span>
-                                    <span class="metric-desc" data-i18n="projects.umrain.metric1">Unified through one polymorphic booking interface</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">3 gateways</span>
-                                    <span class="metric-desc" data-i18n="projects.umrain.metric2">Integrated via Strategy pattern (Stripe, PayPal, Paystack)</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Modular</span>
-                                    <span class="metric-desc" data-i18n="projects.umrain.metric3">New service types added without modifying core booking logic</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Transactional</span>
-                                    <span class="metric-desc" data-i18n="projects.umrain.metric4">Atomic bookings with commission calculation and payment</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
-                        <span class="toggle-text-expand">View Details →</span>
-                        <span class="toggle-text-collapse">Show Less ↑</span>
-                    </button>
-                </div>
-
-                <!-- OfferMe - B2B Service Marketplace -->
-                <div class="project-card project-card-collapsed">
-                    <div class="project-icon">💼</div>
-                    <h3 data-i18n="projects.offerme.title">OfferMe - B2B Service Marketplace</h3>
-                    <div class="project-tech">
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Firebase</span>
-                        <span>Pusher</span>
-                    </div>
-                    <div class="project-challenge">
-                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
-                        <span data-i18n="projects.offerme.problem">B2B marketplace requiring multi-role users (clients
-                            and providers on same account), real-time chat with presence tracking, category-specific
-                            dynamic fields without schema changes, and multilingual push notifications in user-preferred
-                            languages.</span>
-                    </div>
-                    <div class="project-details-collapsible">
-                        <div class="project-solution">
-                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
-                            <ul>
-                                <li data-i18n="projects.offerme.solution1">Ability-based authentication tokens allowing
-                                    single account with dual roles (client/provider)</li>
-                                <li data-i18n="projects.offerme.solution2">Thread-based messaging with Laravel
-                                    Broadcasting
-                                    presence channels for real-time chat and read receipts</li>
-                                <li data-i18n="projects.offerme.solution3">Polymorphic dynamic field system enabling
-                                    category-specific request attributes without database schema changes</li>
-                                <li data-i18n="projects.offerme.solution4">Multilingual FCM integration storing language
-                                    preferences and sending parallel notification batches</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <strong data-i18n="projects.offerme.technologies">Technologies:</strong>
-                            <span>Laravel 10, Laravel Sanctum, Laravel Broadcasting, MySQL, Firebase Cloud Messaging,
-                                Pusher, Spatie Translatable, Spatie Permission, Eloquent Polymorphic Relationships,
-                                Event-Driven Architecture</span>
-                        </div>
-                        <div class="project-outcome">
-                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
-                            <span data-i18n="projects.offerme.result">Streamlined matching between service seekers and
-                                providers with real-time communication. Dynamic field system adapts to new service
-                                categories without code changes. Multilingual notifications improve engagement across
-                                user base. Efficient offer comparison workflow designed to shorten time-to-contract.</span>
-                        </div>
-                        <div class="project-metrics">
-                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
-                            <div class="metrics-grid">
-                                <div class="metric-item">
-                                    <span class="metric-number">Dual-role</span>
-                                    <span class="metric-desc" data-i18n="projects.offerme.metric1">Single account with client/provider abilities via token scopes</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Schema-free</span>
-                                    <span class="metric-desc" data-i18n="projects.offerme.metric2">New service categories added without database migrations</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Real-time</span>
-                                    <span class="metric-desc" data-i18n="projects.offerme.metric3">Presence channels with read receipts via Laravel Broadcasting</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Multilingual</span>
-                                    <span class="metric-desc" data-i18n="projects.offerme.metric4">FCM notifications sent in each user's preferred language</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
-                        <span class="toggle-text-expand">View Details →</span>
-                        <span class="toggle-text-collapse">Show Less ↑</span>
-                    </button>
-                </div>
-
-                <!-- Pear - Telemedicine Platform -->
-                <div class="project-card project-card-collapsed">
-                    <div class="project-icon">🏥</div>
-                    <h3 data-i18n="projects.pear.title">Pear - Telemedicine Platform</h3>
-                    <div class="project-tech">
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Agora</span>
-                        <span>Stripe</span>
-                    </div>
-                    <div class="project-challenge">
-                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
-                        <span data-i18n="projects.pear.problem">Telemedicine platform requiring real-time video
-                            conferencing, flexible scheduling with recurring availability patterns, secure token
-                            generation for video sessions, payment capture timing (hold-and-capture), and document
-                            verification workflow for provider onboarding.</span>
-                    </div>
-                    <div class="project-details-collapsible">
-                        <div class="project-solution">
-                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
-                            <ul>
-                                <li data-i18n="projects.pear.solution1">Agora SDK integration with dynamic token
-                                    generation
-                                    for secure video room access and webhook-based session tracking</li>
-                                <li data-i18n="projects.pear.solution2">Slot-based scheduling separating availability
-                                    templates (recurring patterns) from concrete time slots with atomic reservation</li>
-                                <li data-i18n="projects.pear.solution3">Polymorphic session model linking sessions to
-                                    bookings or standalone events</li>
-                                <li data-i18n="projects.pear.solution4">Document verification workflow with
-                                    ability-based
-                                    tokens providing conditional feature access based on approval status</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <strong data-i18n="projects.pear.technologies">Technologies:</strong>
-                            <span>Laravel 10, Laravel Sanctum, MySQL, Agora.io SDK, Stripe Payment Processing, Firebase
-                                Cloud Messaging, Laravel Broadcasting, Spatie Permission, Webhook Handlers, Event-Driven
-                                Notifications</span>
-                        </div>
-                        <div class="project-outcome">
-                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
-                            <span data-i18n="projects.pear.result">Healthcare providers expanded reach beyond physical
-                                locations. Automated scheduling reduced administrative overhead. Integrated video
-                                conferencing eliminated need for external tools. Document verification ensures platform
-                                quality. Flexible scheduling accommodates various consultation types from one-time
-                                appointments to recurring therapy sessions.</span>
-                        </div>
-                        <div class="project-metrics">
-                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
-                            <div class="metrics-grid">
-                                <div class="metric-item">
-                                    <span class="metric-number">Atomic</span>
-                                    <span class="metric-desc" data-i18n="projects.pear.metric1">Slot reservation designed to prevent double-booking</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Per-session</span>
-                                    <span class="metric-desc" data-i18n="projects.pear.metric2">Dynamic Agora token generation scoped to each video room</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Hold → Capture</span>
-                                    <span class="metric-desc" data-i18n="projects.pear.metric3">Payment charged only after session completes via Stripe</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Gated access</span>
-                                    <span class="metric-desc" data-i18n="projects.pear.metric4">Provider features unlocked progressively via verification workflow</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
-                        <span class="toggle-text-expand">View Details →</span>
-                        <span class="toggle-text-collapse">Show Less ↑</span>
-                    </button>
-                </div>
-
-                <!-- E-Learning System -->
-                <div class="project-card project-card-collapsed">
-                    <div class="project-icon">🎓</div>
-                    <h3 data-i18n="projects.elearning.title">E-Learning System - University LMS</h3>
-                    <div class="project-tech">
-                        <span>Django</span>
-                        <span>PostgreSQL</span>
-                        <span>Celery</span>
-                        <span>AWS S3</span>
-                    </div>
-                    <div class="project-challenge">
-                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
-                        <span data-i18n="projects.elearning.problem">University needed scalable LMS with hierarchical
-                            organization (universities → colleges → courses), resumable video uploads for large files,
-                            accurate progress tracking across multiple completion criteria, course approval workflow,
-                            and payment integration with coupon system.</span>
-                    </div>
-                    <div class="project-details-collapsible">
-                        <div class="project-solution">
-                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
-                            <ul>
-                                <li data-i18n="projects.elearning.solution1">Multi-level hierarchy with ForeignKey
-                                    relationships matching institutional structures</li>
-                                <li data-i18n="projects.elearning.solution2">Resumable upload support using django-tus
-                                    and
-                                    drf-chunked-upload for handling large video files with upload session tracking</li>
-                                <li data-i18n="projects.elearning.solution3">Denormalized progress fields updated
-                                    through
-                                    Django signals with background batch recalculation when content changes</li>
-                                <li data-i18n="projects.elearning.solution4">Status-based workflow with admin approval
-                                    gates
-                                    and custom RBAC permission classes</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <strong data-i18n="projects.elearning.technologies">Technologies:</strong>
-                            <span>Django 5.0+, Django REST Framework, PostgreSQL, Django REST Framework SimpleJWT,
-                                Celery
-                                5.3+, Redis, django-tus, drf-chunked-upload, AWS S3, Custom Permission Classes, Django
-                                Signals</span>
-                        </div>
-                        <div class="project-outcome">
-                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
-                            <span data-i18n="projects.elearning.result">Enabled structured online learning at university
-                                scale with proper academic organization. Progress tracking provides clear visibility
-                                into learning journey. Resumable uploads ensure reliable video delivery even on unstable
-                                connections. Automated enrollment and payment system designed to reduce
-                                administrative overhead significantly.</span>
-                        </div>
-                        <div class="project-metrics">
-                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
-                            <div class="metrics-grid">
-                                <div class="metric-item">
-                                    <span class="metric-number">O(n×m) → O(1)</span>
-                                    <span class="metric-desc" data-i18n="projects.elearning.metric1">Progress queries optimized via denormalization + signals</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Scalable</span>
-                                    <span class="metric-desc" data-i18n="projects.elearning.metric2">Designed for university-scale concurrent enrollment</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Resumable</span>
-                                    <span class="metric-desc" data-i18n="projects.elearning.metric3">Chunked video uploads surviving connection drops</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Background</span>
-                                    <span class="metric-desc" data-i18n="projects.elearning.metric4">Celery tasks for batch recalculation and heavy operations</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
-                        <span class="toggle-text-expand">View Details →</span>
-                        <span class="toggle-text-collapse">Show Less ↑</span>
-                    </button>
-                </div>
-
-                <!-- Jaramana Clinic -->
-                <div class="project-card project-card-collapsed">
-                    <div class="project-icon">🏥</div>
-                    <h3 data-i18n="projects.jaramana.title">Jaramana Clinic Center - Medical Management</h3>
-                    <div class="project-tech">
-                        <span>Spring Boot</span>
-                        <span>PostgreSQL</span>
-                        <span>WebSocket</span>
-                        <span>JWT</span>
-                    </div>
-                    <div class="project-challenge">
-                        <strong data-i18n="projects.cards.labels.challenge">Problem:</strong>
-                        <span data-i18n="projects.jaramana.problem">Medical clinic management system requiring secure
-                            dual authentication (employees vs patients), real-time availability calculation considering
-                            work schedules and holidays, immutable medical records after finalization, WebSocket chat
-                            security, and appointment rescheduling with history tracking.</span>
-                    </div>
-                    <div class="project-details-collapsible">
-                        <div class="project-solution">
-                            <strong data-i18n="projects.cards.labels.solution">Solution:</strong>
-                            <ul>
-                                <li data-i18n="projects.jaramana.solution1">Separate authentication endpoints
-                                    (/api/auth/employee/login and /api/auth/patient/login) preventing client-controlled
-                                    user
-                                    type manipulation</li>
-                                <li data-i18n="projects.jaramana.solution2">Work schedule templates with day-of-week
-                                    patterns, holiday date range checking, and dynamic slot generation</li>
-                                <li data-i18n="projects.jaramana.solution3">isFinalized boolean flag with business logic
-                                    preventing modifications after record completion</li>
-                                <li data-i18n="projects.jaramana.solution4">WebSocket channel interceptors validating
-                                    JWT
-                                    tokens with session-based access control</li>
-                                <li data-i18n="projects.jaramana.solution5">Parent-child booking relationships
-                                    maintaining
-                                    rescheduling history</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <strong data-i18n="projects.jaramana.technologies">Technologies:</strong>
-                            <span>Spring Boot 3.2.8, Spring Security, Spring Data JPA, PostgreSQL, Spring WebSocket
-                                (STOMP),
-                                JWT (jjwt), Firebase Admin SDK, MapStruct (DTO Mapping), Flyway Migrations, Jakarta Bean
-                                Validation</span>
-                        </div>
-                        <div class="project-outcome">
-                            <strong data-i18n="projects.cards.labels.outcome">Result:</strong>
-                            <span data-i18n="projects.jaramana.result">Digitized clinic operations replacing manual
-                                paperwork workflows. Appointment booking system designed to prevent double-booking and
-                                scheduling conflicts. Medical record system maintains comprehensive patient history
-                                improving continuity of care. Real-time chat facilitates patient-doctor communication.
-                                Dual authentication enforces strict access control aligned with healthcare security
-                                standards.</span>
-                        </div>
-                        <div class="project-metrics">
-                            <strong data-i18n="projects.cards.labels.metrics">Engineering Impact:</strong>
-                            <div class="metrics-grid">
-                                <div class="metric-item">
-                                    <span class="metric-number">Immutable</span>
-                                    <span class="metric-desc" data-i18n="projects.jaramana.metric1">Medical records locked after finalization — no modification possible</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Dual Auth</span>
-                                    <span class="metric-desc" data-i18n="projects.jaramana.metric2">Separate employee/patient endpoints preventing role manipulation</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Conflict-free</span>
-                                    <span class="metric-desc" data-i18n="projects.jaramana.metric3">Schedule engine with holiday awareness and slot generation</span>
-                                </div>
-                                <div class="metric-item">
-                                    <span class="metric-number">Auditable</span>
-                                    <span class="metric-desc" data-i18n="projects.jaramana.metric4">Parent-child bookings preserving full rescheduling history</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="project-toggle-btn" data-i18n="projects.viewDetails">
-                        <span class="toggle-text-expand">View Details →</span>
-                        <span class="toggle-text-collapse">Show Less ↑</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Study Section -->
-    <section id="case-study" class="case-study-section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="casestudy.title">Deep Dive: System Architecture</h2>
-            <p class="section-subtitle" data-i18n="casestudy.subtitle">A closer look at how I approach complex backend problems</p>
-
-            <div class="case-study-content">
-                <div class="cs-header">
-                    <h3 data-i18n="casestudy.umrain.title">Umrain — Multi-Vendor Travel Marketplace</h3>
-                    <p class="cs-tagline" data-i18n="casestudy.umrain.tagline">One booking engine. Six service types. Three payment gateways. One shared interface.</p>
-                </div>
-
-                <!-- Problem -->
-                <div class="cs-block">
-                    <h4 data-i18n="casestudy.labels.problem">The Problem</h4>
-                    <p data-i18n="casestudy.umrain.problem">A travel marketplace needed to support hotels, tours, flights, boats, car rentals, and events — each with completely different booking models, pricing structures, and availability logic. The traditional approach would mean 6 separate booking systems with duplicated payment logic, separate admin panels, and inconsistent APIs. Every new service type would take weeks to build from scratch.</p>
-                </div>
-
-                <!-- Architecture -->
-                <div class="cs-block">
-                    <h4 data-i18n="casestudy.labels.architecture">Architecture Overview</h4>
-                    <div class="architecture-diagram">
-                        <pre>
-┌─────────────────────────────────────────────────────────────┐
-│                      Client Layer (Vue.js)                  │
-└─────────────────────────┬───────────────────────────────────┘
-                          │
-┌─────────────────────────▼───────────────────────────────────┐
-│                   API Gateway (Laravel)                      │
-│              Auth Middleware (Sanctum + RBAC)                │
-└──────┬──────────────┬──────────────┬───────────────────┬────┘
-       │              │              │                   │
-┌──────▼─────┐ ┌──────▼─────┐ ┌─────▼──────┐  ┌────────▼────┐
-│   Hotel    │ │   Tour     │ │  Flight    │  │  + 3 more   │
-│   Module   │ │   Module   │ │  Module    │  │  modules    │
-│            │ │            │ │            │  │             │
-│ implements │ │ implements │ │ implements │  │ implements  │
-│ Bookable   │ │ Bookable   │ │ Bookable   │  │ Bookable    │
-└──────┬─────┘ └──────┬─────┘ └─────┬──────┘  └────────┬────┘
-       └──────────────┼─────────────┘                   │
-                ┌─────▼──────────────────────────────────┘
-                │
-       ┌────────▼────────┐
-       │   Polymorphic   │
-       │  Booking Engine │
-       └───┬────┬────┬───┘
-           │    │    │
-    ┌──────▼┐ ┌▼────▼──┐ ┌──────────┐
-    │Pricing│ │Payment │ │Commission│
-    │Engine │ │Gateway │ │ System   │
-    │       │ │        │ │          │
-    │Multi- │ │Strategy│ │Revenue   │
-    │currency│ │Pattern │ │Sharing   │
-    └───────┘ └────────┘ └──────────┘
-                  │
-         ┌───────┼───────┐
-         │       │       │
-      Stripe  PayPal  Paystack</pre>
-                    </div>
-                </div>
-
-                <!-- Key Decisions -->
-                <div class="cs-block">
-                    <h4 data-i18n="casestudy.labels.decisions">Key Technical Decisions</h4>
-                    <div class="decisions-grid">
-                        <div class="decision-card">
-                            <h5 data-i18n="casestudy.umrain.decision1.title">Why Polymorphic Relationships over Single Table Inheritance?</h5>
-                            <p data-i18n="casestudy.umrain.decision1.desc">STI would bloat the bookings table with nullable columns for each service type. Polymorphic relationships keep each service's data normalized while allowing unified queries through the Bookable interface. Adding a new service = one new model implementing Bookable, not a table migration.</p>
-                        </div>
-                        <div class="decision-card">
-                            <h5 data-i18n="casestudy.umrain.decision2.title">Why Strategy Pattern for Payments?</h5>
-                            <p data-i18n="casestudy.umrain.decision2.desc">Vendors operate in different regions: Stripe for US/EU, PayPal for global, Paystack for Africa. Each gateway is wrapped behind a PaymentProcessor interface. Adding a new payment gateway means implementing one new class — existing booking logic remains untouched.</p>
-                        </div>
-                        <div class="decision-card">
-                            <h5 data-i18n="casestudy.umrain.decision3.title">Why a Separate Pricing Engine?</h5>
-                            <p data-i18n="casestudy.umrain.decision3.desc">Hotels use per-night with seasonal rates. Tours use per-person with group discounts. Flights use dynamic fare classes. Extracting pricing into a dedicated engine with per-type calculators keeps booking logic clean and testable. Each calculator handles only its own pricing rules.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Code Pattern -->
-                <div class="cs-block">
-                    <h4 data-i18n="casestudy.labels.code">Core Architecture Pattern</h4>
-                    <div class="code-block cs-code-block">
-                        <pre><code>// The Bookable Interface — every service type implements this
-interface Bookable
-{
-    public function calculatePrice(BookingRequest $request): Money;
-    public function checkAvailability(DateRange $range): bool;
-    public function generateBookingReference(): string;
-}
-
-// Hotel implementation
-class HotelRoom extends Model implements Bookable
-{
-    public function bookings(): MorphMany
-    {
-        return $this->morphMany(Booking::class, 'bookable');
-    }
-
-    public function calculatePrice(BookingRequest $request): Money
-    {
-        return $this->pricingEngine
-            ->forDateRange($request->checkIn, $request->checkOut)
-            ->applySeasonal($this->seasonal_rates)
-            ->convertTo($request->currency)
-            ->calculate();
-    }
-}
-
-// BookingService — works with ANY bookable type
-class BookingService
-{
-    public function create(BookingRequest $request): Booking
-    {
-        $bookable = $this->resolveBookable(
-            $request->bookable_type,
-            $request->bookable_id
-        );
-
-        if (!$bookable->checkAvailability($request->dateRange)) {
-            throw new AvailabilityException('Selected dates unavailable');
-        }
-
-        $price = $bookable->calculatePrice($request);
-
-        return DB::transaction(function () use ($bookable, $request, $price) {
-            $booking = Booking::create([
-                'bookable_type' => get_class($bookable),
-                'bookable_id'   => $bookable->id,
-                'user_id'       => auth()->id(),
-                'total'         => $price->amount,
-                'currency'      => $price->currency,
-                'reference'     => $bookable->generateBookingReference(),
-            ]);
-
-            $this->paymentService->charge($booking, $request->gateway);
-            $this->commissionService->calculate($booking);
-
-            return $booking;
-        });
-    }
-}</code></pre>
-                    </div>
-                </div>
-
-                <!-- Challenges -->
-                <div class="cs-block">
-                    <h4 data-i18n="casestudy.labels.challenges">Challenges Solved</h4>
-                    <div class="challenges-list">
-                        <div class="challenge-item">
-                            <strong data-i18n="casestudy.umrain.challenge1.title">Multi-currency pricing with seasonal rates:</strong>
-                            <span data-i18n="casestudy.umrain.challenge1.desc">Built a pricing pipeline that chains seasonal rate lookup → discount application → currency conversion, each step isolated and testable independently.</span>
-                        </div>
-                        <div class="challenge-item">
-                            <strong data-i18n="casestudy.umrain.challenge2.title">Commission calculation across payment gateways:</strong>
-                            <span data-i18n="casestudy.umrain.challenge2.desc">Each gateway returns different fee structures. The commission engine normalizes fees before calculating vendor payouts, ensuring accurate revenue splitting regardless of payment method.</span>
-                        </div>
-                        <div class="challenge-item">
-                            <strong data-i18n="casestudy.umrain.challenge3.title">Real-time availability across time zones:</strong>
-                            <span data-i18n="casestudy.umrain.challenge3.desc">Hotel availability is date-based, tour availability is slot-based, flight availability is seat-based. Unified the availability check behind the Bookable interface while preserving type-specific logic.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Results -->
-                <div class="cs-block">
-                    <h4 data-i18n="casestudy.labels.results">Results</h4>
-                    <div class="cs-results-grid">
-                        <div class="cs-result">
-                            <span class="cs-result-value">6 service types</span>
-                            <span class="cs-result-label" data-i18n="casestudy.umrain.result1">running on one unified polymorphic booking engine</span>
-                        </div>
-                        <div class="cs-result">
-                            <span class="cs-result-value">1 new class</span>
-                            <span class="cs-result-label" data-i18n="casestudy.umrain.result2">is all it takes to add a new service type to the platform</span>
-                        </div>
-                        <div class="cs-result">
-                            <span class="cs-result-value">3 gateways</span>
-                            <span class="cs-result-label" data-i18n="casestudy.umrain.result3">integrated without modifying existing booking logic</span>
-                        </div>
-                        <div class="cs-result">
-                            <span class="cs-result-value">Isolated</span>
-                            <span class="cs-result-label" data-i18n="casestudy.umrain.result4">pricing, payment, and commission — each testable independently</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1437,7 +1366,11 @@ class BookingService
 
                 <div class="contact-options-wrapper">
                     <!-- Contact Form -->
-                    <form class="contact-form" id="contactForm" autocomplete="on">
+                    <form class="contact-form" id="contactForm" autocomplete="on" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                        <input type="hidden" name="subject" value="New Portfolio Contact">
+                        <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
                         <h3 data-i18n="contact.formTitle">Send a Message</h3>
                         <div class="form-group">
                             <label for="contactName" data-i18n="contact.formName">Name</label>
@@ -1549,9 +1482,9 @@ class BookingService
             <p>&copy; <span id="currentYear">2026</span> Kareem Sharaf. <span data-i18n="footer.tagline">Backend Architect & System Engineer</span>.</p>
             <div class="footer-links">
                 <a href="#home" data-i18n="nav.home">Home</a>
-                <a href="#value" data-i18n="nav.services">Services</a>
-                <a href="#technology" data-i18n="nav.technology">Technology</a>
                 <a href="#projects" data-i18n="nav.projects">Work</a>
+                <a href="#technology" data-i18n="nav.technology">Technology</a>
+                <a href="#recruiters" data-i18n="nav.recruiters">Profile</a>
                 <a href="#contact" data-i18n="nav.contact">Contact</a>
             </div>
         </div>

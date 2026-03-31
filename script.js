@@ -397,62 +397,74 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
-// Contact Form Handling - Mailto
+// Contact Form Handling - Web3Forms
 // ============================================
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
-        // Get form data
-        const formData = {
-            name: document.getElementById('contactName').value.trim(),
-            email: document.getElementById('contactEmail').value.trim(),
-            projectType: document.getElementById('contactProjectType').value,
-            message: document.getElementById('contactMessage').value.trim()
-        };
-        
+
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+
         // Validate form
-        if (!formData.name || !formData.email || !formData.message) {
+        if (!name || !email || !message) {
             formMessage.className = 'form-message error';
             formMessage.textContent = getTranslation('contact.formError') || 'Please fill in all required fields.';
             formMessage.style.display = 'block';
             return;
         }
-        
+
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
+        if (!emailRegex.test(email)) {
             formMessage.className = 'form-message error';
             formMessage.textContent = getTranslation('contact.formEmailError') || 'Please enter a valid email address.';
             formMessage.style.display = 'block';
             return;
         }
-        
-        // Create mailto link with form data
-        const subject = encodeURIComponent(`Portfolio Contact: ${formData.projectType || 'General Inquiry'}`);
-        const body = encodeURIComponent(
-            `Name: ${formData.name}\n` +
-            `Email: ${formData.email}\n` +
-            `Project Type: ${formData.projectType || 'Not specified'}\n\n` +
-            `Message:\n${formData.message}`
-        );
-        
-        // Open email client
-        window.location.href = `mailto:kareem.sh.ite@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Show success message
-        formMessage.className = 'form-message success';
-        formMessage.textContent = getTranslation('contact.formSuccess') || 'Opening your email client... If it doesn\'t open, please email kareem.sh.ite@gmail.com directly.';
-        formMessage.style.display = 'block';
-        
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            contactForm.reset();
-            formMessage.style.display = 'none';
-        }, 5000);
+
+        // Disable button while submitting
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: contactForm.querySelector('[name="access_key"]').value,
+                    name,
+                    email,
+                    project_type: document.getElementById('contactProjectType').value,
+                    message,
+                    from_name: 'Portfolio Contact Form'
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                formMessage.className = 'form-message success';
+                formMessage.textContent = getTranslation('contact.formSuccess') || 'Message sent successfully! I\'ll get back to you soon.';
+                formMessage.style.display = 'block';
+                contactForm.reset();
+            } else {
+                throw new Error(result.message || 'Submission failed');
+            }
+        } catch (error) {
+            formMessage.className = 'form-message error';
+            formMessage.textContent = getTranslation('contact.formSendError') || 'Failed to send message. Please try again or email kareem.sh.ite@gmail.com directly.';
+            formMessage.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = getTranslation('contact.formSubmit') || 'Send Message';
+            setTimeout(() => { formMessage.style.display = 'none'; }, 5000);
+        }
     });
 }
 
