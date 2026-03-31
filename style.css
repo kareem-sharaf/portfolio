@@ -25,8 +25,8 @@
   /* Dark gray for headers */
   --color-text-body: #4a5568;
   /* Medium gray for body */
-  --color-text-muted: #718096;
-  /* Light gray for muted text */
+  --color-text-muted: #64748b;
+  /* Slate gray for muted text — WCAG AA 4.55:1 on #f8fafc */
   --color-text-links: #4299e1;
   /* Blue for links */
 

@@ -61,9 +61,11 @@ window.addEventListener('scroll', () => {
                 if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                     document.querySelectorAll('nav a').forEach(link => {
                         link.classList.remove('active');
+                        link.removeAttribute('aria-current');
                     });
                     if (navLink && !navLink.closest('.nav-brand')) {
                         navLink.classList.add('active');
+                        navLink.setAttribute('aria-current', 'true');
                     }
                 }
             });

@@ -537,22 +537,27 @@ class TechnicalBackground {
             });
         });
         
-        // Respect reduced motion preference
+        // Respect reduced motion preference — fully disable canvas
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         if (reducedMotion.matches) {
+            this.settings.enabled = false;
             this.settings.mouseInteraction = false;
-            this.setQuality('low');
+            if (this.animationId) cancelAnimationFrame(this.animationId);
         }
-        
+
         // Watch for theme changes
         this.watchThemeChanges();
-        
+
         // Watch for reduced motion changes
         if (reducedMotion.addEventListener) {
             reducedMotion.addEventListener('change', (e) => {
                 if (e.matches) {
+                    this.settings.enabled = false;
                     this.settings.mouseInteraction = false;
-                    this.setQuality('low');
+                    if (this.animationId) cancelAnimationFrame(this.animationId);
+                } else {
+                    this.settings.enabled = true;
+                    this.animate();
                 }
             });
         }
