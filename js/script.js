@@ -93,7 +93,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe cards and sections
-document.querySelectorAll('.value-card, .tech-category, .method-step, .testimonial-card, .project-card, .mindset-card, .cs-block, .decision-card').forEach(card => {
+document.querySelectorAll('.value-card, .tech-category, .method-step, .testimonial-card, .project-card, .mindset-card, .cs-block, .decision-card, .service-card, .problem-item').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

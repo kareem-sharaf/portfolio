@@ -180,7 +180,9 @@
 [data-theme="dark"] .value-card,
 [data-theme="dark"] .method-step,
 [data-theme="dark"] .project-card,
-[data-theme="dark"] .testimonial-card {
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .problem-item {
   background: #1e2432;
   border-color: #3a4556;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(125, 211, 252, 0.1);
@@ -3014,6 +3016,229 @@ footer p {
 [dir="rtl"] .architecture-diagram pre {
   direction: ltr;
   text-align: left;
+}
+
+/* ============================================
+   Services Section
+   ============================================ */
+
+.services {
+  padding: var(--spacing-10) 0;
+  background: var(--color-bg-primary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-5);
+  margin-top: var(--spacing-6);
+}
+
+.service-card {
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--border-radius-base);
+  background: rgba(66, 153, 225, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-4);
+  color: var(--color-secondary);
+}
+
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-headers);
+  margin-bottom: var(--spacing-2);
+}
+
+.service-description {
+  color: var(--color-text-body);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-body);
+  margin-bottom: var(--spacing-3);
+}
+
+.service-problem {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-bottom: var(--spacing-4);
+  flex-grow: 1;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+  border-radius: var(--border-radius-base);
+  font-weight: 600;
+  font-size: var(--font-size-small);
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--transition-base);
+  align-self: flex-start;
+}
+
+.btn-outline:hover {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+/* ============================================
+   CTA Strip
+   ============================================ */
+
+.cta-strip {
+  background: var(--color-primary);
+  padding: var(--spacing-6) 0;
+  text-align: center;
+}
+
+.cta-strip .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-5);
+  flex-wrap: wrap;
+}
+
+.cta-strip p {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cta-strip .btn-primary {
+  background: #ffffff;
+  color: var(--color-primary);
+  border: none;
+}
+
+.cta-strip .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   Problems I Solve Section
+   ============================================ */
+
+.problems-section {
+  padding: var(--spacing-10) 0;
+  background: var(--color-bg-section);
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-6);
+}
+
+.problem-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.problem-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.problem-item svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.problem-item span {
+  color: var(--color-text-headers);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+}
+
+/* ============================================
+   Responsive - Services, Problems, CTA
+   ============================================ */
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-strip .container {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .cta-strip p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .problems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   Dark Mode - Services, Problems, CTA
+   ============================================ */
+
+[data-theme="dark"] .service-card {
+  background: var(--color-bg-section);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .service-icon {
+  background: rgba(66, 153, 225, 0.15);
+}
+
+[data-theme="dark"] .problem-item {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .cta-strip {
+  background: #0f2440;
+}
+
+/* ============================================
+   RTL - Services, Problems
+   ============================================ */
+
+[dir="rtl"] .btn-outline {
+  align-self: flex-end;
 }
 
 /* ============================================

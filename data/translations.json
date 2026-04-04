@@ -39,28 +39,28 @@
   },
   "hero": {
     "mainHeadline": {
-      "en": "I Design Backend Systems That Don't Break at Scale",
-      "ar": "أصمم أنظمة خلفية لا تنهار تحت الضغط"
+      "en": "I Build Backend Systems That Grow Your Business",
+      "ar": "أبني أنظمة خلفية تنمّي أعمالك"
     },
     "subHeadline": {
-      "en": "5 production systems — Laravel, Django, Spring Boot — across healthcare, e-learning, travel & marketplace domains",
-      "ar": "5 أنظمة إنتاجية — Laravel، Django، Spring Boot — في مجالات الرعاية الصحية والتعليم الإلكتروني والسفر والأسواق"
+      "en": "From idea to production — I design and develop reliable backend systems, APIs, and architectures that your business can depend on.",
+      "ar": "من الفكرة إلى الإنتاج — أصمم وأطور أنظمة خلفية موثوقة وواجهات برمجة تطبيقات وبنى تحتية يمكن لعملك الاعتماد عليها."
     },
     "tagline": {
       "en": "Polymorphic architectures · Real-time APIs · Multi-gateway payments · Performance-optimized queries",
       "ar": "هندسة معمارية متعددة الأشكال · واجهات API فورية · بوابات دفع متعددة · استعلامات محسّنة الأداء"
     },
     "value1": {
-      "en": "Designed a polymorphic booking engine handling 6 service types through a single unified interface",
-      "ar": "صممت محرك حجز متعدد الأشكال يعالج 6 أنواع خدمات عبر واجهة موحدة واحدة"
+      "en": "Systems built to handle growth without breaking",
+      "ar": "أنظمة مبنية لتتحمل النمو دون أن تتعطل"
     },
     "value2": {
-      "en": "Eliminated N+1 query problems through strategic denormalization and signal-based cache updates",
-      "ar": "حللت مشاكل استعلامات N+1 من خلال إلغاء التطبيع الاستراتيجي وتحديثات الكاش المبنية على الإشارات"
+      "en": "Clean APIs your frontend team will love",
+      "ar": "واجهات برمجة نظيفة سيحبها فريقك الأمامي"
     },
     "value3": {
-      "en": "Built medical systems with immutable records, dual authentication, and audit-trail integrity",
-      "ar": "بنيت أنظمة طبية بسجلات غير قابلة للتعديل ومصادقة مزدوجة وسلامة مسار التدقيق"
+      "en": "On time, on budget, no surprises",
+      "ar": "في الوقت المحدد، ضمن الميزانية، بدون مفاجآت"
     },
     "cta": {
       "startProject": {
@@ -70,6 +70,10 @@
       "viewResume": {
         "en": "View Resume",
         "ar": "عرض السيرة الذاتية"
+      },
+      "getQuote": {
+        "en": "Get a Quote",
+        "ar": "احصل على عرض سعر"
       },
       "viewProjects": {
         "en": "View Projects →",
@@ -628,8 +632,8 @@
         "ar": "التقنيات:"
       },
       "result": {
-        "en": "Eliminated manual scheduling conflicts and paper-based record keeping entirely. The dual authentication model meets HIPAA-aligned security requirements out of the box. Real-time patient-doctor chat reduced phone-based coordination overhead. Full rescheduling history gives staff complete visibility into each patient's care continuity. Reduced administrative workload by 60% and measurably improved patient satisfaction.",
-        "ar": "قضى على تعارضات الجدولة اليدوية وحفظ السجلات الورقية بالكامل. نموذج المصادقة المزدوجة يلبي متطلبات الأمان المتوافقة مع HIPAA من الصندوق. قللت الدردشة الفورية بين المريض والطبيب العبء الإداري للتنسيق الهاتفي. يمنح تاريخ إعادة الجدولة الكامل فريق العمل رؤية شاملة لاستمرارية رعاية كل مريض. قلّل عبء العمل الإداري بنسبة 60% وحسّن رضا المرضى بشكل ملموس."
+        "en": "Replaced paper-based clinic workflows with a secure digital system. Zero scheduling conflicts with automated availability engine. Immutable medical records ensure patient data integrity.",
+        "ar": "استبدلت سير العمل الورقي للعيادة بنظام رقمي آمن. صفر تعارضات في الجدولة مع محرك التوفر الآلي. سجلات طبية غير قابلة للتعديل تضمن سلامة بيانات المرضى."
       },
       "metric1": {
         "en": "Medical records locked after finalization — no modification possible",
@@ -678,8 +682,8 @@
         "ar": "التقنيات:"
       },
       "result": {
-        "en": "Enabled structured online learning for 5,000+ students across a proper academic hierarchy. Resumable uploads eliminated instructor frustration over dropped connections for large lecture files. Accurate progress tracking gives students and admins clear visibility into completion status at all times. Course completion rate increased by 35%. Automated enrollment and payment processing significantly reduced administrative overhead.",
-        "ar": "مكّن التعلم الإلكتروني المنظم لأكثر من 5000 طالب عبر هيكل أكاديمي حقيقي. الرفع القابل للاستئناف أزال إحباط المدرسين من ضياع ملفات المحاضرات الكبيرة عند انقطاع الاتصال. تتبع التقدم الدقيق يمنح الطلاب والمسؤولين رؤية واضحة لحالة الإتمام في كل وقت. ارتفع معدل إتمام الدورات بنسبة 35%. أتمتة التسجيل والدفع قلّصت العبء الإداري بشكل ملحوظ."
+        "en": "Delivered university-scale LMS handling large video uploads and real-time progress tracking. Reduced page load queries from O(n*m) to O(1).",
+        "ar": "قدّمت نظام إدارة تعلم بمستوى جامعي يتعامل مع رفع فيديوهات كبيرة وتتبع التقدم بالوقت الحقيقي. خفّضت استعلامات تحميل الصفحة من O(n*m) إلى O(1)."
       },
       "metric1": {
         "en": "Progress queries optimized via denormalization + signals",
@@ -728,8 +732,8 @@
         "ar": "التقنيات:"
       },
       "result": {
-        "en": "One platform serving 6 distinct travel service types under a unified customer experience. The modular design allows new service types to be onboarded without architectural changes. The commission model scales vendor count without upfront cost exposure. Multi-gateway payment support (Stripe, PayPal, Paystack) reduces checkout abandonment across international markets.",
-        "ar": "منصة واحدة تخدم 6 أنواع خدمات سفر مختلفة تحت تجربة عملاء موحدة. يتيح التصميم المعياري إضافة أنواع خدمات جديدة دون تغييرات معمارية. نموذج العمولة يُوسّع عدد البائعين دون التعرض لتكاليف مسبقة. دعم بوابات الدفع المتعددة (Stripe، PayPal، Paystack) يقلل التخلي عن عملية الدفع في الأسواق الدولية."
+        "en": "Unified 6 service types into one platform, reducing new service integration from weeks to days. Automated commission tracking across 3 payment gateways.",
+        "ar": "وحّدت 6 أنواع خدمات في منصة واحدة، مما قلّص دمج خدمات جديدة من أسابيع إلى أيام. تتبع عمولات آلي عبر 3 بوابات دفع."
       },
       "metric1": {
         "en": "Unified through one polymorphic booking interface",
@@ -778,8 +782,8 @@
         "ar": "التقنيات:"
       },
       "result": {
-        "en": "Providers can reach patients beyond their physical catchment area with no dependency on external tools. Atomic slot reservation handles concurrent booking attempts reliably under load. The verified-provider gate maintains platform quality without manual admin intervention. The hold-and-capture model eliminates payment disputes for no-shows and late cancellations.",
-        "ar": "يستطيع المزودون الوصول إلى المرضى خارج نطاقهم الجغرافي دون الاعتماد على أدوات خارجية. حجز الفترات الذري يتعامل بشكل موثوق مع محاولات الحجز المتزامنة تحت الضغط. بوابة التحقق من المزودين تحافظ على جودة المنصة دون تدخل يدوي من الإدارة. نموذج الاحتجاز والالتقاط يُلغي نزاعات الدفع عند الغياب أو الإلغاء المتأخر."
+        "en": "Launched telemedicine platform supporting video consultations, automated scheduling, and secure payments. Reduced admin overhead for healthcare providers.",
+        "ar": "أطلقت منصة طب عن بُعد تدعم استشارات الفيديو والجدولة الآلية والمدفوعات الآمنة. خفّضت العبء الإداري لمقدمي الرعاية الصحية."
       },
       "metric1": {
         "en": "Slot reservation designed to prevent double-booking",
@@ -828,8 +832,8 @@
         "ar": "التقنيات:"
       },
       "result": {
-        "en": "Buyers and sellers operate from a single account without friction or confusion. The dynamic field system has the capacity to absorb new service categories without a single migration. Multilingual notifications improve engagement across different markets. Efficient offer comparison workflows reduced average time-to-contract by 50%.",
-        "ar": "المشترون والبائعون يعملون من حساب واحد دون احتكاك أو ارتباك. نظام الحقول الديناميكي قادر على استيعاب فئات خدمات جديدة دون migration واحد. الإشعارات متعددة اللغات تُحسّن المشاركة عبر أسواق مختلفة. سير عمل مقارنة العروض الفعّال قلّص متوسط وقت التعاقد بنسبة 50%."
+        "en": "Enabled businesses to find and hire service providers faster. New service categories added in minutes, not days. Real-time chat and multilingual notifications improved user engagement.",
+        "ar": "مكّنت الشركات من إيجاد وتوظيف مزودي الخدمات بشكل أسرع. إضافة فئات خدمات جديدة في دقائق وليس أيام. الدردشة الفورية والإشعارات متعددة اللغات حسّنت تفاعل المستخدمين."
       },
       "metric1": {
         "en": "Single account with client/provider abilities via token scopes",
@@ -863,8 +867,8 @@
           "ar": "النتيجة:"
         },
         "metrics": {
-          "en": "Engineering Impact:",
-          "ar": "الأثر الهندسي:"
+          "en": "Key Results:",
+          "ar": "النتائج الرئيسية:"
         }
       },
       "healthcare": {
@@ -999,12 +1003,12 @@
   },
   "contact": {
     "title": {
-      "en": "Let's Build Your Digital Foundation",
-      "ar": "دعنا نبني أساسك الرقمي"
+      "en": "Tell Me About Your Project",
+      "ar": "أخبرني عن مشروعك"
     },
     "tagline": {
-      "en": "Ready to transform your technical vision into reality?",
-      "ar": "هل أنت مستعد لتحويل رؤيتك التقنية إلى واقع؟"
+      "en": "Describe what you need and I'll get back to you quickly.",
+      "ar": "صِف ما تحتاجه وسأعود إليك بسرعة."
     },
     "description": {
       "en": "Whether you're starting from scratch or optimizing existing systems, I'm here to help you build scalable solutions that drive business growth. Free consultation available to discuss your project needs.",
@@ -1443,6 +1447,132 @@
     "close": {
       "en": "Close",
       "ar": "إغلاق"
+    }
+  },
+  "services": {
+    "title": {
+      "en": "What I Can Do for You",
+      "ar": "ما يمكنني فعله لك"
+    },
+    "subtitle": {
+      "en": "Clear solutions for real business needs",
+      "ar": "حلول واضحة لاحتياجات العمل الحقيقية"
+    },
+    "cta": {
+      "en": "Contact Me",
+      "ar": "تواصل معي"
+    },
+    "backend": {
+      "title": {
+        "en": "Backend Development",
+        "ar": "تطوير الأنظمة الخلفية"
+      },
+      "description": {
+        "en": "Full backend systems from scratch. Database design, server logic, and everything in between.",
+        "ar": "أنظمة خلفية كاملة من الصفر. تصميم قواعد البيانات ومنطق الخادم وكل ما بينهما."
+      },
+      "problem": {
+        "en": "You have an idea but no backend to power it.",
+        "ar": "لديك فكرة لكن لا نظام خلفي يشغّلها."
+      }
+    },
+    "api": {
+      "title": {
+        "en": "API Development",
+        "ar": "تطوير واجهات البرمجة"
+      },
+      "description": {
+        "en": "RESTful APIs that connect your app to the world. Payment gateways, third-party services, real-time features.",
+        "ar": "واجهات برمجة RESTful تربط تطبيقك بالعالم. بوابات دفع وخدمات خارجية وميزات فورية."
+      },
+      "problem": {
+        "en": "Your systems don't talk to each other.",
+        "ar": "أنظمتك لا تتواصل مع بعضها."
+      }
+    },
+    "optimization": {
+      "title": {
+        "en": "System Optimization",
+        "ar": "تحسين الأنظمة"
+      },
+      "description": {
+        "en": "Speed up slow applications, fix database bottlenecks, and prepare your system for more users.",
+        "ar": "تسريع التطبيقات البطيئة وإصلاح عنق الزجاجة في قواعد البيانات وتجهيز نظامك لمزيد من المستخدمين."
+      },
+      "problem": {
+        "en": "Your app is slow and losing users.",
+        "ar": "تطبيقك بطيء ويفقد المستخدمين."
+      }
+    },
+    "consultation": {
+      "title": {
+        "en": "Technical Consultation",
+        "ar": "استشارات تقنية"
+      },
+      "description": {
+        "en": "Architecture review, technology selection, and roadmap planning for your next project.",
+        "ar": "مراجعة الهندسة المعمارية واختيار التقنيات والتخطيط لمشروعك القادم."
+      },
+      "problem": {
+        "en": "You need expert guidance before building.",
+        "ar": "تحتاج إرشاد خبير قبل البناء."
+      }
+    }
+  },
+  "problems": {
+    "title": {
+      "en": "Problems I Solve",
+      "ar": "المشاكل التي أحلّها"
+    },
+    "subtitle": {
+      "en": "If any of these sound familiar, I can help.",
+      "ar": "إذا بدا أي من هذه مألوفًا، يمكنني المساعدة."
+    },
+    "item1": {
+      "en": "Your web application is too slow",
+      "ar": "تطبيقك الويب بطيء جدًا"
+    },
+    "item2": {
+      "en": "Your APIs keep breaking",
+      "ar": "واجهات البرمجة لديك تتعطل باستمرار"
+    },
+    "item3": {
+      "en": "Your backend can't handle more users",
+      "ar": "نظامك الخلفي لا يتحمل مستخدمين أكثر"
+    },
+    "item4": {
+      "en": "Your systems are a mess and hard to maintain",
+      "ar": "أنظمتك فوضوية وصعبة الصيانة"
+    },
+    "item5": {
+      "en": "You need a backend built from scratch",
+      "ar": "تحتاج نظامًا خلفيًا مبنيًا من الصفر"
+    },
+    "item6": {
+      "en": "Your developer left and no one understands the code",
+      "ar": "مطوّرك غادر ولا أحد يفهم الكود"
+    }
+  },
+  "cta": {
+    "afterServices": {
+      "text": {
+        "en": "Have a project in mind?",
+        "ar": "لديك مشروع في بالك؟"
+      },
+      "button": {
+        "en": "Get a Custom Quote",
+        "ar": "احصل على عرض سعر مخصص"
+      }
+    },
+    "afterProjects": {
+      "text": {
+        "en": "Want similar results for your business?",
+        "ar": "تريد نتائج مشابهة لعملك؟"
+      },
+      "button": {
+        "en": "Let's Talk",
+        "ar": "لنتحدث"
+      }
     }
   }
 }
